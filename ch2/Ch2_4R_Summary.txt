@@ -1,0 +1,27 @@
+4R Kinematic Analysis Summary (from Ch2_GDL.txt)
+
+Equations/sections used:
+- Section 2.3 Position Analysis of the 4R Linkage.
+- Link definitions from equation (2.46): a, b, g, h.
+- Input-output constraint from equations (2.50)-(2.51):
+  A(theta) cos(psi) + B(theta) sin(psi) = C(theta),
+  with A(theta), B(theta), C(theta) as defined in (2.51).
+- Output-angle branch solve from equation (2.52):
+  psi = atan2(B, A) ± acos(C / sqrt(A^2 + B^2)).
+- Solvability condition from equation (2.53):
+  A^2 + B^2 - C^2 >= 0.
+- Coupler reconstruction from loop equations (2.55)-(2.57):
+  phi = atan2(b sin(psi) - a sin(theta), g + b cos(psi) - a cos(theta)) - theta.
+
+Test case:
+- No explicit numerical 4R example was identified in section 2.3, so a user-defined
+  reproducible case was used:
+  a=1.0, b=2.0, g=2.5, h=2.0
+  theta_deg = [20, 40, 80, 120, 160]
+- Script: Ch2_4R_solver.py
+
+Validation result:
+- For each theta in the test sweep, two physically valid assembly branches were found.
+- Residuals for (2.50), loop equations (2.55), and distance constraint (2.47) were all
+  near machine precision (~1e-15 to 1e-16).
+- Overall validation status reported by the script: PASS.

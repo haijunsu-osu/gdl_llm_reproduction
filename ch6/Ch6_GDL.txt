@@ -1,0 +1,2047 @@
+--- Page 1 ---
+Chapter 6
+Multiloop Planar Linkages
+In this chapter, we will formulate the systematic design of multiloop planar link-
+ages in a way that combines with traditional robotics and four-bar linkage synthesis
+theory to obtain innovative articulated robotic systems. First, we will show how
+mechanical constraints can be introduced to a planar 3R serial chain to guide the
+movement of its end effector through a set of ﬁve speciﬁed task positions to obtain
+a six-bar linkage, as illustrated in Figure 6.1. Then, we will show how mechanical
+constraints can be introduced to a planar 6R loop to obtain an eight-bar linkage. An
+ple for each six- and eight-bar linkage respectively to illustrate the design process.
+M 3
+F
+M 1
+M 2
+M 4
+M 5
+M 3
+F C 3
+M 1
+M 2
+M 4
+M 5
+Fig. 6.1 A planar 3R serial chain is constrained by two RR chains to deﬁne a six-bar linkage.
+6.1 Synthesis of Six-Bar Linkages
+A planar 3R chain consists of four links and three revolute joints Ci, i = 1,2,3 as
+shown in Figure 6.2. We assume that this chain has full mobility in the plane with
+©
+J.M. McCarthy and G.S. Soh, Geometric Design of Linkages, Interdisciplinary Applied 125
+example on a Novel Steering Linkage and Depolyable Bed is presented as an exam-
+Mathematics 11, DOI 10.1007/978-1-4419-7892-9_6,
+  Springer Science+Business Media, LLC 2011
+
+--- Page 2 ---
+126 6 Multiloop Planar Linkages
+its conﬁguration deﬁned joint angles θ1, θ2, and θ3, and can reach a speciﬁed set of
+task positions.
+M
+a12 θ1
+F
+θ2
+a23
+θ3
+C 1
+C 2
+C 3
+B1
+B3
+B2
+B0
+0 1 2 3
+Fig. 6.2 A schematic of a planar 3R serial chain. The graph of this chain forms a straight line with
+a vertex for each link in the manipulator.
+Our goal is to add constraints consistent with the task positions. While any of the
+constraints PR, RP, and RR can be used, our focus is on RR constraints, Figure 6.3.
+C2
+C1
+C3
+G
+W
+C2
+C1
+C3
+G
+W
+Fig. 6.3 Examples of constrained 3R serial chain.
+A planar six-bar linkage consists of six links and seven joints and has two topo-
+logically distinct conﬁgurations. These are called the Watt and Stephenson six-bar
+chains, Figure 6.4. Inversions of these chains yield the Watt I, Watt II, Stephenson
+I, Stephenson II, and Stephenson III linkages.
+6.1.1 Adding RR Constraints
+We design a six-bar linkage by adding constraints to 3R serial chain to obtain a one-
+degree-of-freedom linkage. We will focus on the synthesis of RR constraints, but
+PR or RP chains can be used to constrain the 3R chain using the same methodology.
+
+--- Page 3 ---
+6.1 Synthesis of Six-Bar Linkages 127
+Watt Chain
+Stephenson Chain
+Watt I Watt II
+Stephenson IIIStephenson IIStephenson I
+Fig. 6.4 The Watt and Stephenson six-bar chains, and the different forms obtained by selecting
+different links as the base.
+In order to identify the ways to add RR constraints to a 3R serial chain, we denote
+links of the 3R chain, as Bi, i = 0,1,2,3. An RR chain cannot constrain consecutive
+links, therefore the two links that can be connected by the ﬁrst RR constraint are (i)
+B0B2, (ii) B0B3, or (iii) B1B3. Once the ﬁrst constraint is attached, the second RR
+constraint can be connected either to one of the original links, or to the link created
+by the ﬁrst RR constraint.
+Stephenson IIIa
+Stephenson IIIb
+Stephenson IIb0 1 2 3
+0 1 2 3
+0 1 2 3
+Fig. 6.5 The linkage graphs show the synthesis sequence for the three constrained 3R chains in
+which the two RR chains are attached independently.
+Figure 6.5 shows the various systems that result from independent RR constraints
+applied to a 3R chain. Notice that while two RR chains can connect B3 to ground,
+there are no other cases in which the two RR cranks are connected to the same
+bodies. The result is three six-bar linkages, the Stephenson IIb, Stephenson IIIa,
+and Stephenson IIIb. The notation “a” and “b” is used to distinguish the input crank,
+which we consider to be the ﬁrst link of the 3R chain.
+
+--- Page 4 ---
+128 6 Multiloop Planar Linkages
+Stephenson I
+Stephenson IIa
+Watt Ia
+Watt Ib
+Step 2
+Step 1
+0 1 2 3
+0 1 2 3
+0 1 2 3
+0 1 2 3
+4
+4
+4
+4
+Fig. 6.6 The linkage graphs show the synthesis sequence for the four constrained 3R chains in
+which the second RR chain connects to the ﬁrst RR chain.
+We now consider the case in which the second RR chain is connected to the new
+link B4 of the ﬁrst RR chain. Figure 6.6 shows that we obtain the following four
+topologies, which can be identiﬁed as (i) (B0B2,B3B4) known as a Watt Ia linkage,
+(ii) (B0B3,B1B4), the Stephenson I, (iii) (B0B3,B2B4), the Stephenson IIa, and (iv)
+(B1B3,B0B4), the Watt Ib linkage.
+6.1.2 The RR Synthesis Equation
+In order to size the two RR constraints for the 3R backbone chain, we generalize the
+RR synthesis equations from the earlier chapter.
+Let [Bl, j], j = 1,..., 5, be the ﬁve positions of the lth moving link, and [Bk, j],
+j = 1,..., 5, the ﬁve positions of the kth moving link measured in a world frame F.
+Let g be the coordinates of the R joint attached to the lth link measured in the link
+frame Bl. Similarly, let w be the coordinates of the other R joint measured in the
+link frame Bk. The ﬁve positions taken by these points in the moving frame as the
+two bodies move relative to each other are given by
+Gj = [Bl, j]g and Wj = [Bk, j]w. (6.1)
+
+--- Page 5 ---
+6.1 Synthesis of Six-Bar Linkages 129
+Now introduce the relative displacements
+[R1 j] = [Bl, j][Bl,1]−1 and [S1 j] = [Bk, j][Bk,1]−1, (6.2)
+so these equations become
+Gj = [R1 j]G1 and Wj = [S1 j]W1, (6.3)
+where [R11] = [S11] = [I] are the identity transformations.
+The points Gj and Wj deﬁne the ends of a rigid link of length R; therefore we
+have the constraint equations
+([S1 j]W1 −[R1 j]G1)·([S1 j]W1 −[R1 j]G1) =R2. (6.4)
+These ﬁve equations can be solved to determine the ﬁve design parameters of the RR
+constraint, G1 = (u,v,1)T , W1 = (x,y,1)T , and R. We will refer to these equations
+as the general synthesis equations for the planar RR link.
+To solve the general synthesis equations, it is convenient to introduce the dis-
+placements
+[D1 j] = [R1 j]−1[S1 j] = [Bl,1][Bl, j]−1[Bk, j][Bk,1]−1, (6.5)
+so we obtain
+([D1 j]W1 −G1)·([D1 j]W1 −G1) =R2, j = 1,..., 5. (6.6)
+Subtract the ﬁrst of these equations from the remaining ones to cancel R2 and the
+square terms in the variables u,v and x,y. The resulting four bilinear equations can
+be solved algebraically to obtain the desired pivots.
+6.1.3 Algebraic Elimination
+The general synthesis equations (6.6) can be solved using the algebraic elimination
+procedure presented previously. Recall that this consists of constructing four bilinear
+equations and extracting four 3×3 minors M
+j to obtain four cubic polynomials in x
+and y, given by
+Rj : dj0y3 +dj1y2 +dj2y +dj3 = 0, j = 1,... 4, (6.7)
+where the coefﬁcient dk j is a polynomial in x of degree k. The four polynomials Rj
+are assembled into the matrix equation
+R = [D(x)]m =
+
+
+d10(x) d11(x) d12(x) d13(x)
+..
+.
+...
+...
+...
+d
+40(x) d41(x) d42(x) d43(x)
+
+
+
+
+
+
+y
+3
+y2
+y
+1
+
+
+
+
+=
+
+
+
+
+0
+0
+0
+0
+
+
+
+
+. (6.8)
+
+--- Page 6 ---
+130 6 Multiloop Planar Linkages
+As we have seen, this equation can be solved for a non-zero m = (y3,y2,y,1), only
+if the resultant matrix [D(x)] had a determinant equal zero.
+Here we present a method to compute the roots of det[D(x)] =0 using the eigen-
+value technique described in [72]. For convenience, rename x as λ, and expand
+[D(λ)] in matrix polynomial form as
+[D(λ)] = [D0]+[ D1]λ +[D2]λ2 +[D3]λ3, (6.9)
+where D0, D1, D2, and D3 are 4 ×4 matrices.
+The roots of detD(λ) =0 are the ﬁnite eigenvalues of the generalized system
+[B]x = λ[A]x, (6.10)
+where A, B, and x are given by
+[A] =
+
+
+I4 0 0
+0 I4 0
+0 0 D3
+
+, [B] =
+
+
+0 I
+4 0
+0 0 I4
+−D0 −D1 −D2
+
+, x =
+
+
+
+m
+λm
+λ
+2m
+
+
+, (6.11)
+where I4 is the 4×4 identity matrix and 0 is a 4×4 matrix of zeros. The solution of
+this eigenvalue problem yields four ﬁnite solutions.
+For each real value of λ we computes its eigenvector and obtain a value for y.
+Notice that each eigenvector x is deﬁned up to a constant multiple µ, therefore, it is
+convenient to determine the coordinate of y by computing the ratio of elements of
+x, such as
+y = x3
+x4
+= µy
+µ . (6.12)
+The remaining variables u and v are obtained by solving two of the four bilinear
+synthesis equations formulated from Eq (6.6).
+6.1.4 The Number of Six-Bar Linkage Designs
+The synthesis of an RR constraint yields as many as four designs; therefore two
+constraints can yield 16 designs. However, our process always has one link of the
+3R chain as one of the solutions, so there are at most 12 designs.
+The Stephenson I structure has all 12 designs. The Stephenson II has two differ-
+ent sets of designs that differ in the workpiece link, and so yields 24 designs. The
+Stephenson III also has two ways to connect to the end effector, one of which yields
+12 designs and the other six, a total of 18.
+The Watt I has two different sets of designs that differ in the input crank, and
+both sets include a link on the 3R chain for both RR constraints, so there are 2 ×9
+candidates. The result is as many as 72 different six-bar linkage designs obtained
+using this process.
+
+--- Page 7 ---
+6.2 Analysis of a Six-Bar Linkage 131
+6.2 Analysis of a Six-Bar Linkage
+Given any six-bar linkage, we can perform closed-form kinematic analysis to sim-
+ulate its movement using complex vectors and the Dixon determinant. Our focus in
+this section is on the Watt Ia six-bar, but the approach can be applied to all of the
+six-bar linkages obtained from our synthesis methodology. All that is needed are the
+loop equations for the linkage.
+Fig. 6.7 The joint angle and link length parameters for the Watt Ia six-bar linkage.
+6.2.1 Complex Loop Equations
+Consider the general Watt Ia linkage shown in Figure 6.7 . Introduce a coordinate
+frame F such that the base pivot of the 3R chain, C1, is the origin with its x-axis
+directed toward G1. Let the conﬁguration angles θi, i = 1,2,..., 5 be as shown in
+Figure 6.7.
+Using the notation inFigure 6.7 , we formulate the vector equations of the loops
+formed by C1C2W1G1 and C1C2C3W2G2G1, that is,
+F1 : l1 cosθ1 +b1 cos(θ2 −γ)−b2 cos(θ4 +η)−l0 = 0,
+F2 : l1 sinθ1 +b1 sin(θ2 −γ)−b2 sin(θ4 +η) =0,
+F3 : l1 cosθ1 +l2 cosθ2 +l3 cosθ3 −l4 cosθ4 −l5 cosθ5 −l0 = 0,
+F4 : l1 sinθ1 +l2 sinθ2 +l3 sinθ3 −l4 sinθ4 −l5 sinθ5 = 0. (6.13)
+Select the angle θ1 as the input to the six-bar linkage, then these four equations Fi
+determine the joint angles θj, j = 2,3,4,5.
+Now introduce the complex numbersΘj = eiθj , so the four loop equations (6.13)
+become two complex loop equations,
+F
+θ1
+C2
+C1
+C3
+G1
+G2
+W2
+W1
+θ4
+θ5
+γ
+ηb2
+b1
+l1
+l2
+l3
+l4
+l5
+θ2
+θ3
+l0
+
+--- Page 8 ---
+132 6 Multiloop Planar Linkages
+C1 : l1Θ1 +b1Θ2e−iγ −b2Θ4eiη −l0 = 0,
+C2 : l1Θ1 +l2Θ2 +l3Θ3 −l4Θ4 −l5Θ5 −l0 = 0. (6.14)
+Take the complex conjugate of these two equations to deﬁne
+C⋆
+1 : l1Θ−1
+1 +b1Θ−1
+2 eiγ −b2Θ−1
+4 e−iη −l0 = 0,
+C⋆
+2 : l1Θ−1
+1 +l2Θ−1
+2 +l3Θ−1
+3 −l4Θ−1
+4 −l5Θ−1
+5 −l0 = 0. (6.15)
+We now solve the four complex loop equations (6.14) and (6.15) for the complex
+conﬁguration angles Θj, j = 2,3,4,5 using the Dixon determinant.
+6.2.2 The Dixon Determinant
+Suppress Θ3, so we have four complex equations in the three variables Θ2, Θ4 and
+Θ5. We formulate the Dixon determinant by inserting each of the four functionsC1,
+C⋆
+1 , C2, C⋆
+2 as the ﬁrst row, and then sequentially replacing the three variables by
+αj in the remaining rows, to obtain
+∆(C1,C⋆
+1 ,C2,C⋆
+2 )
+=
+⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐⏐
+C
+1(Θ2,Θ4,Θ5) C⋆
+1 (Θ2,Θ4,Θ5) C2(Θ2,Θ4,Θ5) C⋆
+2 (Θ2,Θ4,Θ5)
+C1(α2,Θ4,Θ5) C⋆
+1 (α2,Θ4,Θ5) C2(α2,Θ4,Θ5) C⋆
+2 (α2,Θ4,Θ5)
+C1(α2,α4,Θ5) C⋆
+1 (α2,α4,Θ5) C2(α2,α4,Θ5) C⋆
+2 (α2,α4,Θ5)
+C1(α2,α4,α5) C⋆
+1 (α2,α4,α5) C2(α2,α4,α5) C⋆
+2 (α2,α4,α5)
+⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+. (6.16)
+This determinant is zero whenΘ
+j, j = 2,4,5, satisfy the loop equations, because the
+elements of the ﬁrst row become zero.
+Notice that each complex loop equation has the form
+Ck : ck0 +ck3x + ∑
+j=2,4,5
+ck, jΘj and C⋆
+k : c⋆
+k0 +c⋆
+k3
+x−1 + ∑
+j=2,4,5
+c⋆
+k, j
+Θ−1
+j , (6.17)
+where x denotes the suppressed variable Θ3. Clearly, the equations maintain this
+form when αj replaces Θj. Now row reduce ∆ by subtracting the second row from
+the ﬁrst row, then the third from the second, and the fourth from the third, to obtain
+⏐⏐
+⏐⏐⏐
+⏐
+⏐
+⏐
+c
+12(Θ2 −α2) c∗
+12(Θ−1
+2 −α−1
+2 ) c22(Θ2 −α2) c∗
+22
+(Θ−1
+2 −α−1
+2 )
+c14(Θ4 −α4) c∗
+14
+(Θ−1
+4 −α−1
+4 ) c24(Θ4 −α4) c∗
+24
+(Θ−1
+4 −α−1
+4 )
+c15(Θ5 −α5) c∗
+15(Θ−1
+5 −α−1
+5 ) c25(Θ5 −α5) c∗
+25
+(Θ−1
+5 −α−1
+5 )
+C1(α2,α4,α5) C⋆
+1 (α2,α4,α5) C2(α2,α4,α5) C⋆
+2 (α2,α4,α5)
+⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+. (6.18)
+This determinant contains extraneous roots of the form Θ
+j = αj, which we can
+remove by dividing out the factor (Θ−1
+j −α−1
+j ) using Θj −αj = −Θjαj(Θ−1
+j −
+
+--- Page 9 ---
+6.2 Analysis of a Six-Bar Linkage 133
+α−1
+j ), in order to deﬁne the determinant
+δ = ∆(C1,C⋆
+1 ,C2,C⋆
+2 )
+(Θ−1
+2 −α−1
+2 )(Θ−1
+4 −α−1
+4 )(Θ−1
+5 −α−1
+5 ), (6.19)
+that is,
+δ =
+⏐⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+−c
+12Θ2α2 c∗
+12 −c22Θ2α2 c∗
+22
+−c14Θ4α4 c∗
+14
+−c24Θ4α4 c∗
+24
+−c15Θ5α5 c∗
+15 −c25Θ5α5 c∗
+25
+C1(α2,α4,α5) C⋆
+1 (α2,α4,α5) C2(α2,α4,α5) C⋆
+2 (α2,α4,α5)
+⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+. (6.20)
+This determinant expands to form a polynomial of the form
+δ = a
+T [W]t = 0, (6.21)
+where a and t are vectors of monomials,
+a =
+
+
+
+
+
+
+
+
+
+
+
+
+α
+2
+α4
+α5
+α4α5
+α2α5
+α2α4
+
+
+
+
+
+
+
+
+
+
+and t =
+
+
+
+
+
+
+
+
+
+
+
+Θ
+2
+Θ4
+Θ5
+Θ4Θ5
+Θ2Θ5
+Θ2Θ4
+
+
+
+
+
+
+
+
+
+
+. (6.22)
+The 6 ×6 matrix [W] is given by
+[W] =
+[D
+1x +D2 AT
+A −(D∗
+1x−1 +D∗
+2
+)
+]
+. (6.23)
+The matrices [D1] and [D2] are 3 ×3 diagonal matrices, given by
+[D1] =
+
+
+b1b2l3l5e−i(γ+η) 0 0
+0 −b1b2l3l5ei(γ+η) 0
+0 0 0
+
+, [D
+2] =
+
+
+d
+1 0 0
+0 d2 0
+0 0 d3
+
+,
+(6.24)
+where
+d
+1 =(l1Θ1 −l0)(b1b2l5e−i(γ+η) −b2l2l5e−iη ),
+d2 =(l0 −l1Θ1)(b1b2l5ei(γ+η) −b1l4l5eiγ ),
+d3 =(l1Θ1 −l0)(b2l2l5e−iη −b1l4l5eiγ ).
+And the 3 ×3 matrix [A] is given by
+
+--- Page 10 ---
+134 6 Multiloop Planar Linkages
+[A]
+=
+
+
+0 b1b2l2
+5 ei(γ+η) −b2
+2l2l5 +b1b2l4l5ei(γ+η)
+−b1b2l2
+5 e−i(γ+η) 0 b1b2l2l5e−i(γ+η) −b2
+1
+l4l5
+b2
+2
+l2l5 −b1b2l4l5e−i(γ+η) −b1b2l2l5ei(γ+η) +b2
+1
+l4l5 0
+
+.
+(6.25)
+A set of valuesΘj that satisfy the loop equations (6.14) and (6.15) will also yield
+δ = 0, which will be true for arbitrary values of the auxiliary variables αj. Thus,
+solutions for these loop equations must also satisfy the matrix equation
+[W]t = 0. (6.26)
+The matrix [W] has the structure
+[W]t =
+[(
+D1 0
+A −D∗
+2
+)
+x −
+(
+−D2 −AT
+0 D∗
+1
+)]
+t = [Mx −N]t = 0. (6.27)
+Because [W] is a square matrix, this equation has non-zero solutions only if det[W] =
+0. Expanding this determinant, we obtain a polynomial in x = Θ3.
+Notice that the values of x = Θ3 that satisfy det[ W] =0 are also eigenvalues
+of the characteristic polynomial p(x) =det(Mx −N) of the generalized eigenvalue
+problem
+[N]t = x[M]t. (6.28)
+Each value of x = Θ3 has an associated eigenvector t, which yields the values of the
+remaining joint angles Θj, j = 2,4,5.
+It is useful to notice that an eigenvectort = (t1,t2,t3,t4,t5,t6)T is deﬁned only up
+to a constant multiple, µ. Therefore, it is convenient to determine the values Θj by
+the computing the ratios,
+Θ2 = t5
+t3
+= µΘ2Θ5
+µΘ5
+, Θ4 = t6
+t1
+= µΘ2Θ4
+µΘ2
+, Θ5 = t4
+t2
+= µΘ4Θ5
+µΘ4
+. (6.29)
+For a given input angle, a six-bar linkage can have as many as six roots for the
+conﬁguration variables Θj, j = 2,3,4,5. Each of these roots deﬁnes an assembly of
+the six-bar linkage.
+6.2.3 Sorting Assemblies
+As we analyze a six-bar linkage for a sequence of input anglesΘk
+1 , there are as many
+as six sets of conﬁguration angles ⃗Θ = (Θ2,Θ3,Θ4,Θ5)i, i = 1,..., 6 that deﬁne the
+assemblies of the linkage associated with each input angle. In order to sort the roots
+among the assemblies, we use the Jacobian of the loop equations.
+Compute the derivative of the loop equations (6.14) and (6.15) to obtain
+
+--- Page 11 ---
+6.3 Example: A Steering Linkage 135
+∇C1 : l1 ˙Θ1 +b1 ˙Θ2e−iγ −b2 ˙Θ4eiη = 0,
+∇C2 : l1 ˙Θ1 +l2 ˙Θ2 +l3 ˙Θ3 −l4 ˙Θ4 −l5 ˙Θ5 = 0,
+∇C⋆
+1 : −l1 ˙Θ1Θ−2
+1 −b1 ˙Θ2eiγΘ−2
+2 +b2 ˙Θ4e−iηΘ−2
+4 = 0,
+∇C⋆
+2 : −l1 ˙Θ1Θ−2
+1 −l2 ˙Θ2Θ−2
+2 −l3 ˙Θ3Θ−2
+3 +l4 ˙Θ4Θ−2
+4 +l5 ˙Θ5Θ−2
+5 = 0. (6.30)
+Factor out the derivative vector ˙⃗Θ = (˙Θ1, ˙Θ2, ˙Θ3, ˙Θ4, ˙Θ5), and obtain the Jacobian
+matrix
+[∇C(⃗Θk)] =
+
+
+l1 b1e−iγ 0 −b2eiη 0
+l1 l2 l3 −l4 −l5
+−l1Θ−2
+1 −b1eiγΘ−2
+2 0 b2e−iηΘ−2
+4 0
+−l1Θ−2
+1 −l2Θ−2
+2 −l3Θ−2
+3 l4Θ−2
+4 l5Θ−2
+5
+
+. (6.31)
+In order to sort the roots to among assemblies of the six-bar linkage, we approx-
+imate the complex loop equations using the Jacobian, and obtain
+[∇C(⃗Θk
+i )](⃗Ψ −⃗Θk
+i ) =0, (6.32)
+where Ψ approximates the value ⃗Θk+1
+i associated with the input angle Θk+1
+1 and
+is near the assembly deﬁned by ⃗Θk
+i . It is then a matter of identifying which of the
+root ⃗Θk+1
+i is closest to Ψ on the ith circuit, in order to match the assemblies. This
+provides a rapid and exact method to determine a sequence of conﬁguration angles
+for each assembly in order to animate the six-bar linkage.
+6.3 Example: A Steering Linkage
+As an example of our six-bar linkage design methodology, we consider a steering
+linkage. Generally, a steering linkage controls the direction of the two wheels around
+king-pin axes attached to the frame of a vehicle. Our goal is a design that does
+not use a king-pin, and, instead, allows the wheels to move laterally relative to the
+vehicle frame as they change direction. This is intended for a gravity racer in which
+extra stability in turning reduces the need for braking.
+For this design, we use a Watt Ia linkage, see Figure 6.8. We will add the RR
+constraints G
+1W1, and G2W2 to the 3R backbone chain C1C2C3 to obtain the Watt
+Ia linkage.
+Step 1.
+The task positions that deﬁne the positions of the left wheel, [Ti],i = 1,..., 5 are
+given in Table 6.1. These positions provide coordinated tracking of the front wheels
+with turning radius shown in the table.
+
+--- Page 12 ---
+136 6 Multiloop Planar Linkages
+Fig. 6.8 A 3R chain, C1C2C3, constrained by two RR chains, G1W1 and G2W2, to form a Watt
+Ia linkage.
+Table 6.1 Five task positions for the end effector of the 3R chain (dimensions in mm)
+Task Position (φ,x,y) Turning radius
+1 (43.9◦,−325,1511) -1895
+2 (20.0◦,−432,1562) -4724
+3 (0◦,−559,1588) no turn
+4 (−15.9◦,−689,1542) 4724
+5 (−29.1◦,−751,1473) 1895
+The dimensions of the 3R chain are chosen to be a12 = a23 = 274mm. The loca-
+tion of the base and moving pivots of the 3R chain,[G] and [H], are speciﬁed by the
+translation vectors (0◦,−153,1241) and (0◦,−133,0), respectively. Use this data to
+formulate the inverse kinematics equations of the 3R chain and solve for the conﬁg-
+uration angles qj = (θ1,θ2,θ3)j, j = 1,..., 5, that reach the speciﬁed task positions
+[Tj], j = 1,..., 5.
+Notice that the inverse kinematics equations yield two sets of conﬁguration an-
+gles corresponding to a 3R chain with its elbow up and elbow down. In this example,
+we chose the elbow conﬁguration deﬁned by the coordinates C1 = (−153,1241),
+C2 = (6.6,1463.7), and C3 = (−229.2,1603.2)
+The ﬁve conﬁgurations of the 3R chain provide the coordinate transformations
+for each link relative to the ground frame. Compute [B1 j] = [R(θ1 j),C1 j], which
+deﬁnes the ﬁve positions of the ﬁrst link in F. The positions of the second and third
+links are given by
+[B2 j] =[R(θ1 j +θ2 j),C2 j],
+and [B3 j] =[R(θ1 j +θ2 j +θ3 j),C3 j], j = 1,..., 5. (6.33)
+F
+M
+Δφ
+W
+Δθ2
+G
+H
+a12 W1
+G1
+G2
+W2
+R1
+R2
+B2
+B3
+B4
+a23
+Δθ1
+Δθ3
+
+--- Page 13 ---
+6.3 Example: A Steering Linkage 137
+Table 6.2 Step 1. Select the joint coordinates for the 3R chain; Step 2. Solve for the ﬁrst RR chain;
+Step 3. Solve for the second RR chain; The selected values are highlighted in bold (dimensions in
+mm)
+Step 1 C1 C2 C3
+(−153,1241) ( 6.6,1463.7) (−229.2,1603.2)
+Step 2 G1 W1
+1 (−153,1241) ( 6.6,1463.7)
+2 (−93.6,936.0) ( −64.9,918.0)
+3 (−84.3,1294.9) ( 150.7,1570.3)
+4 (74.5,861.6) ( 172.6,805.0)
+Step 3 G2 W2
+1 (−148.9,1442.1) (−198.2,1735.8)
+2 (424.6,962.0) (−244.2,1668.3)
+3 (−221.7,1794.7) (−197.7,1669.5)
+4 (150.7,1570.3) (−229.2,1603.2)
+The 15 coordinate transformations[Bi j] form the tasks requirements that can be used
+to synthesize the planar RR constraints.
+Step 2.
+Using the ﬁve positions B2 j, j = 1,..., 5 of the link B2 relative to the ground frame,
+assemble the design equations for an RR chain, denotedG1W1 in Figure 6.8. In this
+case, we obtain (6.6) with [D1i] = [B2i][B21]−1, i = 1,..., 5. The solution yields the
+values listed in Table 6.2.
+Notice that the RR chain formed byC1C2 is among the computed RR constraints.
+This means we must choose of the remaining three sets to be the ﬁrst constraint
+G1W1. Because real solutions to the design equations occur in pairs, the presence
+of the RR chain C1C2, guarantees at least one real solution to this set of design
+equations.
+Step 3.
+The RR chain G1W1 introduces a new link B4, which takes the positions [B4 j], j =
+1,..., 5, when the end effector is in each of the speciﬁed task positions. This deﬁnes
+the coordinate transformations [B4 j] = [R(θ4 j),G1 j]
+Using the positions of the end effector of the 3R chain and the positions of the
+link B4, we assemble the design equations for an RR constraintG2W2. The solution
+to these equations are shown in Table 6.2. In this case, the chain C2C3 appears
+
+--- Page 14 ---
+138 6 Multiloop Planar Linkages
+Fig. 6.9 The example solution for a Watt Ia linkage reaching each of the ﬁve task positions.
+among the solutions, which guarantees a second real solution. Thus, this design
+process results in at least one real Watt 1a six-bar linkage.
+Analysis
+In order to animate the movement of this system, solve the loop equations of the
+six-bar linkage for a sequence of input angles interpolated between those deﬁned by
+the task positions. Let these input angles θk
+1 , k = 1..., N, then, for each value, θk
+1 ,
+solve the loop equations (6.14) and (6.15) to determine the remaining conﬁguration
+angles Θk = (θk
+2 ,θk
+3 ,θk
+4 ,θk
+5 )T .
+Recall that there can be as many as six roots for each Θk, only one of which
+corresponds to the assembly of the six-bar linkcage speciﬁed in each of the task
+positions. Identify the root Θk for the correct assembly by formulating and solving
+the approximation to the loop equations (6.32). This calculation can be checked
+against the known conﬁgurations at each of the task positions. The results for our
+design are shown in Table 6.3.
+Table 6.3 Analysis solutions for the steering mechanism
+θ1 θ2 θ3 θ4 θ5
+1 16 .26◦ 111.28◦ −43.06◦ 66.37◦ −63.49◦
+2 31 .19◦ 118.18◦ −36.16◦ 70.35◦ −55.85◦
+3 53 .76◦ 126.41◦ −27.93◦ 83.67◦ −39.56◦
+4 81 .50◦ 136.38◦ −17.96◦ 106.03◦ −16.23◦
+5 101.28◦ 144.20◦ −10.14◦ 125.43◦ 2.08◦
+Figure 6.9 shows the six-bar linkage that results when the pivots highlighted
+in Table 6.2 are selected for the design. In order to complete the steering linkage
+
+--- Page 15 ---
+6.4 Synthesis of a Planar Eight-Bar Linkage 139
+provide a mirror-image of this six-bar linkage, and connect the input cranks to the
+steering wheel. The result is a single degree-of-freedom 14-bar linkage, Figure 6.10.
+This linkage achieves ﬁve Ackermann steering positions and extends the outside
+wheel to increase the reaction to the roll-over moment during a turn.
+Fig. 6.10 The 14-bar steering system formed by the six-bar linkage and its mirror image at the
+front wheels which are connected by a driving crank and two coupler links.
+6.4 Synthesis of a Planar Eight-Bar Linkage
+Two 3R serial chains that share an end effector form a planar 6R loop with three
+degrees of freedom, Figure 6.11. The graph of this linkage is a hexagon. We will an
+design eight-bar linkage by adding two RR constraints to a 6R loop, Figure 6.12. It is
+known that there are sixteen topologically distinct eight-bar linkages, as compared
+to two for six-bar linkages. Inversions of these topologies yields a large number
+different design options for an eight-bar linkage.
+
+--- Page 16 ---
+140 6 Multiloop Planar Linkages
+M
+F
+θ3
+θ2
+θ1
+θ4
+θ5
+θ6
+C 1
+C 2
+C 3
+C 6
+C 5
+C 4
+B0B1
+B2
+B3
+B4
+B5
+B6
+a12
+a23
+a45
+a56
+0
+1
+2
+3/6
+5
+4
+Fig. 6.11 The graph of the planar 6R loop forms a hexagon with a vertex for each link.
+C1
+C2
+C3
+C6
+C5
+C4
+G
+W
+C1
+C2
+C3
+C6
+C5
+C4G
+W
+Fig. 6.12 Examples of eight-bar linkages obtained by adding two RR constraints to a 6R loop.
+6.4.1 Adding RR Constraints
+In order to design an eight-bar chain, we choose a 6R loop that moves through the
+task positions, and then attach two RR constraints. Notice that RP and PR chains
+can be used instead of the RR chain to constrain the 6R loop, in which case the
+design equations for these constraints are used in what follows. The selection of the
+6R loop provides the designer the freedom to choose the two connections to ground
+and the two connections to the moving workpiece. We choose not to add a constraint
+to ground in order to avoid a third ground pivot.
+The various ways that two RR constraints can be added to a 6R loop are labeled
+by listing the links that are connected. Denote the ground link as B
+0, the three links
+of the left 3R chain as Bi, i = 1,2,3, and the links of the right 3R chain as Bi,
+i = 4,5,6, which means that B3 = B6. Because we cannot constrain two neighboring
+links and prefer not to constrain a link to ground, the ﬁrst RR constraint is one of the
+six cases (i) B1B3, (ii) B1B4, (iii) B1B5, (iv) B2B4, (v) B2B5, and (vi) B3B4, Figure
+6.13.
+As we saw in the design of a six-bar linkage, the second RR constraint can be
+attached independently to existing links of the 6R loop, as well as the case where the
+
+--- Page 17 ---
+6.4 Synthesis of a Planar Eight-Bar Linkage 141
+1
+2 5
+3/6
+4
+0
+1
+2 5
+3/6
+4
+0
+1
+2 5
+3/6
+4
+0
+1
+2 5
+3/6
+4
+0
+1
+2 5
+3/6
+4
+0
+1
+2 5
+3/6
+4
+0
+Fig. 6.13 There are six ways to add the ﬁrst RR chain.
+second RR constraint is attached to new link of the ﬁrst RR constraint. In the ﬁrst
+case, we choose two of the six constraint to obtain
+(6
+2
+)
+= 15 eight-bar structures.
+In addition to this, there are two cases where both RR constraints attached to the
+same bodies is possible, (i) B1B5, and (ii) B2B4. The 17 eight-bar structures are
+shown in Figure 6.14. We label these structures by denoting as Bij the RR constraint
+connecting Bi and Bj, so the structure with constraints Bij and Bkl is BijBkl. Using
+this notation, the eight-bar linkage B14B15 has RR constraints B1B4 and B1B5.
+Let the link introduced by the ﬁrst RR constraint be denoted B7, then we have
+15 eight-bar structures that arise from the attachment of the second RR constraint
+to B
+7. These can be enumerated by considering that there are three ways to attach
+the second RR constraint, if the ﬁrst constraint is one of the three, B1B4, B1B5, and
+B2B4; and two ways, if the ﬁrst constraint is one of the three B1B3, B2B5 and B3B4.
+Thus, there are 3 ×3 +3 ×2=15 eight-bar structures, Figure 6.15.
+6.4.2 The Number of Eight-Bar Linkage Designs
+This design process yields 32 eight-bar structures available to a designer. Recall that
+the synthesis of an RR chain for a ﬁve-position task yields as many as four design
+candidates, so two RR constraints can yield as many as 16 candidates for a particular
+eight-bar structure. However, this occurs only for the case B15B24.
+There are 17 cases where one of the existing links of the 6R loop arises in the
+synthesis of one of the RR constraints. For these structures, there are at most 12
+design candidates. There are 12 cases in which the synthesis of both RR constraints
+includes two links of the 6R loop, which means that there are at most nine design
+candidates. Finally, the two cases B24B24, and B15B15 have RR chains attached to
+the same bodies, which means that there are at most
+(
+4
+2
+)
+= 6 design candidates.
+Thus, this design process can yield as many as 340 (1 ×16 + 17 ×12 + 12 ×
+9 + 2 ×6) eight-bar linkage design candidates. Comparing the linkage graphs in
+
+--- Page 18 ---
+142 6 Multiloop Planar Linkages
+Independent
+StepsB14B15
+(11)
+B14B13
+(10)
+B14B25
+(8)
+B14B24
+(11)
+B14B34
+(10)
+B15B15
+(16)
+B15B13
+(11)
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+B15B25
+(11)
+B15B24
+(9)
+B15B34
+(7)
+B13B25
+(4)
+B13B24
+(7)
+B13B34
+(10)
+B25B24
+(11)
+B25B34
+(4)
+B24B24
+(16)
+B24B34
+(11)
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+Fig. 6.14 The 17 eight-bar linkage structures obtained from the independent attachment of two RR
+constraints to a 6R loop. The number in parentheses identiﬁes the associated eight-bar topology.
+Figures 6.14 and 6.15 to the 16 eight-bar topologies in Figure 6.16, we see that
+these structures are inversions of the topologies 3, 4, 7, 8, 9, 10, 11, and 16.
+
+--- Page 19 ---
+6.5 Analysis of an Eight-bar Linkage 143
+Step 2
+Step 1B14B27
+(4)
+B14B37
+(7)
+B14B57
+(4)
+B15B27
+(3)
+B15B37
+(3)
+B15B47
+(3)
+B13B57
+(4)
+B13B47
+(7)
+B25B17
+(4)
+B25B47
+(4)
+B24B37
+(3)
+B24B57
+(3)
+B24B17
+(3)
+B34B17
+(7)
+B34B27
+(4)
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+0
+1
+2
+3/6
+5
+4
+7
+7
+7
+7
+7
+7
+7
+7 7
+7
+7
+7
+7
+7
+7
+Fig. 6.15 The 15 eight-bar linkage structures obtained when the second RR constraint is attached
+to the link of the ﬁrst RR constraint in a 6R loop. The number in parentheses identiﬁes the associ-
+ated eight-bar topology.
+6.5 Analysis of an Eight-bar Linkage
+The analysis of an eight-bar linkage to determine its conﬁgurations as a function of
+an input angle follows the analysis presented for a six-bar linkage using complex
+vectors and the Dixon determinant. For the purposes of this presentation, we focus
+
+--- Page 20 ---
+144 6 Multiloop Planar Linkages
+Fig. 6.16 The sixteen topologies available for eight-bar linkages.
+on the B14B25 eight-bar linkage, but the approach can be applied to all of the eight-
+bar topologies. All that is needed is the loop equations for the linkage.
+C 3
+C 2
+C 6
+C 5
+C 4C 1
+G 2
+G 1
+W 2
+W 1
+F
+θ4
+η
+θ5
+ε
+θ8
+θ10
+θ1
+θ2
+β
+θ3
+γ
+l3
+l0
+l1
+l2
+l5
+l4
+l7
+l9
+l8
+l10
+b1
+b4
+Fig. 6.17 The joint angle and link length parameters for the B14B25 eight-bar linkage.
+
+
+--- Page 21 ---
+6.5 Analysis of an Eight-bar Linkage 145
+6.5.1 Complex Loop Equations
+Consider the B14B25 linkage shown in Figure 6.17. Introduce a coordinate frame
+F such that the base pivot of the 6R loop, C1, is the origin with its x-axis di-
+rected toward C4. The input angle is θ1 and the output conﬁguration angles are
+⃗θ = (θ2,θ3,θ4,θ5,θ8,θ10) shown in Figure 6.17.
+The vector loop equations for the three loops (i)C1G1W1C4, (ii) C1C2G2W2C5C4,
+and (iii) C1C2C3C6C5C4 are given by
+F1 : b1 cos(θ1 −γ)+ l8 cosθ8 −l7 cos(θ4 +η)−l0 = 0,
+F2 : b1 sin(θ1 −γ)+ l8 sinθ8 −l7 sin(θ4 +η) =0,
+F3 : l1 cosθ1 +b4 cos(θ2 −β)+ l10 cosθ10 −l9 cos(θ5 +ε)−l4 cosθ4 −l0 = 0,
+F4 : l1 sinθ1 +b4 sin(θ2 −β)+ l10 sinθ10 −l9 sin(θ5 +ε)−l4 sinθ4 = 0,
+F5 : l1 cosθ1 +l2 cosθ2 +l3 cosθ3 −l4 cosθ4 −l5 cosθ5 −l0 = 0,
+F6 : l1 sinθ1 +l2 sinθ2 +l3 sinθ3 −l4 sinθ4 −l5 sinθ5 = 0.
+(6.34)
+For each value of the input angle these six equations deﬁne the six conﬁguration
+angles.
+Now introduce the complex vectorsΘj = eiθj , so the six equations (6.34) become
+three complex loop equations,
+C1 = b1Θ1e−iγ +l8Θ8 −l7Θ4eiη −l0,
+C2 = l1Θ1 +b4Θ2e−iβ +l10Θ10 −l9Θ5eiε −l4Θ4 −l0,
+C3 = l1Θ1 +l2Θ2 +l3Θ3 −l4Θ4 −l5Θ5 −l0.
+(6.35)
+The complex conjugate of these equations yields
+C∗
+1 = b1Θ−1
+1 eiγ +l8Θ−1
+8 −l7Θ−1
+4 e−iη −l0,
+C∗
+2 = l1Θ−1
+1 +b4Θ−1
+2 eiβ +l10Θ−1
+10 −l9Θ−1
+5 e−iε −l4Θ−1
+4 −l0,
+C∗
+3 = l1Θ−1
+1 +l2Θ−1
+2 +l3Θ−1
+3 −l4Θ−1
+4 −l5Θ−1
+5 −l0.
+(6.36)
+We solve the six complex loop equations (6.35) and (6.36) for the complex conﬁg-
+uration angles ⃗Θ = (Θ
+2,Θ3,Θ4,Θ5,Θ8,Θ10), using the Dixon determinant.
+6.5.2 The Dixon Determinant
+Suppress Θ3, so we have six complex equations in the ﬁve variablesΘ2, Θ4, Θ5, Θ8,
+and Θ10. The Dixon determinant constructed with the six functions C1, C∗
+1 , C2, C∗
+2 ,
+C3, C∗
+3 as the ﬁrst row. For the successive rows replace the ﬁve conﬁguration angles
+by the variables αi, to obtain
+
+--- Page 22 ---
+146 6 Multiloop Planar Linkages
+∆(C1,C∗
+1 ,C2,C∗
+2 ,C3,C∗
+3 )
+=
+⏐⏐
+⏐
+⏐
+⏐
+⏐⏐
+⏐
+⏐
+C
+1(Θ2,Θ4,Θ5,Θ8,Θ10) ... C∗
+3 (Θ2,Θ4,Θ5,Θ8,Θ10)
+C1(α2,Θ4,Θ5,Θ8,Θ10) ... C∗
+3 (α2,Θ4,Θ5,Θ8,Θ10)
+..
+.
+...
+C
+1(α2,α4,α5,α8,α10) ... C∗
+3 (α2,α4,α5,α8,α10)
+⏐⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+. (6.37)
+This determinant is zero when Θ
+j, j = 2,4,5,8,10 satisfy the loop equations, be-
+cause the elements of the ﬁrst row become zero.
+As we did in the analysis of the six-bar linkage, we use the properties of the
+general form of the loop equations and row reduce the Dixon determinant, to obtain
+⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+c
+12(Θ2 −α2) ... c∗
+32(Θ−1
+2 −α−1
+2 )
+c14(Θ4 −α4) ... c∗
+34
+(Θ−1
+4 −α−1
+4 )
+..
+. ...
+C
+1(α2,α4,α5,α8,α10) ... C⋆
+3 (α2,α4,α5,α8,α10)
+⏐⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+. (6.38)
+This determinant contains extraneous roots of the form Θ
+j = αj, which we can
+remove by dividing out the factor (Θ−1
+j −α−1
+j ) using Θj −αj = −Θjαj(Θ−1
+j −
+α−1
+j ), in order to deﬁne
+δ = ∆(C1,C∗
+1 ,C2,C∗
+2 ,C3,C∗
+3 )
+∏i=2,4,5,8,10(Θ−1
+i −α−1
+i ) . (6.39)
+This determinant expands to deﬁne a polynomial of the form
+δ = a[W]t = 0, (6.40)
+where the vectors a and t are deﬁned as follows.
+The vector a =
+{a1 a2
+}
+is constructed from monomials of αi, such that a1 is
+combinations αiαj of the variables (α2,α4,α5,α8,α10), and a2 is its complement
+αkαlαm, given by
+aT
+1 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+α
+2α4
+α2α5
+α2α8
+α2α10
+α4α5
+α4α10
+α5α8
+α5α10
+α8α10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+, a
+T
+2 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+α
+5α8α10
+α4α8α10
+α4α5α10
+α4α5α8
+α2α8α10
+α2α5α8
+α2α4α10
+α2α4α8
+α2α4α5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+. (6.41)
+Similarly the t = (t
+1,t2)T is constructed from the monomials Θi, such that
+
+--- Page 23 ---
+6.5 Analysis of an Eight-bar Linkage 147
+t1 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Θ
+2Θ4
+Θ2Θ5
+Θ2Θ8
+Θ2Θ10
+Θ4Θ5
+Θ4Θ10
+Θ5Θ8
+Θ5Θ10
+Θ8Θ10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+, t
+2 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Θ
+5Θ8Θ10
+Θ4Θ8Θ10
+Θ4Θ5Θ10
+Θ4Θ5Θ8
+Θ2Θ8Θ10
+Θ2Θ5Θ8
+Θ2Θ4Θ10
+Θ2Θ4Θ8
+Θ2Θ4Θ5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+. (6.42)
+The result is that (6.40) takes the form
+{a
+1 a2
+}[D1x +D2 AT
+A D ∗
+1x−1 +D∗
+2
+]{
+t1
+t2
+}
+= 0, (6.43)
+where matrices [D1] and [D2[ are diagonal, and [A] is Hermitian, which means ai j =
+a∗
+ji.
+There are 10 ways to form the productsαiαj from the variables(α2,α4,α5,α8,α10),
+which means there are many as 20 monomials in a = (a1,a2). However, for our
+equations, α4α8 and its complementary α2α5α10 are not in the monomial list be-
+cause they have zero coefﬁcients. Thus, we have 18 monomials instead of 20.
+A set of values Θj that satisfy the loop equations (6.35) and (6.36) also yield
+δ = 0, which will be true for arbitrary values of the auxiliary variables αj. Thus
+solutions for these loop equations must also satisfy
+[W]t =
+[D1x +D2 AT
+A D ∗
+1
+x−1 +D∗
+2
+]{t1
+t2
+}
+= 0. (6.44)
+Because [W] is a square matrix, this equation has non-zero solutions only if det[W] =
+0, which is a polynomial in λ = Θ3.
+The structure [W] allows us to write it in the form of a generalized eigenvalue
+problem [(D1 0
+A D ∗
+2
+)
+λ −
+(
+−D2 −AT
+0 −D∗
+1
+)]{t1
+t2
+}
+= [Mλ −N]t = 0. (6.45)
+The eigenvalues of this system are the solutions of the characteristic polynomial
+p(x) = det[Mλ −N]. For each eigenvalue λ = Θ3, we can solve (6.45) to obtain
+an associated eigenvector t that deﬁnes the values of the remaining joint angles
+Θj, j = 2,4,5,8,10.
+Because the eigenvector t = (t1,t2,..., t18)T is deﬁned up to a constant multiple
+µ, we obtain the values of Θj by computing the ratios
+Θ2 = t18
+t5
+= µΘ2Θ4Θ5
+µΘ4Θ5
+, Θ4 = t18
+t2
+= µΘ2Θ4Θ5
+µΘ2Θ5
+, Θ5 = t18
+t1
+= µΘ2Θ4Θ5
+µΘ2Θ4
+,
+Θ8 = t17
+t1
+= µΘ2Θ4Θ8
+µΘ2Θ4
+, Θ10 = t16
+t1
+= µΘ2Θ4Θ10
+µΘ2Θ4
+. (6.46)
+
+--- Page 24 ---
+148 6 Multiloop Planar Linkages
+For a given value of the input angle Θ1, there are as many as 18 roots for the con-
+ﬁguration variables ⃗Θ = (Θ2,Θ3,Θ4,Θ5,Θ8,Θ10). Each of these roots deﬁnes an
+assembly for the eight-bar linkage.
+6.5.3 Sorting Assemblies
+For a sequence of input anglesΘk
+1 , we can obtain a set of as many as 18 roots⃗Θk
+i , i =
+1,..., 18, for each input angle. In order to sort the solutions of the Dixon determinant
+among the assemblies of the eight-bar linkage, construct an approximation to the
+loop equations in the same way as discussed previously for the analysis of a six-bar
+linkage.
+Compute the derivatives of the loop equations (6.35) and (6.36), and construct
+the Jacobian
+[∇C(⃗Θk)] =
+
+
+
+
+
+b
+1e−iγ 0 0 −l7eiη 0 l8 0
+l1 b4e−iβ 0 −l4 −l9eiε 0 l10
+l1 l2 l3 −l4 −l5 0 0
+−b1eiγΘ−2
+1 0 0 l7e−iηΘ−2
+4 0 −l8Θ−2
+8 0
+−l1Θ−2
+1 −b4eiβΘ−2
+2 0 l4Θ−2
+4 l9e−iεΘ−2
+5 0 −l10Θ−2
+10
+−l1Θ−2
+1 −l2Θ−2
+2 −l3Θ−2
+3 l4Θ−2
+4 l5Θ−2
+5 0 0
+
+
+
+
+
+.
+(6.47)
+The approximation to the loop equations of the eight-bar linkage in the ith is
+given by
+[∇C(⃗Θ
+k
+i )](⃗Ψ −⃗Θk
+i ) =0. (6.48)
+The solution of these equations yields Ψ that is on the tangent to the ith circuit at
+⃗Θk
+i . The root ⃗Θk+1
+i that is closest to Ψ is the root that matches the ith assembly.
+6.6 Example: A Convertible Sofa
+As an example of our planar eight-bar linkage design methodology, we consider the
+deployment linkage for a convertible sofa. The current deployment linage may pull
+the user toward the bed causing back strain. Our goal is a new design that deploys
+smoothly without this reverse movement.
+For this design, we use a B14B25 linkage, see Figure 6.18. The backbone 6R
+loop is deﬁned by C
+1C2C3C6C5C4. We add the RR constraint G1W1 that connects
+links B1B4 and a second constraint G2W2 that connects B2B5.
+
+--- Page 25 ---
+6.6 Example: A Convertible Sofa 149
+F
+θ1
+C 2
+θ2
+C 1
+C 3
+θ3
+M
+φ
+B1
+a12
+a45
+a 56
+C 4
+C 5
+W 1
+G 1
+C 6
+G 2
+W 2
+R 2
+B4
+B5
+B2
+θ4
+θ5
+B3
+θ6
+a23
+R 1
+Fig. 6.18 The geometry of the B14B15 eight-bar linkage to be designed as the deployment linkage
+for convertible sofa .
+Step 1.
+The task positions that deﬁne the desired deployed positions of the bed, [Ti], i =
+1,..., 5 , are given in Table 6.4. These positions deﬁne movement of the bed as it
+unfolds from the base of the sofa.
+Table 6.4 Five task positions for the design of the convertible sofa (dimensions in cm)
+Task Position (φ,x,y)
+1 (0◦,−4,6.1)
+2 (−49◦,−5.4,18.5)
+3 (−53◦,−14,24)
+4 (−42◦,−20,22.4)
+5 (0◦,−28.6,13.6)
+The dimensions of the left 3R chain are chosen to be a12 = a23 = 16.28cm. The
+location of the base and moving pivots of this 3R chain,[G] and [H], are speciﬁed by
+the translation vectors (0◦,−6,0) and (0◦,4,0) respectively. The dimensions of the
+right 3R chain are chosen to be a45 = a56 = 18.00cm, and base and moving pivots
+are deﬁned by the translation vectors (0◦,2,0) and (0◦,0,0) respectively.
+Use this data to formulate the inverse kinematics equations of the 6R loop and
+solve for the conﬁguration angles qj = (θ1,θ2,θ3,θ4,θ5,θ6), j = 1,..., 5, that reach
+the speciﬁed task positions. There are four solutions corresponding to the elbow up
+
+--- Page 26 ---
+150 6 Multiloop Planar Linkages
+and elbow down conﬁgurations for the left and right 3R chains. In this example, we
+choose the elbow conﬁguration deﬁned by the coordinates for Ci listed in Table 6.5.
+The ﬁve positions of the 6R loop provide the coordinate transformations for each
+link relative to the ground frame. Compute [B1 j] = [R(θ1 j),C1 j], which deﬁnes the
+ﬁve positions of the ﬁrst link in F. The positions of the second, third, fourth, ﬁfth,
+and sixth links are given by
+[B2 j] =[R(θ1 j +θ2 j),C2 j],
+[B3 j] =[R(θ1 j +θ2 j +θ3 j),C3 j],
+[B4 j] =[R(θ4 j),C4 j],
+[B5 j] =[R(θ4 j +θ5 j),C5 j], and
+[B6 j] =[R(θ4 j +θ5 j +θ6 j),C6 j], j = 1,..., 5. (6.49)
+Step 2.
+Using the ﬁve positions B1 j, j = 1,..., 5 of the link B1 and B4 j, j = 1,..., 5 of
+the link B4, assemble the design equations for an RR chain, denoted G1W1 in
+Figure 6.18. In this case, we obtain (6.6) with [D1 j] = [B1,1][B1, j]−1[B4, j][B4,1]−1,
+i = 1,..., 5. The solution yields the values listed in Table 6.5.
+Notice that the RR chain formed byC1C4 is among the computed RR constraints,
+therefore only one solution is available for this design.
+Step 3.
+The synthesis of G2W2 can occur in parallel with Step 2 because it does not rely on
+the result of the new link B7 formed by the RR chain G1W1.
+Using the positions of the link B2 and the positions of the link B5, we assemble
+the design equations for an RR constraint G2W2. The solution to these equations
+are shown in Table 6.5. In this case, the chain C3C6 appears among the solutions,
+which guarantees a second real solution. Thus, this design process also results in at
+least one real B14B25 eight-bar linkage.
+Analysis
+In order to animate the movement of this system, solve the loop equations of the
+eight-bar linkage for a sequence of input angles interpolated between those deﬁned
+by the task positions. Let these input anglesθ
+k
+1 , k = 1..., N, then, for each value,θk
+1 ,
+solve the loop equations (6.35) and (6.36) to determine the remaining conﬁguration
+angles Θk = (θk
+2 ,θk
+3 ,θk
+4 ,θk
+5 ,θk
+8 ,θk
+10)T .
+There can be as many as eighteen roots for eachΘk because the det[Mλ −N] for
+this linkage is of dimension 18, only one of which corresponds the assembly of the
+
+--- Page 27 ---
+6.7 Summary 151
+Table 6.5 Step 1. Select the joint coordinates for the 6R loop; Step 2. Solve for the ﬁrst RR chain;
+Step 3. Solve for the second RR chain; The selected values are highlighted in bold (dimensions in
+cm)
+Step 1 C1 C2 C3 C4 C5 C6
+(−6,0) (8.2,8.0) (−8,6.1) (2,0) (11.5,15.3) ( −4,6.1)
+Step 2 G1 W1
+1 Complex Solution
+2 Complex Solution
+3 (−6,0) ( 2,0)
+4 (0.84,1.02) (6.85,4.55)
+Step 3 G2 W2
+1 (−8,6.1) ( −4,6.1)
+2 Complex Solution
+3 Complex Solution
+4 (0.87,5.37) (4.35,5.38)
+eight-bar speciﬁed in each of the task positions. Identify the root Θk for the correct
+assembly by formulating and solving the approximation to the loop equations (6.48).
+This calculation can be checked against the known conﬁgurations at each of the task
+positions. The results for our design are shown in Table 6.6. Figure 6.19 shows an
+image sequence of the resulting eight bar linkage reaching each of the task positions.
+Table 6.6 Analysis solution for the sofabed mechanism.
+θ1 θ2 θ3 θ4 θ5 θ8 θ10
+1 29. 52◦ 186.78◦ 0◦ 58.27◦ 210.78◦ 30.44◦ 0.23◦
+2 46. 97◦ 143.78◦ −49◦ 55.40◦ 168.20◦ 10.57◦ −48.64◦
+3 84. 36◦ 137.52◦ −53◦ 86.92◦ 160.46◦ 1.14◦ −55.89◦
+4 102.53◦ 145.66◦ −42◦ 105.17◦ 163.80◦ −1.57◦ −56.03◦
+5 129.49◦ 176.35◦ 0◦ 134.47◦ 177.60◦ −6.32◦ −54.77◦
+6.7 Summary
+In this chapter, we present a design procedure for single degree-of-freedom planar
+six-bar and eight-bar linkages that guide a workpiece through ﬁve task positions.
+This was done by adding two RR chains to an existing backbone chains. Starting
+with a 3R serial chain, the addition of two RR constraints yields a planar six-bar
+linkage, which yields seven different six-bar structures and as many as 72 design
+
+--- Page 28 ---
+152 6 Multiloop Planar Linkages
+Fig. 6.19 The image sequence of the chosen planar eight-bar linkage design reaching each of the
+ﬁve task positions.
+candidates. The planar eight-bar linkage is obtained by adding two RR constraints
+to a 6R loop, and yields thirty-two different eight-bar structures with as many 340
+design candidates.
+The design and analysis of a six-bar linkage for use as a steering linkage is pre-
+sented as an example. Similarly, the design and analysis of an eight-bar linkage for
+use in the deployment of a convertible sofa is presented in detail.
+6.8 References
+The dimensional synthesis for planar multiloop mechanism can be found in Soh
+et al. [116], and Soh and McCarthy [117, 118, 119, 120]. Erdman [29], Erdman
+and Sandor [30], and Chase [9] used the complex vector formulation to synthesize
+different types of planar six-bar linkages. Tsai [138] describes the use of graph
+
+--- Page 29 ---
+6.8 References 153
+theory on planar multiloop mechanisms. Mirth and Chase [83], and Foster and Cipra
+[35] examine circuits and branches of planar multiloop mechanisms.
+Exercises
+1. Design a Watt Ia linkage that moves a foot pedal through the ﬁve positions in
+Table 6.7 using the given 3R chain. How many design candidates are obtained?
+Table 6.7 Five task positions and the 3R chain for an adjustable foot pedal linkage (dimensions in
+mm)
+Task Position (φ,x,y) Pivots Coordinates
+1 (40◦,79,−216) C1 (0,0)
+2 (42◦,104,−208) C2 (43.2,−165.1)
+3 (43.5◦,130,−203) C3 (12.7,−175.3)
+4 (45◦,152,−198)
+5 (48◦,180,−191)
+2. Analyze the the various design candidates for the above problem. How many of
+the design candidates pass smoothly through all ﬁve task positions?
+Fig. 6.20 The Stephenson IIb Linkage.
+3. Formulate the closed-form solution to the Stephenson IIb linkage as shown in
+Figure 6.20 using complex number coordinates and the Dixon determinant.
+4. Compare the computation time for the two methods for the algebraic solution of
+the design equations of an RR crank. Use the data in Table 6.7.
+5. Design a B14B24 eight-bar linkage that moves a surgical tool around a remote
+center at each of the ﬁve positions listed in Table 6.8. You are free to choose your
+own 6R chain. How many design candidates are obtained?
+
+
+--- Page 30 ---
+154 6 Multiloop Planar Linkages
+Table 6.8 Five task positions for a remote center surgical tool (dimensions in mm)
+Task Position (φ,x,y)
+1 (55◦,−77,54)
+2 (30◦,−47,81)
+3 (0◦,0,94)
+4 (−30◦,47,81)
+5 (−55◦,77,54)
+Fig. 6.21 The B14B24 eight-bar linkage.
+6. Formulate the closed-form solution to the B14B24 linkage as shown in Figure
+6.21 using complex number coordinates and the Dixon determinant. Now analyze
+the various design candidates. How many of the design candidates pass smoothly
+through all ﬁve task positions?
+

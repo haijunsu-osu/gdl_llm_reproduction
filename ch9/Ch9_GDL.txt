@@ -1,0 +1,1561 @@
+Chapter 9
+
+Algebraic Synthesis of Spherical Chains
+
+In this chapter we formulate the design theory for spherical RR chains. The axes of
+the two revolute joints must lie in the same plane, and therefore intersect in a point.
+The floating link of this system moves in pure rotation about this point.
+Two RR chains can be connected to form a one-degree-of-freedom spherical 4R
+linkage. The result is that the coupler is guided along a general rotational movement.
+Notice that the axes of the four revolute joints must pass through the same point.
+While it would seem difficult to ensure that the four axes intersect in one point, in
+practice the internal forces of the system tend to align the axes so that the linkage
+moves smoothly.
+The synthesis theory for spherical linkages follows the same geometric principles
+as the planar theory. Intuition gained from working in the plane can be used to guide
+the design process for spherical linkages.
+
+9.1 A Single Revolute Joint
+A revolute joint cannot rotate a body between two general positions in space.
+However, if the two positions have the property that their relative displacement
+[T12 ] = [A12 , d12 ] is a rotational displacement, then a revolute joint aligned with the
+rotation axis of this displacement provides the desired movement.
+Let the two spatial positions M1 and M2 be defined by [T1 ] and [T2 ], so we have
+the relative displacement [T12 ] = [T2 ][T1−1 ]. If the relative translation vector d12 is
+orthogonal to the rotation axis S12 , that is, d12 · S12 = 0, then we can determine a
+fixed point c by (8.81)
+c=
+
+b12 × (d12 − b12 × d12 )
+,
+2b12 · b12
+
+(9.1)
+
+where b12 = tan(φ12 /2)S12 is Rodrigues’s vector for the relative rotation. The line
+L12 : Y(t) = c + tS12 is the axis of the revolute joint.
+J.M. McCarthy and G.S. Soh, Geometric Design of Linkages, Interdisciplinary Applied
+Mathematics 11, DOI 10.1007/978-1-4419-7892-9_9,
+© Springer Science+Business Media, LLC 2011
+
+203
+
+204
+
+9 Algebraic Synthesis of Spherical Chains
+
+A point in the moving body that lies on this axis, as seen from the moving frame
+†
+] = [T2−1 ][T1 ] =
+M, is found from the relative inverse rotational displacement [T12
+†
+†
+†
+[A12 , d12 ]. This point defines the line L12 : y(t) = c† + ts12 in M that coincides with
+the line L12 to form the revolute joint.
+
+9.2 Spherical Displacements
+If three or more spatial positions Mi , i = 1, . . . , n, are to be reachable by the floating
+link of a spherical chain, then the relative displacements [T1 j ], j = 2, . . . , n, must each
+be rotational displacements. Furthermore, the axes of these displacements must pass
+through the same point c. If this occurs, then the axes of the relative displacements
+have the form L1 j : Y(t) = c + tS1 j , j = 2, . . . , n. The relative translation vectors d1 j
+can now be written as
+(9.2)
+[I − A1 j ]c = d1 j , j = 2, . . . , n.
+Substitute this into the transformation equation Y j = [A1 j ]Y1 + d1 j to obtain
+Y j − c = [A1 j ](Y1 − c), j = 2, . . . , n.
+
+(9.3)
+
+Spatial displacements that can be put into this form are called spherical displacements. The change of coordinates X = Y − c transforms these equations into pure
+rotations about the origin of F. In what follows, we assume this transformation
+and consider the positions Mi , i = 1, . . . , n, to be specified by pure rotations [Ai ],
+i = 1, . . . , n.
+
+9.2.0.1 Longitude, Latitude, and Roll Angles
+There are many ways to parameterize the set of rotation matrices. For example, almost any combination of three coordinate rotations can be used to define a general
+rotation. Here we introduce a set of parameters that is analogous to the x and y translation and rotation φ used to define planar positions. They are the longitude, latitude,
+and roll angles that define the orientation of M relative to F. These parameters allow
+us to use a globe to illustrate the orientation of each task position, Figure 9.1.
+Locate the fixed frame F at the center of a globe so its y-axis is directed toward the north pole and its z-axis passes through intersection of the prime meridian,
+0◦ longitude, and the equator, 0◦ latitude. Longitude and latitude coordinates α, β
+locate a point X on the surface of the globe such that its coordinates are
+
+
+ sin α cos β 
+sin β
+X=R
+,
+(9.4)
+
+
+cos α cos β
+
+9.3 The Geometry of Spherical RR Chains
+
+205
+
+Y
+
+X
+
+Z
+
+θ
+
+Fig. 9.1 Longitude, latitude, and roll coordinates defining orientation relative to a global frame.
+
+where R is the distance from the origin c. We can compute longitude and latitude
+angles for a vector X = (X,Y, Z)T using the formulas
+α = arctan
+
+X
+,
+Z
+
+Y
+β = arctan √
+,
+X 2 + Z2
+
+R=
+
+p
+
+X 2 +Y 2 + Z 2 .
+
+(9.5)
+
+The orientation of the moving frame M can now be defined in terms of the longitude θ and latitude φ of its z-axis, and the roll ψ about this axis. The rotation matrix
+[A] is given by the composition of coordinate rotations
+[A(θ , φ , ψ)] = [Y (θ )][X(−φ )][Z(ψ)],
+
+(9.6)
+
+
+
+
+cos θ 0 sin θ
+1 0
+0
+cos ψ − sin ψ 0
+[A] =  0 1 0  0 cos φ sin φ   sin ψ cos ψ 0 .
+− sin θ 0 cos θ
+0 − sin φ cos φ
+0
+0
+1
+
+(9.7)
+
+that is,
+
+
+Notice that we have used the identities cos(−φ ) = cos φ and sin(−φ ) = − sin φ in
+[X(−φ )].
+We often draw the moving frame on the surface of the unit sphere, though it
+is understood that the origins of both the moving and fixed frames, M and F, are
+located at the center of the sphere.
+
+9.3 The Geometry of Spherical RR Chains
+A spherical RR chain consists of a floating link connected to a crank by a revolute
+joint, which in turn is connected to ground by a revolute joint, Figure 9.2. The axes
+
+206
+
+9 Algebraic Synthesis of Spherical Chains
+
+of the two joints lie in the same plane, and therefore intersect. We align this point of
+intersection with the origin of F so that the floating link M moves in pure rotation
+with no translation component in F. Let the unit vector directed along the fixed joint
+axis be denoted by G, and let the unit vector along the moving axis in M be w. The
+coordinates W in F of the moving axis are given by
+W = [A]w,
+
+(9.8)
+
+where [A] represents the rotation of M relative to the fixed frame F.
+
+W
+M
+!
+
+G
+
+F
+
+Fig. 9.2 The spherical RR chain with G as the fixed axis, W as the moving axis, and ρ is the
+angular dimension of the chain.
+
+The angular length ρ of the RR chain is constant during the movement, so we
+have the condition
+G · W = |G||W| cos ρ.
+(9.9)
+This must be true for any rotation [A] of the end-link. This constraint characterizes
+the spherical RR chain.
+
+9.3.1 Perpendicular Bisectors
+Let n orientations of the frame M in the end-link of a spherical RR chain be defined
+by the rotations [Ai ], i = 1, . . . , n. Each vector Wi , which locates the moving axis in
+F for M in orientation Mi , satisfies (9.9). Therefore,
+G · Wi = |G||Wi | cos ρ, i = 1, . . . , n.
+
+(9.10)
+
+9.3 The Geometry of Spherical RR Chains
+
+207
+
+Because |W1 | = |Wi |, we can subtract the first equation from the remaining n − 1
+and obtain
+(9.11)
+P1i : G · (Wi − W1 ) = 0, i = 2, . . . , n.
+Recall from (8.30) that this is the equation of the perpendicular bisector P1i to
+each segment Wi − W1 . Equation (9.11) states that all of these planes pass through
+G. This is an algebraic expression of the fact that the moving axes Wi lie on right
+circular cone with G as its axis. The equations of these perpendicular bisectors form
+the design equations for a spherical RR chain.
+
+9.3.2 The Spherical Dyad Triangle
+The movement of a spherical RR chain can be viewed as a rotation about the moving
+pivot W1 by the angle α1i that is followed by a rotation about G by the angle β1i . The
+composition of these two rotations yields the rotation φ1i about the relative rotation
+axis S1i that moves the end-link M from orientation M1 to Mi , that is,
+[A(φ1i , S1i )] = [A(β1i , G)][A(α1i , W1 )].
+
+(9.12)
+
+Rodrigues’s formula yields the equation of the spherical dyad triangle 4W1 GS1i
+as
+tan β21i G + tan α21i W1 + tan β21i tan α21i G × W1
+φ1i
+tan S1i =
+.
+(9.13)
+2
+1 − tan β1i tan α1i G · W1
+2
+
+2
+
+1
+
+The spherical triangle 4W GS1i has two configurations relative to the plane containing the axes G and W1 . In order to distinguish these configurations let R1i be
+the point that coincides with the moving pivot W when the crank angle is β1i /2. We
+can now view S1i as being on the same, or opposite, side of G along the perpendicular bisector P1i as the point R1i . If S1i is on the same side as R1i , then it is above
+the plane through GW1 and the sum of the joint angles α + β is less than 2π, see
+Figure 9.3. If S1i is on the side opposite to R1i , then S1i is below the plane through
+GW1 and α + β is greater that 2π, Figure 9.4. In this case, if κ is the interior angle
+at S1i , then φ1i /2 = κ + π.
+
+9.3.2.1 Quaternion Equations
+We can use Hamilton’s quaternions to define the spherical dyad triangle. Introduce
+the quaternions G(β1i /2) = cos(β1i /2)+sin(β1i /2)G and W 1 (α1i /2) = cos(α1i /2)+
+sin(α1i /2)W1 that represent rotations about the fixed and moving axes. The quaternion product yields
+β1i
+φ1i
+α1i
+(9.14)
+S1i ( ) = G( )W 1 ( ),
+2
+2
+2
+
+208
+
+9 Algebraic Synthesis of Spherical Chains
+n
+
+Wi
+
+S1i
+1i
+
+2
+
+G
+
+W1
+β
+2
+
+α
+2
+
+ρ
+
+Fig. 9.3 The spherical dyad triangle 4W1 GS1i formed by the fixed axis G, the moving axis W1 ,
+and the rotation axis S1i .
+n
+
+α
+
+β
+
+2
+
+2
+
+G
+ρ
+
+W1
+
+κ
+S1i
+1i
+
+2
+
+Fig. 9.4 The spherical dyad triangle 4W1 GS1i with S1i below the GW1 plane.
+
+where S1i (φ1i /2) = cos(φ1i /2) + sin φ1i /2S1i defines the relative rotation of the endlink. Separate the scalar and vector parts of this quaternion to obtain
+β1i
+α1i
+β1i
+α1i
+φ1i
+= cos
+cos
+− sin
+sin
+G · W1 ,
+2
+2
+2
+2
+2
+φ1i
+α1i
+α1i
+β1i 1
+α1i
+β1i
+β1i
+sin S1i = sin
+cos
+G + sin
+cos
+W + sin
+sin
+G × W1 .
+2
+2
+2
+2
+2
+2
+2
+(9.15)
+cos
+
+Notice that (9.13) is obtained by dividing the vector equation by the scalar equation.
+
+9.3 The Geometry of Spherical RR Chains
+
+209
+
+9.3.3 The Center-Axis Theorem
+For three orientations of the moving body M1 , M2 , and M3 we have three positions
+of the moving pivot Wi , i = 1, 2, 3. The crank rotation angle about G between each
+of these positions is the dihedral angle βi j between the planes defined by GWi and
+GW j . Notice that β13 = β23 + β12 .
+Recall that the plane P12 contains GS12 and bisects the segment W1 W2 . This
+means that the angle ∠W1 GS12 equals β12 /2 or β12 /2 + π, depending on the location of S12 above or below the plane through GW1 . Similarly, because P23 bisects the segment W2 W3 , we have that the angle ∠W2 GS23 is either β23 /2 or
+β23 /2 + π. Notice that ∠W1 GS12 =∠S12 GW2 . Considering each of the possible
+cases for ∠S12 GS23 =∠S12 GW2 + ∠W2 GS23 , we see that this angle must be either
+β13 /2 or β13 /2 + π. Thus, G views the two relative rotation axes S12 and S23 in the
+angle β13 /2 or β13 /2 + π, Figure 9.5.
+This generalizes to yield a spherical version of the planar center-point theorem:
+Theorem 10 (The Center-Axis Theorem). The center axis G of an RR chain that
+reaches orientations Mi , M j , and Mk views the relative rotation axes Si j and S jk in
+the dihedral angle βik /2 or βik /2 + π, where βik is the crank rotation angle from
+position Mi to Mk .
+This theorem provides the foundation for the generalization of Burmester’s techniques to spherical RR chain design.
+
+W3
+W2
+S23
+γ
+
+2
+
+β23
+2
+
+S12
+
+β12
+2
+
+δ
+2
+
+W1
+
+G
+
+Fig. 9.5 The center axis G views the relative rotation axes S12 and S23 in the angle β13 /2 =
+β12 /2 + β23 /2.
+
+210
+
+9 Algebraic Synthesis of Spherical Chains
+
+9.3.3.1 The Dihedral Angle at G
+The center-axis theorem provides a formula to compute the crank angle βik given
+the relative rotation axes Si j and S jk . Consider the vectors G × Si j and G × S jk that
+are normal, respectively, to the planes containing GSi j and GS jk . The angle between
+these vectors is given by (8.47) as
+
+
+(G × Si j ) · S jk
+βik
+= arctan
+.
+(9.16)
+2
+(G × Si j ) · (G × S jk )
+We use this equation to compute βik for a given set of relative rotation axes Si j and
+S jk . This equation remains true whether G views these axes in βik /2 or βik /2 + π,
+because tan κ = tan(κ + π).
+Alternatively, we can specify βik in this equation and obtain
+Cik : (G × Si j ) · (G × S jk ) tan
+
+βik
+− (G × Si j ) · S jk = 0,
+2
+
+(9.17)
+
+which is a quadric cone on which the fixed axes G must lie.
+Another approach to defining the crank rotation angle βik is to use the quaternion
+form of the spherical triangle. Assume that the spherical triangle 4Si j GS jk is the
+pole triangle for the composite rotation
+[A(γ, S jk )] = [A(βik , G)][A(δ , Si j )].
+
+(9.18)
+
+Associated with this is the quaternion equation
+βik
+γ
+δ
+S jk ( ) = G( )Si j ( ).
+2
+2
+2
+
+(9.19)
+
+Multiply both sides by the conjugate Si∗j (δ /2) to obtain
+G(
+
+βik
+γ
+δ
+) = S jk ( )Si∗j ( ),
+2
+2
+2
+
+(9.20)
+
+which expands to yield the scalar and vector equations
+γ
+δ
+γ
+δ
+βik
+= cos cos + sin sin S jk · Si j ,
+2
+2
+2
+2
+2
+βik
+γ
+δ
+γ
+δ
+δ
+γ
+sin G = sin cos S jk − sin cos Si j − sin sin S jk × Si j .
+2
+2
+2
+2
+2
+2
+2
+cos
+
+(9.21)
+
+For a given set of relative rotation axes Si j and S jk , we can choose arbitrary values
+for γ and δ and obtain the axis G and the rotation angle βik .
+On the other hand, if we specify βik , then we can determine δ as a function of γ
+from the scalar equation of (9.21). Notice that this equation has the form
+
+9.4 Finite Position Synthesis of RR Chains
+
+A cos
+
+211
+
+δ
+δ
++ B sin = C,
+2
+2
+
+(9.22)
+
+where
+γ
+A = cos ,
+2
+
+γ
+B = sin S jk · Si j ,
+2
+
+The solution is
+δ (γ) = 2 arctan
+
+and C = cos
+
+B
+C
+± 2 arccos √
+.
+2
+A
+A + B2
+
+βik
+.
+2
+
+(9.23)
+
+(9.24)
+
+Substitute this into the vector equation of (9.21) in order to obtain a cone of fixed
+axes G parameterized by γ. Each of these axes views Si j S jk in the dihedral angle
+βik /2 or βik /2 + π.
+
+9.4 Finite Position Synthesis of RR Chains
+9.4.1 The Algebraic Design Equations
+The equations of the perpendicular bisectors P1i can be modified to provide a convenient set of algebraic design equations for a spherical RR chain. If n task orientations Mi , i = 1, . . . , n, are specified for the end-link of the chain, then we can
+determine the relative rotation matrices [A1i ], i = 2, . . . , n, such that Wi = [A1i ]W1 .
+This allows us to write the equations of the perpendicular bisectors (9.11) as
+P1i : G · [A1i − I]W1 = 0, i = 2, . . . , n.
+
+(9.25)
+
+This is a homogeneous bilinear equation in the six unknown coordinates for G =
+(x, y, z)T and W1 = (λ , µ, ν)T . In what follows we solve these equations to obtain a
+spherical RR chain that reaches five task orientations.
+To see the structure of these design equations in more detail, we use (8.55) to
+write [A1i ] in terms of its rotation axis S1i and rotation angle φ1i . Introducing φ1i /2
+into the resulting equation for [A1i − I], we obtain
+
+
+φ1i
+φ1i
+φ1i
+2
+[A1i − I] = 2 sin
+cos
+(9.26)
+[S1i ] + tan [S1i ] .
+2
+2
+2
+Write the components of the rotation axis such that S1i = (pi , qi , ri )T . Then a typical
+equation (9.25) is
+ 
+ T 
+φ
+φ
+φ
+x − tan 21i (ri2 + q2i ) −ri + tan 21i qi pi qi + tan 21i ri pi
+λ 
+
+
+φ
+φ
+φ
+y
+ ri + tan 21i qi pi − tan 21i (ri2 + p2i ) −pi + tan 21i ri qi  µ = 0.
+ 
+ 
+z
+ν
+−qi + tan φ21i ri pi pi + tan φ21i ri qi − tan φ21i (q2i + p2i )
+(9.27)
+
+212
+
+9 Algebraic Synthesis of Spherical Chains
+
+If the vector G = (x, y, z)T is considered to be known, then these equations are linear
+and homogeneous in the components of W1 = (λ , µ, ν)T . In the same way, if W1 is
+known, then these equations are linear and homogeneous in the components of G.
+This structure provides a convenient strategy for solving these equations.
+
+9.4.1.1 The Bilinear Structure
+The solution of the design equations for spherical RR chains follows closely the
+results for planar RR chains. As in the plane, these equations are linear separately
+in the coordinates of the fixed and moving axes. This bilinear structure allows us to
+consider selecting the fixed axis or the moving axis as part of the solution process.
+If we select the fixed axis G, then x, y, z are known, and we can collect coefficients of λ , µ, ν to obtain the design equations
+Ai λ + Bi µ +Ci ν = 0, i = 2, . . . , n,
+
+(9.28)
+
+where
+φ1i 2
+φ1i
+φ1i
+(ri + q2i )x + (ri + tan qi pi )y + (−qi + tan ri pi )z,
+2
+2
+2
+φ1i
+φ1i 2
+φ1i
+2
+Bi = (−ri + tan qi pi )x − tan (ri + pi )y + (pi + tan ri qi )z,
+2
+2
+2
+φ1i
+φ1i
+φ1i 2
+Ci = (qi + tan ri pi )x + (−pi + tan ri qi )y − tan (qi + p2i )z.
+2
+2
+2
+Ai = − tan
+
+(9.29)
+
+This is a set of n−1 linear homogeneous equations in the components of the moving
+axis W1 .
+Rather than select the fixed axis, we can specify a moving axis W1 = (λ , µ, ν)T
+and collect the coefficients of (x, y, z) to obtain
+A0i x + B0i y +Ci0 z = 0, i = 2, . . . , n,
+
+(9.30)
+
+where
+φ1i
+φ1i 2
+φ1i
+(r + q2i )λ + (−ri + tan qi pi )µ + (qi + tan ri pi )ν,
+2 i
+2
+2
+φ1i
+φ1i 2
+φ1i
+0
+2
+Bi = (ri + tan qi pi )λ − tan (ri + pi )µ + (−pi + tan ri qi )ν,
+2
+2
+2
+φ1i
+φ1i
+φ1i 2
+0
+Ci = (−qi + tan ri pi )λ + (pi + tan ri qi )µ − tan (qi + p2i )ν.
+2
+2
+2
+A0i = − tan
+
+(9.31)
+
+We solve these n − 1 equations to determine the coordinates of the fixed axis G.
+
+9.4 Finite Position Synthesis of RR Chains
+
+213
+
+9.4.2 Parameterized Form of the Design Equations
+The movement of the end-link of an RR chain from orientation M1 to each of the
+orientations Mi , i = 2, . . . , n, is defined by the composite rotations
+[A(φ1i , S1i )] = [A(β1i , G)][A(α1i , W1 )], i = 2, . . . , n,
+
+(9.32)
+
+where β1i and α1i are the rotation angles about the fixed and moving axes, respectively. The quaternion form of these equations are
+S(
+
+β1i
+α1i
+φ1i
+) = G( )W 1 ( ), i = 2, . . . , n.
+2
+2
+2
+
+(9.33)
+
+The scalar and vector parts of these quaternions provide design equations in which
+the joint rotation angles β1i and α1i appear explicitly. They are used to design spherical RR chains for selected crank rotation angles.
+
+9.4.3 Two Specified Orientations
+If two orientations M1 and M2 are specified for the end-link of a spherical RR chain,
+then we have the rotations [A1 ] and [A2 ]. From these rotations we construct the
+relative rotation matrix [A12 ] and obtain the relative rotation angle φ12 and axis S12 .
+This is the information that we need to form the single design equation
+G · [A(φ12 , S12 ) − I]W1 = 0.
+
+(9.34)
+
+We may choose either the fixed or moving axis and solve for the other.
+
+9.4.3.1 Select the Fixed Axis
+If we specify the coordinates G = (x, y, z)T , then the design equation (9.28) becomes
+A2 λ + B2 µ +C2 ν = 0.
+
+(9.35)
+
+This is the equation of a plane through the origin of F. Any vector in this plane can
+be used as a moving pivot W1 . Set ν equal to 1, so this plane defines a line in the
+z = 1 plane. We can then choose either λ or µ and solve for the other.
+
+9.4.3.2 Select the Moving Axis
+A similar result is obtained if we choose the moving axis W1 = (λ , µ, ν)T . In this
+case the design equation (9.30) becomes
+
+214
+
+9 Algebraic Synthesis of Spherical Chains
+
+A02 x + B02 y +C20 z = 0.
+
+(9.36)
+
+This equation defines the perpendicular bisector to the segment W1 W2 . Set z = 1,
+so this equation defines a line in the z = 1 plane. Then choose either x or y and solve
+for the other.
+
+9.4.3.3 Select the Crank Angle
+The quaternion equation of the dyad triangle can be used to design a spherical RR
+chain with a specified crank rotation angle β12 . The parameterized design equation
+is
+β12 1 α12
+φ12
+) = G(
+)W (
+).
+(9.37)
+S(
+2
+2
+2
+For the specified orientations, we can determine the quaternion S(φ12 /2). We now
+assume that we have specified the fixed axis G and the crank angle β12 , so we have
+the quaternion G(β12 /2). Multiply this equation on the left by the conjugate G∗ to
+obtain a formula defining the moving axis W1 and the rotation angle α12 ,
+W 1(
+
+φ12
+α12
+β12
+) = G∗ (
+)S(
+).
+2
+2
+2
+
+(9.38)
+
+Recall that the conjugate G∗ is obtained by negating its vector part, or equivalently,
+by negating the angle β12 .
+We can select W1 and α12 instead. Then G and β12 are determined by multiplying
+∗
+(9.37) on the right by the conjugate W 1 .
+
+9.4.4 Three Specified Orientations
+Given three task orientations M1 , M2 , and M3 , we have three rotation matrices
+[Ai ], i = 1, 2, 3, which we use to construct the relative rotations [A(φ12 , S12 )] and
+[A(φ13 , S13 )]. The result is the two design equations
+G · [A(φ12 , S12 ) − I]W1 = 0,
+G · [A(φ13 , S13 ) − I]W1 = 0.
+
+(9.39)
+
+Selecting one axis, these equations yield a unique solution for the other.
+
+9.4.4.1 Select the Fixed Axis
+For a selected direction of the fixed axis G, the design equations (9.28) can be
+assembled into the matrix equation
+
+9.4 Finite Position Synthesis of RR Chains
+
+ 
+
+ λ   
+A2 B2 C2
+0
+µ =
+.
+0
+A3 B3 C3  
+ν
+
+215
+
+(9.40)
+
+This equation is solved by forming the two vectors D1 = (A1 , B1 ,C1 )T and D2 =
+(A2 , B2 ,C2 )T . The result is
+(9.41)
+W1 = kD1 × D2 ,
+where k is used to normalize this to a unit vector.
+
+9.4.4.2 Select the Moving Axis
+For a selected moving axis W1 , we have from (9.30) the equations for the fixed axis
+G given by
+ 
+ 0 0 0  x  
+A2 B2 C2
+0
+y =
+.
+(9.42)
+A03 B03 C30  
+0
+z
+These equations define the perpendicular bisectors to the segments W1 W2 and
+W1 W3 . The two planes intersect in the axis G. Solve these equations in the same
+way as shown above for the moving axis.
+
+9.4.4.3 Select the Crank Angle
+Given three orientations Mi , i = 1, 2, 3, we have the spherical pole triangle 4S12 S23 S13 .
+The center-axis theorem shows that G views the sides S13 S23 and S12 S23 in the angles β12 /2 and β13 /2, respectively. Given the crank angles β12 and β13 , we can use
+(9.17) to determine two quadric cones that intersect to define G. They are
+C12 :
+C13 :
+
+β12
+− (G × S13 ) · S23 = 0,
+2
+β13
+− (G × S12 ) · S23 = 0.
+(G × S12 ) · (G × S23 ) tan
+2
+(G × S13 ) · (G × S23 ) tan
+
+(9.43)
+
+The simultaneous solution of these equations yields the desired fixed pivot G. The
+moving pivot W1 is then calculated using (9.41).
+Another approach is to use the quaternion equations of the triangles 4S13 GS23
+and 4S12 GS23 , given by
+γ1 ∗ δ1
+β12
+) = S23 ( )S13
+( ),
+2
+2
+2
+β13
+γ2 ∗ δ2
+G(
+) = S23 ( )S12 ( ).
+2
+2
+2
+G(
+
+(9.44)
+
+216
+
+9 Algebraic Synthesis of Spherical Chains
+
+For the specified angles β12 and β13 these equations can be used to determine parameterized equations of the quadric cones C12 (γ1 ) and C13 (γ2 ). This is done by
+solving the scalar equations of the quaternions to determine the angles δ1 and δ2
+in terms of γ1 and γ2 using (9.24). The parameterized version of the cone C12 (γ1 )
+can be substitute into the algebraic equation for C13 to obtain an equation for γ1 that
+identifies the desired G.
+
+9.4.5 Four Specified Orientations
+In the previous section we found that for three task orientations every fixed axis is
+in one-to-one correspondence with a moving axis. Geometrically, this results from
+the fact that the perpendicular bisectors of the segments W1 W2 and W1 W3 always
+intersect in a line. In the case of four task orientations, the perpendicular bisector
+of W1 W4 must also pass through this line. However, this cannot happen in general.
+This does not mean that there are no axes that have this property. In fact, there is a
+cubic cone of axes G that are centers for four moving axes W1 , i = 1, 2, 3, 4, that we
+can use to form RR chains that reach four orientations. This is the center-axis cone.
+The available moving axes form a cubic cone known as the circling-axis cone.
+
+9.4.5.1 The Center-Axis Cone
+Given four orientations Mi , i = 1, 2, 3, 4, we have the relative rotations [A(φ1i , S1i )]
+and the design equations
+
+   
+A2 B2 C2 λ  0
+A3 B3 C3  µ = 0 ,
+(9.45)
+   
+A4 B4 C4
+ν
+0
+where Ai , Bi , and Ci are given by (9.28). In order to have a solution the 3 × 3 coefficient matrix [M] = [Ai , Bi ,Ci ] of this equation must have the determinant |M| equal
+to zero. This yields a cubic polynomial
+R(x, y, z) : |M| = a30 y3 + (a21 x + a20 z)y2 + (a12 x2 + a11 xz + a10 z2 )y
++ a03 x3 + a02 x2 z + a10 xz2 + a00 z3 = 0.
+
+(9.46)
+
+This polynomial defines a cubic cone in the fixed frame, and any line on this cone
+may be chosen as a fixed axis G for the spherical RR chain. It is known as the
+center-axis cone.
+The coefficients ai j can be obtained by noting that each element of the coefficient
+matrix [M] is linear in x, y, z, therefore |M| has the form
+|M| = a1 x + b1 y + c1 z, a2 x + b2 y + c2 z, a3 x + b3 y + c3 z = 0,
+
+(9.47)
+
+9.4 Finite Position Synthesis of RR Chains
+
+217
+
+where ai , bi , and ci are constants defined by the task orientations. The linearity of
+the determinant allows an expansion that is identical to that presented in (5.37).
+
+9.4.5.2 The Burmester–Roth Theorem
+Roth [104] generalized Burmester’s planar synthesis theory to spatial displacements
+in a way that included the design of spherical RR chains. He showed how to construct the spherical equivalent of Burmester’s opposite-pole quadrilateral, that we
+call the complementary-axis quadrilateral, Figure 9.6. The fundamental result is
+that center axes must view opposite sides of the complementary-axis quadrilateral
+in angles that are equal or differ by π. This provides a way to generate the equation
+of the center-axis cone directly from the coordinates of the relative rotation axes.
+
+Fig. 9.6 The spherical complementary-axis quadrilateral Q: S12 S23 S34 S14 .
+
+Four task orientations define six relative rotation axes Si j , i < j = 1, 2, 3, 4. Following Burmester’s definition of the planar opposite-pole quadrilateral, Roth defines the three complementary pairs of relative rotation axes, S12 S34 , S13 S24 and
+S14 S23 . The spherical complementary-axis quadrilateral is constructed from two
+sets of complementary pairs so that the pairs are opposite to each other along the
+diagonals of the quadrilateral. The fundamental result is the following:
+Theorem 11 (The Burmester–Roth Theorem). The center axis G of a spherical RR chain that can reach four specified orientations views opposite sides of a
+complementary-axis quadrilateral constructed from the relative rotation axes of the
+given orientations in angles that are equal, or differ by π.
+Proof. The definition of the complementary-axis quadrilateral ensures that opposite
+sides have the form Si j Sik and Sm j Smk . The center-axis theorem states that G views
+Si j Sik in the dihedral angle β jk /2 or β jk /2 + π, where β jk is the crank rotation of
+from position M j to Mk . Similarly, it must view the Sm j Smk in β jk /2 or β jk /2 + π.
+
+218
+
+9 Algebraic Synthesis of Spherical Chains
+
+Consider the various combinations to see that G views these sides in angles that are
+equal, or differ by π. t
+u
+This theorem provides a convenient derivation for the center-axis cone in terms
+of the coordinates of the relative rotation axes of the complementary-axis quadrilateral. Let the vertices of this quadrilateral be S12 S23 S34 S14 . Then the dihedral angle
+κ between the planes containing GS12 and GS23 must be the same as the angle between the planes GS14 and GS34 , or differ by π. We compute tan κ = tan(κ + π) to
+obtain
+G × S12 · S23
+L12
+,
+=
+(G × S12 ) · (G × S23 ) C12
+L34
+G × S14 · S34
+=
+.
+tan κ =
+(G × S14 ) · (G × S34 ) C34
+
+tan κ =
+
+(9.48)
+
+Equate these expressions to obtain an equation for the center-axis cone, given by
+R(x, y, z) : L12C34 − L34C12 = 0.
+
+(9.49)
+
+This is a homogeneous cubic polynomial in the coordinates of G.
+
+9.4.5.3 The Parameterized Center-Axis Cone
+The Burmester-Roth theorem reduces the problem of finding center axes to finding
+those axes that view opposite sides of the complementary-axis quadrilateral in angles that are equal, or differ by π. Just as we did in the plane, we can use this to
+obtain a construction for center axes, Figure 9.7.
+Theorem 12 (Construction of Center Axes). The axes that satisfy the Burmester–
+Roth theorem are obtained as follows:
+1. Construct the complementary-axis quadrilateral Q: S12 S23 S34 S14 using the four
+task orientations.
+2. Rotate the segment S12 S23 by an angle θ about S12 and determine the new configuration Q 0 in order to obtain S023 and S034 .
+3. The axis G of the rotation of S023 S034 from its original location S23 S34 satisfies the
+Burmester–Roth theorem and is a center axis.
+Proof. Let G be the intersection of the perpendicular bisectors V1 = (S23 S023 )⊥ and
+V2 = (S34 S034 )⊥ . Then G is the axis of rotation of the segment S23 S34 by an angle
+κ to the position S023 S034 . The input crank formed by S12 S23 has the dyad triangle
+4S23 S12 G and G must view the S12 S23 in the angle κ/2 or κ/2 + π. Similarly, the
+geometry of the dyad triangle 4S34 S14 G requires that G view the segment S14 S34
+in either κ/2 or κ/2 + π. Thus, G views the opposite sides S12 S23 and S14 S34 in
+angles that are equal, or differ by π. The same argument shows that G views the
+other two sides S23 S34 and S12 S14 in angles that are equal, or differ by π. Thus, G
+satisfies Burmester’s theorem. t
+u
+
+9.4 Finite Position Synthesis of RR Chains
+
+219
+
+Fig. 9.7 Construction of the center-axis G using the spherical complementary-axis quadrilateral.
+
+This construction yields a parameterized equation for the center-axis cone. The
+rotation of the coupler segment S23 S34 from its initial configuration Q to another
+configuration Q 0 is the composite of a rotation by ∆ φ = φ − φ0 about S23 , followed
+by a rotation of ∆ θ = θ − θ0 about S12 . This composite rotation is given by
+[G(β , G)] = [A(∆ θ , S12 )][A(∆ φ , S23 )].
+
+(9.50)
+
+Rodrigues’s formula yields the equation for the relative rotation axis G as
+∆φ
+
+tan
+
+∆φ
+
+tan ∆2θ S12 + tan 2 S23 + tan ∆2θ tan 2 S12 × S23
+β
+G=
+.
+2
+1 − tan ∆ θ tan ∆ φ S12 · S23
+2
+
+(9.51)
+
+2
+
+The coupler angle φ (θ ) is determined from the driving crank rotation θ , using equation (7.36). We compute θ = θ0 and φ = φ0 in the initial configuration Q from the
+formulas
+tan θ0 =
+
+(S12 × S14 ) · S23
+(S23 × S12 ) · S34
+, tan φ0 =
+.
+(S12 × S14 ) · (S12 × S23 )
+(S23 × S12 ) · (S23 × S34 )
+
+(9.52)
+
+The result is a formula (9.51) that generate the center-axis cone by varying the
+parameter θ .
+
+9.4.5.4 The Circling-Axis Cone
+Associated with each point on the center-axis cone is a solution of the design equations (9.45), which yields a moving axis W1 . These axes form another cubic cone,
+called the circling-axis cone. We can compute this cone directly from the design
+
+220
+
+9 Algebraic Synthesis of Spherical Chains
+
+equations (9.30). For a four position task, we have
+ 0 0 0    
+A2 B2 C2 x 0
+A03 B03 C30  y = 0 .
+   
+A04 B04 C40
+z
+0
+
+(9.53)
+
+These equations have a solution for the fixed axis G only if the determinant of the
+coefficient matrix [M 0 ] is zero. Thus, the coordinates of the moving axis W1 must
+satisfy the condition
+|M 0 | = a01 λ + b01 µ + c01 ν, a02 λ + b02 µ + c02 ν, a03 λ + b03 µ + c03 ν = 0.
+
+(9.54)
+
+An expansion similar to (5.37) yields the algebraic equation of the circling-axis
+cone.
+If the four task orientations Mi , i = 1, 2, 3, 4, are inverted, then the circling-axis
+cone can be computed as the center-axis cone for the inverted movement. In this
+case, the cone is defined in the moving frame M. We then transform the coordinates
+of this curve to the fixed frame in the first orientation M1 to obtain the set of moving
+pivots W1 .
+The complementary-axis quadrilateral for the inverted relative displacements in
+position M1 is constructed from the image poles S112 , S123 , S134 , and S114 . Recall that
+S112 = S12 and S114 = S14 , and further that S123 and S134 are the reflections of S23 and
+S34 through the planes containing S12 S13 and S14 S13 , respectively. Thus, the image
+quadrilateral Q † : S12 S123 S134 S14 has the same dimensions as the complementaryaxis quadrilateral Q, and the same ground link S12 S14 , Figure 9.8.
+n
+S13
+S231
+
+S23
+
+S12
+
+S341
+
+S34
+
+S14
+
+γ
+
+Fig. 9.8 The image complementary-axis quadrilateral Q † is obtained from Q by reflecting S23
+through the plane S12 S13 and S34 through S14 S13 .
+
+The circling-axis cone can now be determined by applying the Burmester–Roth
+theorem to the image quadrilateral Q † . The result is a parameterized equation for
+the moving axes W1 .
+
+9.4 Finite Position Synthesis of RR Chains
+
+221
+
+9.4.6 Five Specified Orientations
+Given five spatial orientations of a rigid body, we can determine as many as six
+spherical RR chains that can reach these positions. The solution procedure follows
+closely the solution of the planar design equations for five positions. We solve the
+design equations (9.25) using a two-step elimination procedure that yields a sixth
+degree polynomial. We can also solve this problem by finding the intersections of
+two center-axis cones.
+
+9.4.6.1 Algebraic Elimination
+Collect the coefficients of λ , µ, ν in the design equations to obtain
+
+
+A2 B2 C2    
+A3 B3 C3  λ  0
+
+
+A4 B4 C4  µ  = 0 ,
+ν
+0
+A5 B5 C5
+
+(9.55)
+
+where Ai , Bi , and Ci are defined in (9.28). In order for this system of equations to
+have a solution the rank of the 4 × 3 coefficient matrix [M] must be two.
+Let R j be the determinant of the 3 × 3 matrix formed from [M] by removing row
+5 − j, so R1 is computed using the first three rows, R2 is obtained from the first two
+and last row, and so on. The result is four homogeneous cubic polynomials in x, y,
+and z, identical in structure to the center-axis cone (9.49),
+R j (x, y, z) : a30, j y3 + (a21, j x + a20, j z)y2 + (a12, j x2 + a11, j xz + a10, j z2 )y
++ a03, j x3 + a02, j x2 z + a01, j xz2 + a00, j z3 = 0, j = 1, 2, 3, 4.
+
+(9.56)
+
+In the next step, we dehomogenize these equations by setting z = 1, and eliminate y
+to obtain a single polynomial in x.
+The polynomials R j are homogeneous in x, y, and z, which means that if G =
+(x, y, z)T is a solution of these equations, then G0 = k(x, y, z)T is a solution as well.
+Therefore, we can set z = 1 and solve for the unique values of x and y, and simply
+recall that G = k(x, y, 1)T is also a solution.
+In each of the polynomials R j collect the coefficients of y so that it has the form
+R j : d j0 y3 + d j1 y2 + d j2 y + d j3 = 0, j = 1, 2, 3, 4.
+
+(9.57)
+
+Each coefficient d jk is a polynomial in x of degree k.
+Assemble the coefficients of these polynomials into a matrix that multiplies the
+vector (y3 , y2 , y, 1)T , given by
+
+222
+
+9 Algebraic Synthesis of Spherical Chains
+
+
+ y3  0
+ 
+
+d10 d11 d12 d13 
+
+ 
+ 
+
+ 
+0
+ .. .. .. ..  y2
+=
+.
+ . . . . 
+0
+y
+
+
+
+
+
+
+
+
+
+
+d40 d41 d42 d43
+0
+1
+
+(9.58)
+
+These four equations have a solution for the unknowns (y3 , y2 , y) only if the rank of
+the 4 × 4 coefficient matrix [D] = [d j0 , d j1 , d j2 , d j3 ] is three. Thus, this matrix has
+the determinant |D| = 0.
+The determinant |D| is a polynomial in the single variable x. The degree of this
+polynomial is the sum of the degrees of each of the columns of [D], that is, 0 + 1 +
+2 + 3 = 6. Therefore, this step of the solution reduces the four cubic polynomials in
+x, y to a single sixth-degree polynomial
+6
+
+P(x) : |D| = ∑ ai xi = 0.
+
+(9.59)
+
+i=0
+
+This polynomial has six roots for which zero, two, four, or six may be real. Thus,
+there can be as many as six spherical RR chains that reach the five orientations.
+To determine the spherical RR chains that reach five specified orientations, first
+formulate the polynomial P(x) and determine its roots xi , i = 1, . . . , 6. For each real
+root xi , solve (9.58) to determine the coordinate yi . This defines as many as six fixed
+axes Gi = (xi , yi , 1)T , called Burmester axes. To determine the associated moving
+axis W1i , choose two of the constraint equations (9.25) and solve for λ , µ, and ν.
+
+9.4.6.2 Intersecting Two Center-Axis Cones
+An alternative solution for the fixed axes of spherical RR chains can be obtained
+using the parameterized form of the center-axis cone. The five task orientations
+define ten relative rotation axes Si j , i < j = 1, . . . , 5. From these we can construct two
+complementary-axis quadrilaterals Q14 : S12 S23 S34 S14 and Q15 : S12 S23 S35 S15 . A
+fixed axis compatible with five orientations must lie on the center-axis cone defined
+by Q14 and on the center-axis cone defined by Q15 . Thus, the desired axes are the
+intersections of these two cones.
+The complementary-axis quadrilaterals Q14 and Q15 share the same side S12 S23 .
+Therefore, the equations of the two center-axis cones are given by
+tan ∆2θ1 S12 + tan ∆2φ1 S23 + tan ∆2θ1 tan ∆2φ1 S12 × S23
+κ
+tan G =
+2
+1 − tan ∆ θ1 tan ∆ φ1 S12 · S23
+
+(9.60)
+
+tan ∆2θ2 S12 + tan ∆2φ2 S23 + tan ∆2θ2 tan ∆2φ2 S12 × S23
+κ
+.
+tan G =
+2
+1 − tan ∆ θ2 tan ∆ φ2 S12 · S23
+
+(9.61)
+
+2
+
+2
+
+and
+
+2
+
+2
+
+9.4 Finite Position Synthesis of RR Chains
+
+223
+
+The angles ∆ φ1 and ∆ φ2 are functions of ∆ θ1 and ∆ θ2 defined by the dimensions
+of the two complementary-axis quadrilaterals.
+The two equations (9.60) and (9.61) define the same axis G when
+∆ θ1 = ∆ θ2 and ∆ φ1 = ∆ φ2 .
+
+(9.62)
+
+The first condition is satisfied by using the same parameter θ to drive S12 S23 for both
+quadrilaterals. The second condition requires that the spherical triangle 4S23 S34 S35
+have the same shape in each solution configuration. Thus, the fixed axis G is an axis
+of the relative rotation of the triangle 4S23 S34 S35 to each of the assemblies of the
+platform formed by the three RR chains S12 S23 , S14 S34 , and S15 S35 , Figure 9.9. This
+assembly of relative rotation axes is called the spherical compatibility platform and
+have the following theorem.
+
+Fig. 9.9 The reference configuration of the spherical compatibility platform.
+
+Theorem 13 (The Spherical Compatibility Platform). The fixed axis of an RR
+chain that can reach with five specified orientations is a relative rotation axis of the
+spherical compatibility platform from its original configuration to one of its other
+assemblies.
+
+224
+
+9 Algebraic Synthesis of Spherical Chains
+
+The analysis of this platform yields the two constraint equations
+Ai cos φ + Bi sin φ = Ci , i = 1, 2,
+
+(9.63)
+
+one for each of the 4R chains Q14 and Q15 . The solution of these equations shown
+in (A.11) yields an eighth degree polynomial. This means that the spherical 3RR
+platform can have as many as eight assemblies. One is the original configuration,
+so there are seven relative rotation axes for the displacement to the other seven
+assemblies. One of these axes is S13 , and the remaining six are the desired fixed
+axes.
+
+9.5 Spherical 4R Linkages
+In general, the design of a spherical RR chain yields multiple solutions that can be
+assembled in pairs to form one-degree-of-freedom 4R closed chain linkages, Figure 9.10. It is also possible to design the coupling between two RR chains in order
+to coordinate the movement of the input and output cranks. This is known as a
+spherical function generator.
+Wout
+"
+
+Win
+
+!out
+
+!in
+
+Gin
+
+#
+
+Gout
+
+Fig. 9.10 The spherical 4R linkage.
+
+Connecting the end-links of two RR chains constrains the range of movement
+of the individual chains. This can interfere with the smooth travel of the coupler
+between the task orientations. This is called the branching problem. A solution rectification strategy exists for spherical linkages that is analogous to the planar theory.
+In the following sections we present the spherical version of solution rectification
+and then present discuss the design strategy for spherical function generators.
+
+9.5 Spherical 4R Linkages
+
+225
+
+9.5.1 Solution Rectification
+Bodduluri [80] shows that Filemon’s construction generalizes to apply to spherical
+4R linkage synthesis. Assume, as before, that the driven crank Gout W1out has been
+determined. The output crank, when viewed from the coupler in each of the design
+positions, is seen to sweep two wedge shaped regions centered on W1out . If the input
+moving axis W1in is chosen outside of these wedges, then the linkage will not jam
+between the design positions.
+It is possible for this wedge to include the entire space. If this happens, then
+there are no solutions to Filemon’s construction. A spherical version of Waldron’s
+construction identifies output cranks that ensure that this does not occur. The result
+is a spherical 4R chain that moves smoothly through the task orientations.
+
+9.5.1.1 Spherical Filemon’s Construction
+We focus our development on design for three task orientations. Given an output
+moving crank Gout W1out , the inverted positions of Gout are obtained using the inverse of the relative rotations
+(9.64)
+giout = [AT1i ]G.
+Let α12 and α23 be the angles measured around W1out from g1out to g2out and from
+3
+out to gout , respectively. They are dihedral angles between the planes Li defined
+by the axes W1out giout , Figure 9.11. Assume that these angles are between π and
+−π. The angle τ of the wedge swept by movement of the output crank is the sum
+α12 + α23 , if these angles have the same sign. If these angles have different signs,
+then τ is the angle with the largest absolute value.
+Select the moving pivot W1in outside of this wedge-shaped region, then the resulting spherical 4R linkage must pass through the design positions before it hits a
+singular configuration. This is the spherical version of Filemon’s construction.
+g2
+
+9.5.1.2 Spherical Waldron’s Construction
+Filemon’s construction fails when the angle τ is greater than or equal to π, because
+in this case the wedges cover space and there are no input moving axes that avoid
+singular configurations. Waldron’s planar solution to this problem generalizes to the
+spherical case. The goal is a condition on the design of the output crank Gout W1out
+that ensures that there is a solution to Filemon’s construction.
+Given three task orientations, we have the pole triangle 4S12 S23 S13 . Inverting
+the relative rotations to define the movement of the base frame relative to the coupler, we obtain the image pole triangle 4S12 S123 S13 in the first position M1 . The
+center-axis theorem requires the moving axis W1out to view the side S1i j S1jk in the
+rotation angle −αik /2 of the crank relative to the coupler. Thus, we have
+
+226
+
+9 Algebraic Synthesis of Spherical Chains
+L1
+L2
+
+Wout
+
+L3
+gout3
+Win
+gout2
+!23
+
+gout1
+
+!12
+
+"
+
+Fig. 9.11 The spherical version of Filemon’s construction: The planes L1 and L3 bound the region
+excluded from selection for driving moving pivots Win .
+
+cos(
+
+(W × S1i j ) · (W × S1jk )
+αik
+)=
+.
+2
+|W × S1i j ||W × S1jk |
+
+(9.65)
+
+If an output moving axis W1out has any one of the angles αik greater than or
+equal to π, then there is no solution to Filemon’s construction. The points that have
+αik /2 = π/2 lie on the quadric cones
+Cik : (W × S1i j ) · (W × S1jk ) = 0.
+
+(9.66)
+
+The three cones Cik pass through the sides S1i j S1jk of the image pole triangle in a
+configuration analogous to Waldron’s three-circle diagram. In this case the cones
+are general quadrics and are not circular.
+These cones define regions within which an output axis W1out has coupler rotation angles α jk all less than π. This guarantees that Filemon’s construction yields a
+region from which an input axis W1in can be selected.
+
+9.5.2 Function Generation
+A spherical four-bar linkage can be designed to provide coordination between the
+input and output angular values θi , ψi , i = 1, . . . , n, Figure 9.12. To do this, we
+arbitrarily select the fixed axes O and C for the input and output cranks of this
+linkage. Let γ = arccos(O · C) be the angle between these axes. Denote by PO the
+plane through O that makes the dihedral angle θ1 with the plane containing OC.
+
+9.6 Summary
+
+227
+
+P0
+θi
+
+O
+
+i
+
+θ2
+θ1
+
+2
+
+C
+
+1
+
+γ
+
+Fig. 9.12 Coordinated input and output angles for a spherical 4R function generator.
+
+Following the approach we used for planar function generators, we define the
+exterior angles θ̄i = π − θi around O. Introduce the coordinate frame F 0 attached
+the input crank so that its y-axis is perpendicular to the plane PO . Then θ̄1 is the
+angle from measured PO to OC. The angles θ̄i and ψi are the joint angles of the
+spherical RR open chain formed by OC as it moves relative to F 0 , Figure 9.13. The
+kinematics equations of this RR chain define the task orientations, given by
+[Ai ] = [Z(θ̄i )][X(γ)][Z(ψi )], i = 1, . . . , n.
+
+(9.67)
+
+Use these orientations [Ai ] to design a spherical RR chain AB to close the 4R chain.
+The result is a spherical 4R chain that has the desired set of coordinated angles
+θi and ψi , i = 1, . . . , n, between the input and output links. Notice that we can obtain
+a design for at most five coordinated values for these angles.
+
+9.6 Summary
+This chapter has presented the synthesis theory for spherical RR chains. The algebraic formulation of the design equations and their solution parallels the results presented for planar RR chains. Furthermore, the center-axis theorem leads to Roth’s
+generalization of Burmester’s planar constructions. And the quaternion equation for
+a spherical triangle generalizes the complex vector equation for a planar triangle. We
+also obtain spherical versions for Filemon and Waldron’s constructions for solution
+rectification. The analogue between the planar and spherical RR design theories
+provides insight to spatial linkage analysis and design.
+
+228
+
+9 Algebraic Synthesis of Spherical Chains
+
+F
+2
+
+1
+
+C2
+
+i
+
+Ci
+
+C1
+
+θ2
+
+θ1
+
+θi
+
+P0
+
+O
+
+Fig. 9.13 Hold the input crank fixed and consider the output crank as the floating link of an RR
+chain to define task positions.
+
+9.7 References
+Dobrovolskii [26] is credited with the initial formalization of the synthesis theory
+for spherical linkages. The similarity of the geometry of planar and spherical linkages lead Meyer zur Capellen et al. [82] to present parallel formulations for their
+analysis. Suh and Radcliffe [133, 134] describe a constraint equation based formulation for spherical linkage synthesis. Roth [105, 106] generalized Burmester’s
+planar constructions to space, which include the spherical results in this chapter as
+a special case. Dowler et al. [27] provide an example of spherical linkage design.
+The text by Chiang [12] is devoted to the analysis and design theory for spherical
+linkages. Computer-based design tools for these linkages are described Larochelle
+et al. [61], Ruth [110], and Furlong et al. [38].
+
+Exercises
+1. Consider the location of the continent of Africa 150 million years ago as M1 and
+its location today as M2 . The longitude and latitude of points Pi and Qi in the two
+locations are given in Table 9.1. Determine the relative rotation matrix [A12 ].
+2. Design a 4R linkage to move the African continent between the two positions
+defined by Table 9.1.
+3. Generate the center-point curve for the relative orientations [A12 ], [A13 ], and [A14 ]
+defined by the points Pi and Qi in Table 8.1.
+4. A spherical linkage support for a feeding device is to locate a spoon at the
+longitude, latitude, and roll coordinates M2 = (−22.5◦ , −5◦ , −30◦ ) and M4 =
+
+9.7 References
+
+229
+
+Table 9.1 Longitude and latitude for two positions of points on the African continent
+Point
+
+M1
+
+P
+Q
+
+(35◦ , −13◦ )T (50◦ , 12◦ )T
+(−22◦ , −41◦ )T (18◦ , −36◦ )T
+
+M2
+
+(25◦ , 20◦ , −10◦ ) to pick up and deliver food, respectively. Select positions M1 to
+provide a desired scooping movement and M3 so that food is not lost in transit.
+Generate the center-point curve and design a spherical 4R linkage.
+
+

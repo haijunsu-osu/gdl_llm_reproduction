@@ -1,0 +1,1912 @@
+--- Page 1 ---
+Chapter 2
+Analysis of Planar Linkages
+In this chapter we consider assemblies of links that move in parallel planes. Any
+one of these planes can be used to examine the movement since the trajectories of
+points in any link can be projected onto this plane without changing their properties.
+Our focus is on linkages constructed from revolute joints with axes perpendicular to
+RR, PR, and RP open chains and the closed chains constructed from them, as well
+as the 3R and RPR planar robots. We determine the conﬁguration of the linkage as
+a function of the independent joint parameters and the physical dimensions of the
+links.
+2.1 Coordinate Planar Displacements
+A revolute joint in a planar linkage allows rotation about a point, and a prismatic
+joint allows translation along a line. These movements are represented by transfor-
+mations of point coordinates in the plane.
+Consider the rotation of a link about the revolute joint O located at the origin of
+the ﬁxed coordinate frame F. Let x = (x,y)
+T be the coordinates of a point measured
+in the frame M of the link. If the moving frame has its origin also located at O,
+and the angle between the x-axes of these two frames is θ, then the coordinates
+X = (X,Y )T of this point in F are given by the matrix equation
+
+
+
+X
+Y
+1
+
+
+=
+
+
+cosθ −sinθ 0
+sinθ cosθ 0
+0 0 1
+
+
+
+
+
+x
+y
+1
+
+
+. (2.1)
+We introduce the extra column in this matrix to accommodate translations typical
+of prismatic joints as part of the matrix operation.
+In particular, consider a prismatic joint that has the x-axis of F as its line of
+action. Let the distance between the origins of M and F along this line be s. Then
+©
+J.M. McCarthy and G.S. Soh, Geometric Design of Linkages, Interdisciplinary Applied
+this plane and prismatic joints that move along lines parallel to it. We examine the
+15
+Mathematics 11, DOI 10.1007/978-1-4419-7892-9_2,
+  Springer Science+Business Media, LLC 2011
+
+--- Page 2 ---
+16 2 Analysis of Planar Linkages
+we have 
+
+
+X
+Y
+1
+
+
+=
+
+
+1 0 s
+0 1 0
+0 0 1
+
+
+
+
+
+x
+y
+1
+
+
+. (2.2)
+A translation along a prismatic joint parallel to they-axis is deﬁned in the same way
+as 
+
+
+X
+Y
+1
+
+
+=
+
+
+1 0 0
+0 1 s
+0 0 1
+
+
+
+
+
+x
+y
+1
+
+
+. (2.3)
+The matrices in these equations deﬁne the three coordinate displacements of planar
+movement. Planar displacements are constructed from these three basic transforma-
+tions.
+We now introduce the notation [Z(θ)], [X(s)], and [Y (s)] for these coordinate
+displacements, so we have
+X = [Z(θ)]x, X = [X(s)]x, and X = [Y (s)]x, (2.4)
+respectively. Notice that we do not distinguish symbolically between the coordi-
+nates X that are two-dimensional and those that have 1 as a third component. Some
+authors to refer to the former as vectors and the latter as afﬁne points. We do not
+need this general distinction, and therefore will take the time to make the difference
+clear when needed in the context of our calculations.
+2.1.1 The PR Open Chain
+The beneﬁt of this matrix formulation can be seen in considering the movement of a
+PR open chain. This chain consists of a link that slides along the linear guide of a P-
+joint relative to the ground. An end-link is attached to the slider by a revolute joint,
+Figure 2.1. We now determine the movement of a coordinate frame M attached to
+the end-link relative to a ﬁxed frame F.
+Fig. 2.1 The PR and RR open chain robots.
+O
+A
+AO
+F
+s
+F
+θ θ1
+θ2
+a
+
+--- Page 3 ---
+2.1 Coordinate Planar Displacements 17
+First, locate F so that its x-axis is parallel to the slide of the P-joint and denote its
+origin by O. Locate M in the end-link so that its origin is centered on the revolute
+joint, which we denote by A, and with its x-axis aligned initially with the x-axis of
+F.
+The conﬁguration of the PR chain is deﬁned by the slide s from O to A, and the
+rotation angle θ about O measured from the x-axis of F to the x-axis of M. The
+transformation of coordinates from M to F is given by the matrix product
+X = [X(s)][Z(θ)]x, (2.5)
+or 
+
+
+X
+Y
+1
+
+
+=
+
+
+cosθ −sinθ s
+sinθ cosθ 0
+0 0 1
+
+
+
+
+
+x
+y
+1
+
+
+. (2.6)
+The set of planar displacements [D], given by
+[D] = [X(s)][Z(θ)], (2.7)
+is the workspace of the PR open chain. This matrix equation deﬁnes the kinematics
+equations for the chain.
+An important question in the analysis of an open chain is what parameter values
+s and θ are needed to reach a given displacement [D] in the workspace of the chain.
+Assuming the elements of the matrix
+[D] =
+
+
+a
+11 a21 px
+a21 a22 py
+0 0 1
+
+ (2.8)
+are known, equation (2.7) can be solved to determine these parameters. Notice that
+py = 0 is required for the displacement [D] to be in the workspace reachable by the
+PR chain. It is now easy to see that s and θ can be determined from the elements of
+[D] by the formulas
+s = px and θ = arctan a21
+a11
+. (2.9)
+Its important to note here that the arctan function must keep track of the signs of
+both a21 and a11 so the correct value for θ is obtained in the range 0 to 2π.
+The arctan function in calculators often incorporates the assumption that the de-
+nominator of the fractiona21/a11 is positive. If this denominator is actually negative,
+as occurs when θ is in the second and third quadrants, then π must be added to the
+angle returned by the calculator in order to obtain the correct result.
+
+--- Page 4 ---
+18 2 Analysis of Planar Linkages
+2.1.2 The RR Open Chain
+A planar RR open chain has a ﬁxed revolute joint O that connects a rotating link,
+or crank, to the ground link. A second revolute joint A connects the crank to the
+end-link, or ﬂoating link, Figure 2.1.
+Position the ﬁxed frame F so that its origin is the ﬁxed pivot O and its x-axis is
+directed toward A when the crank OA is in the zero position. Introduce the moving
+frame M in the end-link, so that its origin is located at A and its x-axis is also
+directed, initially, along the segment OA.
+Let θ1 be the angle measured from F to OA as the linkage moves, and let θ2 be
+the angle measured from OA to M. Then the position of M relative to F is deﬁned
+by the composition of coordinate displacements
+X = [Z(θ1)][X(a)][Z(θ2)]x, (2.10)
+where a = |A −O|is the length of the crank. Expanding this equation we obtain
+
+
+
+X
+Y
+1
+
+
+=
+
+
+cos(θ1 +θ2) −sin(θ1 +θ2) acosθ1
+sin(θ1 +θ2) cos(θ1 +θ2) asinθ1
+0 0 1
+
+
+
+
+
+x
+y
+1
+
+
+. (2.11)
+Notice that the position of the ﬂoating link of an RR chain is equivalent to a trans-
+lation by the vector d = (asinθ1,asinθ1)T followed by a rotation by the angle
+σ = θ1 +θ2.
+The workspace of the RR chain is given by the set of displacements
+[D] = [Z(θ1)][X(a)][Z(θ2)]. (2.12)
+This deﬁnes the kinematics equations of the RR chain. For a given position [D] the
+parameter values θ1 and θ2 that reach it are obtained by equating (2.8) to the matrix
+in (2.11). The result is that the angles θ1 and σ = θ1 +θ2 are given by
+θ1 = arctan py
+px
+and σ = arctan a21
+a11
+. (2.13)
+Notice that the elements px and py must satisfy the relation
+a =
+√
+p2x + p2
+y
+. (2.14)
+in order for [D] to be in the workspace of this chain.
+
+--- Page 5 ---
+2.1 Coordinate Planar Displacements 19
+2.1.3 The RPR and 3R Chains
+If the distance a between the joints of an RR chain is allowed to vary, then we
+obtain the structure of a three-degree-of-freedom planar manipulator. This variation
+in length can be introduced either by a prismatic joint, forming an RPR open chain,
+or by a revolute joint to form a 3R open chain,Figure 2.2 . The formulas for the RR
+chain can be used to analyze the RPR and 3R chains with minor modiﬁcations.
+Fig. 2.2 The RPR and RRR open robots.
+For the RPR, the link length a can be identiﬁed with the slide parameter s of the
+prismatic joint. The result is that (2.12) witha = s deﬁnes the workspace of the RPR
+chain. Equations (2.14) and (2.13) deﬁne the values fors, θ1, and θ2 needed to reach
+a given goal displacement.
+For the 3R case, we have an elbow joint E inserted between O and A. Let the
+lengths of the two links be a1 = |E −O|and a2 = |A −E|. Denote the rotation
+angle about the elbow joint by θ2 which is measured from OE counter-clockwise
+to EA. The rotation of the end-link around A is now denoted by θ3. The kinematics
+equations of this chain become
+[D] = [Z(θ1)][X(a1)][Z(θ2)][X(a2)][Z(θ3)]. (2.15)
+The variable length s = |A −O|is given by the cosine law of the triangle △OEA,
+s2 = a2
+1 +a2
+2 +2a1a2 cosθ2. (2.16)
+The positive sign for the cosine term in this equation arises becauseθ2 is an exterior
+angle of the triangle △OEA. Notice that s must lie between the values |a2 −a1|and
+a1 +a2.
+For a given position [D] of the end-link, we can determine the length s as we did
+for the RPR chain using (2.14). This allows us to compute the elbow joint angle as
+θ2 = arccos p2
+x + p2
+y −a2
+1 −a2
+2
+2a1a2
+. (2.17)
+s
+O
+A
+q1
+s
+O
+A
+E
+a2
+a1
+q1
+q3
+q2
+q2
+
+--- Page 6 ---
+20 2 Analysis of Planar Linkages
+The arccosine function yields two values for this angle ±θ2. We can compute the
+joint angle θ1 using (2.13), however, we must account for the presence of the angle
+ψ = ∠EOA, which is given by
+ψ = arctan a2 sinθ2
+a1 +a2 cosθ2
+. (2.18)
+The result is
+θ1 = arctan py
+px
+−ψ. (2.19)
+Finally, θ3 is obtained from the fact that the rotation of the end-link isσ = θ1 +θ2 +
+θ3 in (2.13), which yields
+θ3 = arctan a21
+a11
+−θ1 −θ2. (2.20)
+Notice that two sets of values θ1 and θ3 are obtained depending on the sign of θ2.
+These are known as the elbow-up and elbow-down solutions.
+2.2 Position Analysis of the RRRP Linkage
+The RRRP linkage is called a slider-crank and consists of a rotating crank linked
+to a translating slider by a connecting rod, or coupler. It is a fundamental machine
+element found in everything from automotive engines to door-closing mechanisms.
+We can also view this device as a platform linkage, in which case the coupler is a
+workpiece supported by an RR and a PR chain.
+Denote the ﬁxed and moving pivots of the input crank by O and A, respectively,
+and let B be the revolute joint attached to the slider. Position the ﬁxed frame F so
+that its origin is O and orient it so that its x-axis is perpendicular to the direction of
+slide, Figure 2.3. The input crank angle θ is measured from the x-axis of F around
+O to OA, and the travel s of the slider is measured along the y-axis to B.
+The length of the driving crank is r = |A −O|, and the length of the coupler is
+L = |B −A|. The distance e to the linear path of the pivot B is called the offset.
+Notice that the dimensions r, L, and e are always positive.
+2.2.1 The Output Slide
+To analyze this linkage, we determine the output slide s as a function of the input
+crank angle θ. The linkage moves so the pivotsA and B remain the constant distance
+L apart. The coordinates of these pivots in F are given by
+A =
+{
+r cosθ
+r sinθ
+}
+and B =
+{
+e
+s
+}
+. (2.21)
+
+--- Page 7 ---
+2.2 Position Analysis of the RRRP Linkage 21
+Fig. 2.3 The dimensions characterizing a slider-crank, or RRRP, linkage.
+Thus, the length L = |B −A|of the coupler provides the constraint equation
+(B −A)·(B −A) =L2. (2.22)
+Substitute (2.21) into this expression and collect the coefﬁcients of s to obtain the
+quadratic equation
+s2 −(2r sinθ)s +(r2 +e2 −2er cosθ −L2) =0. (2.23)
+The quadratic formula yields the roots
+s = r sinθ ±
+√
+L2 −e2 +2er cosθ −r2 cos2 θ. (2.24)
+Thus, for a given input crank angle θ there are two possible values of the slide
+s. They are, geometrically, the intersection of a circle of radius L centered on A
+with the line through B parallel to the y-axis of F. These two solutions deﬁne the
+two assemblies of the RRRP linkage. The positive solution generally has the slider
+moving above the crank, while the negative solution has it below.
+2.2.2 The Range of Crank Rotation
+We now consider the values of the crank angle θ for which a solution for the slider
+position s exists. The condition that the solution be a real number is
+L2 −e2 +2er cosθ −r2 cos2 θ ≥0. (2.25)
+Set this to zero to obtain a quadratic equation in cosθ that deﬁnes the minimum and
+maximum angular values for the crank angle θ, and obtain the roots
+θmin = arccos e +L
+r and θmax = arccos e −L
+r . (2.26)
+r
+e
+L
+s
+θ
+φ
+O
+A B
+
+--- Page 8 ---
+22 2 Analysis of Planar Linkages
+Notice that the arccosine function returns two values for these limiting angles that
+are reﬂections through the x-axis of F.
+If cos θmin > 1, then the lower limit θmin to the crank rotation angle does not
+exist. In which case the crank can reach θ = 0 and pass into the lower half-plane of
+F. Thus, the condition that no lower limit exist is
+S1 = L −r +e > 0. (2.27)
+Similarly, if cos θmax < −1 then the upper limit does not exist, and the crank can
+reach θ = π. This yields the condition
+S2 = L −r −e > 0. (2.28)
+The signs of the parameters S1 and S2 identify four types of slider-crank linkage
+depending on the input rotation of the crank:
+1. A rotatable crank: S1 > 0 and S2 > 0, in which case neither limit θmin nor θmax
+exists, and the input crank can fully rotate.
+2. A 0-rocker: S1 > 0 and S2 < 0, for which θmax exists but not θmin, and the input
+crank rocks through θ = 0 between the values ±θmax.
+3. A π-rocker: S1 < 0 and S2 < 0, which means that θmin exists but not θmax, and
+the input crank rocks through θ = π between the values ±θmin.
+4. A rocker: S1 < 0 and S2 < 0, in which case both upper and lower limit angles
+exist, and the crank cannot pass through either 0 or π. Instead, it rocks in one of
+two separate ranges: (i) θmin ≤θ ≤θmax, or (ii) −θmax ≤θ ≤−θmin.
+The conditions S1 > 0 and S2 > 0 for a fully rotatable crank can be combined to
+deﬁne the formula
+S1S2 = (L −r +e)(L −r −e) = (L −r)2 −e2 > 0. (2.29)
+Notice that because e is always positive, L −r must be positive for S2 to be positive.
+This allows us to conclude that
+L −r > e (2.30)
+is the condition that ensures that the crank of the RRRP linkage can fully rotate.
+The parameters S1 or S2 can take on zero values as well. In these cases, the pivots
+O, A, and B line up along thex-axis of F, and the slider-crank linkage is said tofold.
+2.2.3 The Coupler Angle
+Let φ denote the angle around the moving pivotA measured counterclockwise from
+the line extending along the crankOA to the segment AB deﬁning the coupler. Then
+the coordinates of the pivot B = (e,s)T are also given by the vector
+
+--- Page 9 ---
+2.2 Position Analysis of the RRRP Linkage 23
+B =
+{
+r cosθ +Lcos(θ +φ)
+r sinθ +Lsin(θ +φ)
+}
+. (2.31)
+We equate the two vectors deﬁning B to obtain
+r cosθ +Lcos(θ +φ) =e,
+r sinθ +Lsin(θ +φ) =s. (2.32)
+These equations are called the loop equations of the slider-crank because they
+capture the fact that the linkage forms a closed loop. Solve these equations for
+Lsin(θ +φ) and Lcos(θ +φ) and use the arctan function to obtain
+θ +φ = arctan s −r sinθ
+e −r cosθ . (2.33)
+This equation provides the value for φ associated with each solution for the slide s
+deﬁned in (2.24).
+2.2.4 The Extreme Slider Positions
+The maximum translation of the slider, smax, is reached when the coupler angle φ
+is equal to zero. In this instance the pivots O, A, and B fall on a line, so that r + L
+forms the hypotenuse of a right triangle. This yields
+smax =
+√
+(r +L)2 −e2. (2.34)
+The crank angle θ1 associated with smax is obtained from the loop equations (2.32)
+as
+θ1 = arctan smax
+e . (2.35)
+Notice that the parameter smax can be positive or negative, because the linkage can
+be assembled with the slider above over below the x-axis.
+The minimum translation of the slider, smin, occurs with the coupler angle φ is
+equal to π. In this conﬁguration the pivots A and B are on opposite sides of O and
+L −r is the hypotenuse of the triangle, so smin is given by
+smin =
+√
+(L −r)2 −e2. (2.36)
+While smax always exists, smin exists only if this square root is real. There are two
+cases L −r > 0 and L −r < 0. In the ﬁrst case the crank is fully rotatable and the
+associated crank angle is
+θ2 = π +arctan smin
+e . (2.37)
+
+--- Page 10 ---
+24 2 Analysis of Planar Linkages
+The minimum slide results when the pivot A rotates to the position such that O lies
+between it and B. If L −r < 0 then A and B are on the same side of O and the crank
+angle is
+θ2 = arctan smin
+e . (2.38)
+Notice that these extreme conﬁgurations can be reﬂected through the x-axis.
+If the crank of the slider-crank is fully rotatable, then the angular travel of the
+crank as the slider moves from smax to smin is |θ2 −θ1|. The angular travel of the
+return from smin to smax is |2π −(θ2 −θ1)|. The ratio of these two ranges of travel
+is known as the time ratio
+rt = |θ2 −θ1|
+|2π −(θ2 −θ1)|. (2.39)
+Notice that if the offsete is nonzero then the time ratio is less than 1. This means that
+the crank rotates a smaller angular distance as it pulls the slider to smin, than it does
+when it pushes it out again to smax. This operation is known as quick return because
+for a constant angular velocity the slider moves slowly toward smax and quickly as
+it returns to smin.
+2.2.5 The RRPR Linkage
+A slider-crank linkage is often used in an inverted conﬁguration in which the P-joint
+is connected to the ﬂoating link,Figure 2.4 . In this form, the prismatic joint may be
+the piston of a linear actuator that drives the rotation of the crank OA. This system
+is analyzed as follows.
+Fig. 2.4 The inverted slider-crank, or RRPR, linkage.
+Let the driving RR crank be OA with length r = |A −O|, as before. Position the
+frame F with its origin atO and its x-axis directed towardC, which denotes the ﬁxed
+pivot of the RP chain. The length of the ground link OC is g = |C −O|. Consider
+r
+g
+θ
+O
+A
+B
+C
+s
+e
+
+--- Page 11 ---
+2.3 Position Analysis of the 4R Linkage 25
+the line through C perpendicular to the direction of the slider and the line through
+A parallel this direction. Let the intersection of these two lines be the point B. The
+length e = |B −C|is the joint offset, and s = |A −B|is the slide distance of the
+prismatic joint. Denote the input crank angle by θ and let ψ be the angle measured
+about C to the segment CB.
+These conventions allow us to introduce the intermediate parameters b and β
+given by
+b =
+√
+s2 +e2 and tan β = s
+e. (2.40)
+The cosine law for the triangle △COA yields the relation
+b2 = g2 +r2 −2rgcosθ. (2.41)
+Substitute s2 +e2 to obtain
+s =
+√
+g2 +r2 −e2 −2rgcosθ. (2.42)
+This deﬁnes the joint slide s for a given crank angle θ. Notice that this equation can
+also be solved to determine θ for a given slide:
+cosθ = g2 +r2 −e2 −s2
+2rg . (2.43)
+This latter situation arises when the slider is the piston in a linear actuator driving
+the RR crank.
+The rotation angle ψ of the RP crank is determined using the fact that the coor-
+dinates of the pivot A can be written in two ways
+A =
+{r cosθ
+r sinθ
+}
+=
+{g +bcos(ψ +β)
+bsin(ψ +β)
+}
+. (2.44)
+These equations yield the formula
+ψ +β = arctan r sinθ
+r cosθ −g. (2.45)
+Notice that β is determined from s by (2.40).
+The range of movement of the cranks and the sliding joint for this linkage can be
+analyzed in the same way as shown above for the RRRP linkage.
+2.3 Position Analysis of the 4R Linkage
+Given a planar 4R closed chain, we can identify an input RR crank and an output
+RR crank, Figure 2.5. Let the ﬁxed and moving pivots of the input crank be O and
+A, respectively, and that the ﬁxed and moving pivots of the output crank be C and
+
+--- Page 12 ---
+26 2 Analysis of Planar Linkages
+B. The distances between these points characterize the linkage:
+a = |A −O|, b = |B −C|, g = |C −O|, h = |B −A|. (2.46)
+Fig. 2.5 The link lengths that deﬁne a 4R linkage.
+To analyze the linkage, we locate the origin of the ﬁxed frameF at O, and orient
+it so that the x-axis passes through the other ﬁxed pivot C. Let θ be the input angle
+measured around O from the x-axis of F to OA. Similarly, let ψ be the angular
+position of the output crank CB.
+2.3.1 Output Angle
+The relationship between the input angle θ of the driving crank and the angle ψ of
+the driven crank is obtained from the condition thatA and B remain a ﬁxed distance
+apart throughout the motion of the linkage. Since h = |B −A|is constant, we have
+the constraint equation
+(B −A)·(B −A)−h2 = 0. (2.47)
+The coordinates of A and B in F are given by
+A =
+{acosθ
+asinθ
+}
+and B =
+{g +bcosψ
+bsinψ
+}
+. (2.48)
+Substitute these coordinates into (2.47) to obtain
+b2 +g2 +2gbcosψ +a2 −2(acosθ(g+bcosψ)+ absinθ sinψ)−h2 = 0. (2.49)
+Gathering the coefﬁcients of cos ψ and sin ψ, we obtain the constraint equation for
+the 4R chain as
+A(θ)cosψ +B(θ)sinψ = C(θ), (2.50)
+h
+a
+b
+g
+θ
+O
+A
+B
+C
+φ
+
+--- Page 13 ---
+2.3 Position Analysis of the 4R Linkage 27
+where
+A(θ) =2abcosθ −2gb,
+B(θ) =2absinθ,
+C(θ) =g2 +b2 +a2 −h2 −2agcosθ. (2.51)
+The solution to this equation is
+ψ(θ) =arctan
+(B
+A
+)
+±arccos
+( C√
+A2 +B2
+)
+. (2.52)
+Equations of the form (2.50) arise many times in the analysis of linkages, so we
+present its solution in Appendix A for easy reference, see (A.1).
+Notice that there are two angles ψ for each angle θ. This arises because the
+moving pivot B of the output crank can be assembled above or below the diagonal
+joining the moving pivot A of the input crank to the ﬁxed pivot C of the output
+crank. The angle δ = arctan(B/A) deﬁnes the location of this diagonal, and ε =
+arccos(C/
+√
+A2 +B2) is the angle above and below this diagonal that locates the
+output crank.
+The argument of the arccosine function must be in the range −1 to +1, which
+places a solvability constraint on the coefﬁcients A, B, and C. Speciﬁcally, for a
+solution to exist we must have
+A2 +B2 −C2 ≥0. (2.53)
+If this constraint is not satisﬁed, then the linkage cannot be assembled for the spec-
+iﬁed input crank angle θ.
+2.3.2 Coupler Angle
+Let φ denote the angle of the coupler measured aboutA relative to the segmentOA,
+so θ + φ measures the angle to AB from the x-axis of F. The coordinates of B can
+also be deﬁned in terms of φ as
+B =
+{acosθ +hcos(θ +φ)
+asinθ +hsin(θ +φ)
+}
+. (2.54)
+Equating the two forms for B, we obtain the loop equations of the four-bar linkage
+acosθ +hcos(θ +φ) =g +bcosψ,
+asinθ +hsin(θ +φ) =bsinψ. (2.55)
+For a given value of the drive crank θ, determine ψ using (2.52) then cos (θ + φ)
+and sin(θ +φ) are given by
+
+--- Page 14 ---
+28 2 Analysis of Planar Linkages
+cos(θ +φ) =g +bcosψ −acosθ
+h and sin( θ +φ) =bsinψ −asinθ
+h . (2.56)
+Thus, the value of the coupler angle is obtained as
+φ = arctan
+( bsinψ −asinθ
+g +bcosψ −acosθ
+)
+−θ. (2.57)
+Notice that a unique value for φ is associated with each of the two solutions for the
+output angle ψ.
+2.3.2.1 An Alternative Derivation
+It is useful here to present a direct calculation of the coupler angle φ associated
+with a given crank angle θ. The derivation is identical to that above for the output
+angle. However, our standard frame is now F′, positioned with its origin at A and
+its x-axis along the vector O −A. In this coordinate frame, the pivots B and C have
+the coordinates
+F′
+B =
+{hcos(φ −π)
+hsin(φ −π)
+}
+and F′
+C =
+{a +gcos(π −θ)
+gsin(π −θ)
+}
+. (2.58)
+The constraint (B −C)·(B −C) =b2 yields the equation
+A(θ)cosφ +B(θ)sinφ = C(θ), (2.59)
+where
+A(θ) =2ah −2ghcosθ,
+B(θ) =2ghsinθ,
+C(θ) =b2 −a2 −g2 −h2 +2agcosθ. (2.60)
+This equation is solved in exactly the same way as before (A.1). It results in two val-
+ues for φ for each crank angle θ. The output angle ψ associated with each of these
+coupler angles can be determined from the loop equations of the linkage written for
+C in F
+′.
+This equation for the coupler angle is used in solutions for four and ﬁve position
+synthesis of a planar 4R linkage.
+2.3.3 Transmission Angle
+The angle ζ between the coupler and the driven crank atB is called the transmission
+angle of the linkage. If the only external loads on the linkage are torques on the input
+
+--- Page 15 ---
+2.3 Position Analysis of the 4R Linkage 29
+and output cranks, then the forces FA and FB acting on the coupler at the moving
+pivots must oppose each other along the line AB,Figure 2.6 . Thus, the force FB is
+directed at the angleζ relative to the driven crank, and sinζ measures the component
+of FB that is transmitted as useful output torque. The cos ζ component is absorbed
+as a reaction force at the ﬁxed pivot of the driven crank.
+Fig. 2.6 The coupler is a two-force member connecting the input and output cranks.
+To determineζ in terms of θ, equate the cosine laws for the diagonald = |A−C|
+for the triangles △COA and △ABC. Since ζ is the exterior angle at B, we have
+d2 = g2 +a2 −2agcosθ = h2 +b2 +2bhcosζ. (2.61)
+The result is
+cosζ = g2 +a2 −h2 −b2 −2agcosθ
+2bh . (2.62)
+2.3.4 Coupler Curves
+As a linkage moves, points in the coupler trace curves in the ﬁxed frame. The pa-
+rameterized equation of this curve is obtained from the kinematics equations of the
+driving RR chain. Let x = (x,y)T be the coordinates of a coupler point in the frame
+M located at A with its x-axis along AB. The coordinates X = (X,Y )T in F are given
+by the matrix equation
+
+
+
+X(θ)
+Y (θ)
+1
+
+
+=
+
+
+cos(θ +φ) −sin(θ +φ) acosθ
+sin(θ +φ) cos(θ +φ) asinθ
+0 0 1
+
+
+
+
+
+x
+y
+1
+
+
+. (2.63)
+The coupler angle φ is a function of θ, thus the coupler curve is parametrized by the
+crank angle θ.
+The algebraic equation for this curve, eliminating θ, is obtained by deﬁning the
+coordinates of X from two points of view. Let the coupler triangle △XAB (Figure
+O
+A
+B
+CTin Tout
+FA
+FB
+F'A
+F'B
+θ
+ζ
+
+--- Page 16 ---
+30 2 Analysis of Planar Linkages
+2.7) have lengths r and s given by
+r = |X −A|=
+√
+x2 +y2 and s = |X −B|=
+√
+(x −h)2 +y2. (2.64)
+If λ is the angle to AX in F, and µ is the angle to BX, then we have
+X −A =
+{r cosλ
+r sinλ
+}
+and X −B =
+{scos µ
+ssin µ
+}
+. (2.65)
+Rearrange these equations to isolate A and B, and substitute into the identities A ·
+A = a2 and (B −C)·(B −C) =b2 to obtain
+X2 +Y 2 −2Xr cosλ −2Y rsinλ +r2 = a2,
+X2 +Y 2 −2Xs cos µ −2Y ssin µ +s2 −2gscos µ −2Xg +g2 = b2. (2.66)
+The algebraic equation of the coupler curve is obtained by eliminatingλ and µ from
+these two equations.
+Fig. 2.7 The trajectory of a point in the ﬂoating link is known as a coupler curve of the 4R chain.
+First, note that if α is the interior angle of the coupler triangle △XAB at A,
+then λ = α + θ + φ. Similarly, if β is the exterior angle of this triangle at B, then
+µ = β +θ +φ, or equivalently
+µ −λ = β −α. (2.67)
+The angle γ = β −α is the interior angle of the coupler triangle at X given by the
+cosine law as
+cosγ = r2 +s2 −h2
+2rs . (2.68)
+Substitute µ = λ +γ into (2.66) and rearrange these equations to obtain
+O
+A
+B
+Cθ
+X
+r
+s
+μ
+λ
+α
+β
+γ
+
+--- Page 17 ---
+2.4 Range of Movement 31
+A1 cosλ +B1 sinλ = C1,
+A2 cosλ +B2 sinλ = C2, (2.69)
+where
+A1 = 2rX, A2 = 2s(cosγ(X −g)+ Y sinγ),
+B1 = 2rY, B2 = 2s(−sinγ(X −g)+ Y cosγ),
+C1 = X2 +Y 2 +r2 −a2, C2 = (X −g)2 +Y 2 −b2 +s2. (2.70)
+Eliminate λ in these equations by solving linearly for x = cosλ and y = sinλ. Then
+impose the condition x2 +y2 = 1. The result is
+(C1B2 −C2B1)2 +(A2C1 −A1C2)2 −(A1B2 −A2B1)2 = 0. (2.71)
+Notice that Ai and Bi are linear in the coordinates X and Y , and Ci are quadratic.
+Therefore, this equation deﬁnes a curve of degree six. See Hunt [50] for a detailed
+study of this curve, known as a tricircular sextic, and a description of its properties.
+2.4 Range of Movement
+2.4.1 Limits on the Input Crank Angle
+The formula that deﬁnes the output angle ψ for a given input angle θ has a solution
+only when A2 + B2 −C2 ≥0. When this condition is violated, the crank is rotated
+to a positioned in which the mechanism cannot be assembled. The maximum and
+minimum values for θ are obtained by setting this condition to zero, which yields
+the quadratic equation in cosθ
+4a2g2 cos2 θ−4ag(g2 +a2 −h2 −b2)cosθ
++
+(
+(g2 +a2)−(h +b)2)(
+(g2 +a2)−(h −b)2)
+= 0. (2.72)
+The roots of this equation are the upper and lower limiting anglesθmax and θmin that
+deﬁne the range of movement of the input crank,
+cosθmin = (g2 +a2)−(h −b)2
+2ag , cosθmax = (g2 +a2)−(h +b)2
+2ag . (2.73)
+These equations are the cosine laws for the two ways that the triangle △AOC
+can be formed with the coupler AB aligned with the output crank CB, Figure 2.8.
+This alignment is what limits rotation of the input crank. The cosine function does
+not distinguish between ±θ so there are actually two limits for each case±θmin and
+±θmax above and below OC.
+
+--- Page 18 ---
+32 2 Analysis of Planar Linkages
+Fig. 2.8 The angles θmin and θmax are the limits to the range of movement of the input link.
+The arccosine function yields a real angle only if its argument is between−1 and
+1. This provides conditions that determine whether these crank limits exist.
+2.4.1.1 The Lower Limit: θmin
+If θmin does not exist, then the crank has no lower limit to its movement and it rotated
+through θ = 0 to reach negative values below the segment OC. Thus, cos θmin > 1
+is the condition that there is no lower limit to the input crank rotation, that is,
+(g2 +a2)−(h −b)2
+2ag > 1. (2.74)
+This simpliﬁes to yield
+(g −a)2 −(h −b)2 > 0. (2.75)
+Factor the difference of two squares to obtain
+(g −a +h −b)(g −a −h +b) > 0,
+T1T2 > 0, (2.76)
+where
+T1 = g −a +h −b and T2 = g −a −h +b. (2.77)
+Thus, T1 and T2 must both be either positive or negative for there to be no lower
+limit to the rotation of the input crank.
+g
+θmax
+O
+A
+B
+C
+g
+O
+A
+B
+a
+b+h
+a
+θmin
+h-b
+C
+
+--- Page 19 ---
+2.4 Range of Movement 33
+2.4.1.2 The Upper Limit: θmax
+If θmax does not exist, then the crank has no upper limit to its movement and it will
+be able to rotate through θ = π. Thus, cosθmax < −1, or
+(g2 +a2)−(h +b)2
+2ag < −1, (2.78)
+is the condition that this limit does not exist. This inequality simpliﬁes to
+(h +b)2 −(g +a)2 > 0, (2.79)
+which factors to become
+(h +b −g −a)(h +b +g +a) > 0,
+T3T4 > 0, (2.80)
+where
+T3 = h +b −g −a, and T4 = h +b +g +a. (2.81)
+The sum of the link lengthsT4 is always positive. Therefore, the condition that there
+is no upper limit to the rotation of the input crank is T3 > 0.
+2.4.1.3 Input Crank Types
+We can now identify four types of movement available to the input crank of a 4R
+linkage:
+1. A crank: T1T2 > 0 and T3 > 0, in which case neither θmin nor θmax exists, and
+the input crank can fully rotate.
+2. A 0-rocker: T1T2 > 0 and T3 < 0, for which θmax exists but not θmin, and the
+input crank rocks through θ = 0 between the values ±θmax.
+3. A π-rocker: T1T2 < 0 and T3 > 0, which means that θmin exists but not θmax, and
+the input crank rocks through θ = π between the values ±θmin.
+4. A rocker: T1T2 < 0 and T3 < 0, which means that both upper and lower limiting
+angles exist, and the crank cannot pass through either 0 or π. Instead, it rocks in
+one of two separate ranges: (i) θmin ≤θ ≤θmax, or (ii) −θmax ≤θ ≤−θmin.
+2.4.2 Limits on the Output Crank Angle
+The range of movement of the output crank can be analyzed in the same way. The
+limiting positions occur when the input crank OA and coupler AB become aligned,
+see Figure 2.9. The limits ψmin and ψmax are deﬁned by the equations
+
+--- Page 20 ---
+34 2 Analysis of Planar Linkages
+cosψmin = (h +a)2 −(g2 +b2)
+2bg , cosψmax = (h −a)2 −(g2 +b2)
+2bg . (2.82)
+Note that in this case ψ is the exterior angle, which changes the sign of the cosine
+term in the cosine law formula.
+Fig. 2.9 The angles ψmin and ψmax are the limits to the range of motion of the output link.
+Examining the existence of solutions to arccosine in (2.82), we ﬁnd that the con-
+dition for no lower limit ψmin is
+(h +a −g −b)(h +a +g +b) > 0,
+(−T2)(T4) > 0, (2.83)
+where T2 and T4 are the same parameters used above for the input crank. Because
+T4 is always greater than zero, the condition that there be no lower limit to the range
+of movement of the output crank is T2 < 0.
+Similarly, in order for there to be no upper limit ψmax, we have
+(g −b −h −a)(g −b +h −a) > 0,
+(−T3)(T1) > 0. (2.84)
+Again, the parameters T3 and T1 are the same as were deﬁned above and there is no
+upper limit to the movement of the output crank when T1T3 < 0.
+2.4.2.1 Output Crank Types
+We can now identify four types of movement available to the output crank of a
+four-bar linkage:
+g
+θ min
+O
+A
+B
+C
+g
+θ
+O
+A
+C
+max
+b B
+a+h
+h-a
+b
+
+--- Page 21 ---
+2.4 Range of Movement 35
+1. A rocker: T1T3 > 0 and T2 > 0. In this case both limits ψmin and ψmax exist, and
+the crank cannot not pass through either 0 or π. Instead, it rocks in one of two
+separate ranges: (i) ψmin ≤ψ ≤ψmax, or (ii) −ψmax ≤ψ ≤−ψmin.
+2. A 0-rocker: T1T3 < 0 and T2 > 0, for which ψmax exists but not ψmin, and the
+output crank rocks through ψ = 0 between the values ±ψmax.
+3. A π-rocker: T1T3 > 0 and T2 < 0, which means that ψmin exists but not ψmax,
+and the output crank rocks through ψ = π between the values ±ψmin.
+4. A crank: T1T3 < 0 and T2 < 0. Then neither limit ψmin nor ψmax exists, and the
+output crank can fully rotate.
+2.4.3 The Classiﬁcation of Planar 4R Linkages
+A planar 4R linkage is classiﬁed by the movement of its input and output cranks. For
+example, a crank-rocker has a fully rotatable input link, and an output link that rocks
+between two limits. On the other hand a rocker-crank has an input link that rocks
+and an output link that fully rotates. The combinations of positive and negative signs
+for the parametersT
+1, T2, T3 identify eight basic linkage types. These parameters can
+take zero values as well, in which case the linkage folds.
+2.4.3.1 The Eight Basic Types
+The link lengths a, b, g, and h for a 4R chain deﬁne the three parameters T1, T2, and
+T3. Our classiﬁcation scheme requires only the signs of these parameters, therefore
+we assemble the array (sgnT1,sgnT2,sgnT3). The eight possible arrays identify the
+eight basic types of 4R linkages.
+We separate the linkage types into two general classes depending upon the sign
+of the product T1T2T3. If T1T2T3 > 0 then the linkage is called Grashof ; otherwise,
+it is called nonGrashof. There are four Grashof and four non-Grashof linkage types.
+We consider the Grashof cases ﬁrst:
+1. (+,+,+): Because T1T2 > 0 and T3 > 0 the input link can fully rotate. Similarly,
+because T1T3 > 0 and T2 > 0 the output link is a rocker with two output ranges.
+This linkage is a crank-rocker.
+2. (+,−,−): With T1T2 < 0 and T3 < 0 the input is a rocker, and withT1T3 < 0 and
+T2 < 0 the output is a crank. This deﬁnes the rocker-crank linkage.
+3. (−,−,+): In this case, T1T2 > 0 and T3 > 0, so the input link is a crank, and
+T1T3 < 0 and T2 < 0, which means that the output link is also a crank. This
+deﬁnes the double-crank linkage.
+4. (−,+,−): T1T2 < 0 and T3 < 0 deﬁne the input as a rocker, and with T1T3 > 0
+and T2 > 0 the output is also a rocker. This deﬁnes the Grashof double-rocker
+linkage type.
+Now consider the nonGrashof cases:
+
+--- Page 22 ---
+36 2 Analysis of Planar Linkages
+5. (−,−,−): Here we have T1T2 > 0 and T3 < 0, and the input link rocks through
+the value θ = 0. With T1T3 > 0 and T2 < 0, the output link rocks through the
+value ψ = 0. This type of linkage is termed a 00 double-rocker.
+6. (+,+,−): In this case, the input rocks through θ = 0. However, with T1T3 < 0
+and T2 > 0 the output rocks through ψ = π. This linkage is called a 0π double-
+rocker.
+7. (+,−,+): With T1T2 > 0 and T3 > 0 the input link rocks through π, and because
+T1T3 < 0 and T2 < 0 the output link rocks through 0. This is theπ0 double-rocker.
+8. (−,+,+): Finally, the input again rocks through π, as does the output, deﬁning
+the ππ double-rocker.
+The parameters associated with these linkages are listed in Table 2.1.
+Table 2.1 Basic Planar 4R Linkage types
+Linkage type T1 T2 T3
+1 Crank-rocker + + +
+2 Rocker-crank + − −
+3 Double-crank − − +
+4 Grashof double-rocker − + −
+5 00 double-rocker − − −
+6 0π double-rocker + + −
+7 π0 double-rocker + − +
+8 ππ double-rocker − + +
+2.4.4 Grashof Linkages
+If a linkage is to be used in a continuous operation, the input crank should be able
+to fully rotate so that it can be driven by a rotating power source. A study of the
+conﬁgurations of a 4R linkage lead Grashof to conclude that, for a shortest link of
+length s and longest link of length l, the shortest link will fully rotate if
+s +l < p +q, (2.85)
+where p and q are the lengths of the other two links. This is known as Grashof’s
+criterion and linkages that have a rotatable crank are called Grashof linkages.
+There are four linkage types that satisfy Grashof’s criterion. If the input or output
+link is the shortest, then we have the crank-rocker or the rocker-crank, respectively.
+If the ground link is the shortest, then both the input and output links will fully rotate
+relative to the ground; this is the double-crank linkage. Finally, if the ﬂoating link
+is the shortest link, then the input and output links are rockers; this is the Grashof
+double-rocker. By examining Table 2.1, it is easy to see that these four linkage types
+satisfy the condition
+
+--- Page 23 ---
+2.4 Range of Movement 37
+T1T2T3 > 0, (2.86)
+which can be shown to be equivalent to Grashof’s criterion.
+The rockers of each of the Grashof linkage types are distinguished by the fact
+that both upper and lower limits exist. The means that they have two distinct angular
+ranges of movement, one in the upper half plane and one in the lower relative to the
+ﬁxed link. If the linkage is assembled so that the rocker is in one angular range,
+then it cannot reach the other range without disassembly. Thus, Grashof linkages
+have two distinct sets of conﬁgurations called assemblies. The linkage can move
+between the conﬁgurations in only one of these assemblies and cannot reach the
+others.
+2.4.5 Folding Linkages
+If any one of the parameters T1, T2, or T3 has the value zero, then the linkage can
+take a conﬁguration in which all four joints lie on a line. The linkage is said to fold.
+If we consider the positive, negative, and zero values for the array (T1,T2,T3),
+then we ﬁnd that there are 27 types of planar 4R linkages, 19 of which fold. Fur-
+thermore, the number of parameters Ti that are zero deﬁnes the number of folding
+conﬁgurations of the linkage. It is often useful to have a linkage fold. However,
+while it is easy to drive the linkage into a folded conﬁguration, it may be difﬁcult to
+get it out of the this conﬁguration.
+Consider, for example, the parallelogram linkage deﬁned by a = b and g = h.
+This linkage has T
+2 = 0 and T3 = 0. Thus, it has two folding conﬁgurations, which
+occur for the input crank angles of θ = 0,π. Another doubly folding example is the
+kite linkage with g = a and h = b, which yields T1 = 0 and T2 = 0. This linkage
+folds when θ = 0, at which point the output link can freely rotate because the joints
+A and C coincide; the second folding position occurs when ψ = π.
+There is one triply folding case, the rhombus linkage, for which a = b = g = h.
+This linkage is a combination of the parallelogram and kite linkages. It folds at the
+two conﬁgurations θ = 0,π like the parallelogram. When θ = 0 the output link is
+free to rotate because the joints A and C coincide as with the kite linkage. The
+third folding conﬁguration occurs when ψ = π. The linkage can also reach this
+conﬁguration with θ = π, in which case it is the input crank that can freely rotate
+because O and B coincide.
+Linkages that have small values for any of the parameters Ti are termed near
+folding. These linkages have conﬁgurations in which the joints can lie close to a
+line. In nearly folded conﬁgurations the transmission angle of the linkage is near 0
+or π, and the output crank is difﬁcult to move using the input crank.
+
+--- Page 24 ---
+38 2 Analysis of Planar Linkages
+2.5 Velocity Analysis
+The velocity analysis of a linkage determines the angular rates of the various joint
+parameters as a function of the conﬁguration of the linkage and the input joint rate.
+This analysis can be used in combination with the principle of virtual work to pro-
+vide an important technique for determining the force and torque transmission prop-
+erties of these systems.
+2.5.1 Velocity of a Point in a Moving Link
+Points x ﬁxed in a moving linkM trace trajectories X(t) = [T (t)]x in the ﬁxed frame
+F. The velocity of a point along its trajectory is the time derivative of its coordinate
+vector, that is, V = ˙X. Of importance to us is the relationship between this velocity
+and the movement of the linkage as a whole.
+The usual convention in velocity calculations is to focus on the trajectories in F
+rather than coordinates in M of the moving point. For this reason, the trajectory of
+the of a segment AB ﬁxed in M is deﬁned by coordinates A and B measured in F.
+A general trajectory X of M has the property that r = |X −A|and α = ∠BAX are
+constants, because the three points A, B, and X are part of the same link.
+Let the orientation of M be deﬁned by the angle θ of AB measured relative to the
+x-axis of F. Then we can determine the relative position vector X −A as
+X −A =
+{r cos(θ +α)
+r sin(θ +α)
+}
+. (2.87)
+The time derivative of this vector yields
+V = ˙X = ˙A + ˙θ[J](X −A), where [J] =
+[
+0 −1
+1 0
+]
+. (2.88)
+This deﬁnes the velocity of a general point in terms of the velocity of a reference
+point and the rate of rotation of the body. We now show that ˙θ[J] is directly related
+to the angular velocity of this link.
+Each body in a planar linkage rotates about an axis that is perpendicular to the
+plane of movement. Denote this direction by ⃗k = (0,0,1)T . Then the usual vector
+cross product yields ⃗k ×⃗ı=⃗ and⃗k ×⃗ = −⃗ı, where⃗ıand ⃗ are unit vectors along
+the x- and y-axes of the ﬁxed frame F. We now deﬁne the angular velocity of the
+link AB to be the vector
+wAB = ˙θ⃗k. (2.89)
+where θ deﬁnes the orientation of AB in F. Notice that for any vectory, the angular
+velocity vector satisﬁes the identity
+wAB ×y = ˙θ[J]y. (2.90)
+
+--- Page 25 ---
+2.6 Velocity Analysis of an RR Chain 39
+This allows us to write equation (2.88) for the velocity of a point in the form
+V = ˙A +wAB ×(X −A). (2.91)
+The angular velocity vector can be viewed as an operator that computes the compo-
+nent of velocity that arises from the rotation of the link.
+Notice that if the link AB simply rotates about A, then ˙A = 0, and we have
+V = wAB ×(X −A). (2.92)
+In this case, the velocity of a point X is directed 90◦to the line joining it to A.
+2.5.2 Instant Center
+It interesting to note that there is a point in every moving link that has zero velocity.
+This point I, known as the instant center, is found by setting (2.91) to zero, that is,
+˙A +wAB ×(I −A) =0. (2.93)
+Take the cross product by wAB and solve for I to obtain
+I −A = wAB ×˙A
+wAB ·wAB
+. (2.94)
+This calculation uses the vector identity a ×(b ×c) =b(a ·c)−c(a ·b).
+The geometric meaning of I is found by substituting ˙A from (2.93) into (2.91) to
+obtain
+V = wAB ×(X −I). (2.95)
+Compare this to (2.92) to see that the distribution of velocities in this link, at this
+instant, is the same as is generated by a rotation about the instant center I.
+2.6 Velocity Analysis of an RR Chain
+The kinematics equations of an open chain deﬁne the set of positions it can reach as
+a function of its joint parameters. If each of these parameters is given as a function
+of time, then we obtain a curve in its workspace that deﬁnes the trajectory of the
+end-link. The time derivative of the kinematics equations deﬁnes the velocity along
+this trajectory.
+The 3 ×3 transform [D] = [A,P] for planar open chains separate into a 2 ×2 ro-
+tation matrix [A] and a 2×1 translation vector P. The translation vector P is deﬁned
+by the position of reference point in the end-link. The orientationφ of this link is the
+sum of the relative rotation angles at each joint. Thus, the velocity of any trajectory
+
+--- Page 26 ---
+40 2 Analysis of Planar Linkages
+X(t) of any point in the end-link is given by the equation
+V = ˙P +wM ×(X −P), (2.96)
+where wM is, the angular velocity vector of the end-link, is the sum of the angular
+velocities at each joint.
+2.6.1 The Jacobian
+For an RR chain let θ1(t) and θ2(t) be the rotation angles at each joint. We can
+compute
+w = (˙θ1 + ˙θ2)⃗k and ˙P =
+{
+−a ˙θ1 sinθ1
+a ˙θ1 cosθ1
+}
+. (2.97)
+These two equations are considered to deﬁne the velocity of the end-link as a whole,
+as opposed the velocity of trajectories traced by its points. The ˙P and ˙φ are assem-
+bled into a vector and (2.97) is written in the matrix form
+{˙P
+˙φ
+}
+=
+
+
+−asinθ1 0
+acosθ1 0
+1 1
+
+
+{˙θ1
+˙θ2
+}
+(2.98)
+In robotics literature this 3×2 matrix is called the Jacobian of the RR chain. Given
+a desired velocity for the end effector, we can solve these equations to obtain the
+required joint rates ˙θ1 and ˙θ2.
+Another form of the Jacobian is obtained by considering the trajectory of a gen-
+eral point x in M given by
+X(t) = [D(t)]x = [Z(θ1)][X(a)][Z(θ2)]x. (2.99)
+Compute the velocity V = ˙X then eliminate the M-frame coordinates using x =
+[D−1]X. The result is
+V = ˙X = [˙D][D−1]X. (2.100)
+The matrix [S] = [˙D][D−1] can be viewed as operating on a trajectory X(t) to com-
+pute its velocity V.
+For the RR chain, we use (2.11) and compute
+[S] =
+
+
+0 −˙θ1 −˙θ2 a ˙θ2 sinθ1
+˙θ1 + ˙θ2 0 −a ˙θ2 cosθ1
+0 0 0
+
+. (2.101)
+The upper left 2 ×2 matrix is ( ˙θ1 + ˙θ2)[J], which is the matrix that we have asso-
+ciated with the angular velocity of the end-link. The third column is the velocity of
+the trajectory Y(t) that passes through the origin ofF. Assemble this into the matrix
+
+--- Page 27 ---
+2.7 Velocity Analysis of a Slider-Crank 41
+equation
+{v
+˙φ
+}
+=
+
+
+0 asinθ1
+0 −acosθ1
+1 1
+
+
+{˙θ1
+˙θ2
+}
+. (2.102)
+This alternative form for the Jacobian is the focus of our study in the last chapter of
+this text.
+2.6.2 The Centrode
+We now compute the instant center for the instantaneous movement of the end-link
+of the RR chain. From (2.94) we have
+I = P + wM ×˙P
+wM ·wM
+. (2.103)
+Simplify this equation and introduce the vector⃗e = (cosθ1,sinθ1)T to obtain
+I = a
+( ˙θ2
+˙θ1 + ˙θ2
+)
+⃗e. (2.104)
+This shows that the instant center lies on the line through the two revolute joints of
+the RR chain.
+Equation (2.103) deﬁnes an instant center for every conﬁguration of the chain.
+If the joint angles θ1 and θ2 are related by a function f (θ1,θ2) =0, then the set of
+instant centers forms a curve in F known as the centrode.
+Other planar open chains can be analyzed in the same way to relate the velocity
+of the end-link to the rate of change of the conﬁguration parameters.
+2.7 Velocity Analysis of a Slider-Crank
+If the input crank to an RRRP linkage is driven at the rate ˙θ, then we can determine
+the rotation rate ˙φ of the coupler link, and the linear velocity ˙s of the slider using
+the velocity loop equations . These equations are obtained by computing the time
+derivative of the loop equations (2.32)
+˙θ
+{
+−r sinθ
+r cosθ
+}
++( ˙θ + ˙φ)
+{
+−Lsin(θ +φ)
+Lcos(θ +φ)
+}
+= ˙s
+{
+0
+1
+}
+. (2.105)
+Rearrange the terms so this equation takes the form
+[0 Lsin(θ +φ)
+1 −Lcos(θ +φ)
+]{˙s
+˙φ
+}
+= ˙θ
+{−r sinθ −Lsin(θ +φ)
+r cosθ +Lcos(θ +φ)
+}
+. (2.106)
+
+--- Page 28 ---
+42 2 Analysis of Planar Linkages
+Notice that to solve these equations we must have previously determined the param-
+eters φ and s. Then Cramer’s rule yields
+˙s
+˙θ = r sinφ
+sin(θ +φ) and
+˙φ
+˙θ = r sinθ +Lsin(θ +φ)
+Lsin(θ +φ) . (2.107)
+It is useful to note that we can obtain the slider velocity directly from the con-
+straint (2.23) and avoid the need to determine φ or ˙φ. To do this, simply compute
+the time derivative of this constraint equation to obtain
+˙s(s −r sinθ)−˙θr(scosθ −esinθ) =0. (2.108)
+The result is
+˙s
+˙θ = r(scosθ −esinθ)
+s −r sinθ . (2.109)
+This equation is used to determine the mechanical advantage of this linkage.
+2.7.1 Mechanical Advantage
+The ratio of the static force generated at the slider to the input torque applied at
+the crank is known as mechanical advantage. We compute this using the principle
+of virtual work which states that the work done by input forces and torques must
+equal the work done by output forces and torques during a virtual displacement.
+For the RRRP linkage, we assume the weight of each link and the friction in each
+joint are negligible compared to the applied forces and torques. In which case, the
+principle of virtual work requires that the work done by the torque applied to the
+input crank must equal the work done by the slider on an external load during a
+virtual displacement.
+A virtual displacement is a small movement of the system over which the applied
+forces and torques are considered to be constant. This small movement is easily
+deﬁned in terms of the velocities of each link. The angular velocity of the input crank
+˙θ acting over a small increment of time δt generates the virtual crank displacement
+δθ = ˙θδ t. Similarly, a virtual displacement of the slider is δs = ˙sδt.
+Let the input torque to the crank be T = F
+in p⃗k, where Fin is a force applied
+perpendicular to the link at a distancep along it. Then the virtual work of this torque
+is Fin pδθ . The virtual work done by the slider as it applies a force F = Fout⃗ along
+its direction of movement is Fδs. Thus, we have
+Fout ˙sδt = Fin p ˙θδ t. (2.110)
+Because the virtual time increment δt is not zero, we can equate coefﬁcients to
+obtain the relationship
+
+--- Page 29 ---
+2.8 Velocity Analysis of a 4R Chain 43
+Fout
+Fin
+=
+˙θ
+˙s = p(s −r sinθ)
+r(scosθ −esinθ). (2.111)
+This ratio deﬁnes the mechanical advantage of the slider-crank. Notice that it de-
+pends on the conﬁguration of the linkage, as well as the ratio p/r, which deﬁnes the
+point of application of the input force Fin.
+This formula has an interesting geometric interpretation. LetI be the intersection
+of the line through the crank OA and the line y = s that locates the slider. We now
+determine the distances |IA|and |IB|from the geometry of the linkage and obtain
+|IA|= r − s
+sinθ and |IB|= e −
+( s
+sinθ
+)
+cosθ. (2.112)
+Thus, we ﬁnd that the mechanical advantage for the slider-crank can be written as
+Fout
+Fin
+= p|IA|
+r|IB|. (2.113)
+Decreasing the distance |IB|increases the mechanical advantage. In fact, as tan θ
+approaches s/e, the extreme position of the slider, the distance|IB|approaches zero,
+and the mechanical advantage becomes very large.
+2.8 Velocity Analysis of a 4R Chain
+The velocity loop equations of the 4R chain are obtained by computing the time
+derivative of the loop equations (2.55) to obtain
+˙θ
+{−asinθ
+acosθ
+}
++( ˙θ + ˙φ)
+{−hsin(θ +φ)
+hcos(θ +φ)
+}
+= ˙ψ
+{−bsinψ
+bcosψ
+}
+. (2.114)
+For a given input angular velocity ˙θ, these equations are linear in the angular ve-
+locities ˙φ and ˙ψ of the coupler and output link. Notice that we must have already
+determined the angles φ and ψ. Assemble these equations into the matrix equation
+[−bsinψ hsin(θ +φ)
+bcosψ −hcos(θ +φ)
+]{˙ψ
+˙φ
+}
+= ˙θ
+{−asinθ −hsin(θ +φ)
+acosθ +hcos(θ +φ)
+}
+. (2.115)
+Solve this equation to determine the velocity ratios
+˙ψ
+˙θ = asinφ
+bsin(θ +φ −ψ) and
+˙φ
+˙θ = asin(ψ −θ)−hsin(θ +φ −ψ)
+hsin(θ +φ −ψ) . (2.116)
+
+--- Page 30 ---
+44 2 Analysis of Planar Linkages
+2.8.1 Output Velocity Ratio
+We now examine the velocity properties of the 4R chain in terms of the angular ve-
+locity vectors wO = ˙θ⃗k and wC = ˙ψ⃗k, where⃗ı,⃗ , and⃗k are the unit vectors along the
+coordinate axes of a three dimensional frame. The time derivative of the constraint
+equation (B −A)·(B −A) =b
+2 yields
+( ˙B −˙A)·(B −A) =0. (2.117)
+Since ˙B = wC ×(B −C) and ˙A = wO ×A, this can be written as
+(˙ψ⃗k ×(B −C)−˙θ⃗k ×A
+)
+·(B −A) =0. (2.118)
+Interchange the dot and cross operations and expand this equation to obtain
+˙ψ⃗k ·B ×(B −A)−˙θ⃗k ·A ×(B −A)−˙ψ⃗k ·C ×(B −A) =0. (2.119)
+Notice that the cross products A ×(B −A) and B ×(B −A) are equal, and, in fact,
+any point on the line LAB: Y(t) =A+t(B−A) yields the same result. In particular,
+both A and B can be replaced by the point I = r⃗ı, which is the intersection of LAB
+with the x-axis. Since C = g⃗ı, this equation takes the form
+⃗k ·
+(˙ψ(r −g)−˙θr
+)
+⃗ı×(B −A) =0. (2.120)
+It is now easy to see that the output velocity ratio is given by
+˙ψ
+˙θ = −r
+g −r . (2.121)
+The distance r to the point I along the x-axis can be computed by ﬁnding the
+parameter t that satisﬁes the relation ⃗ ·(A + t(B −A)) =0. Substitute this into
+r =⃗ı·(A +t(B −A)) to obtain
+r = absin(θ −φ)
+bsinφ −asinθ . (2.122)
+Notice that the velocity ratio between the output and input links can be viewed as
+instantaneously equivalent to the speed ratio between two gears in contact at the
+instant center I that have the radii g −r and r respectively, see Figure 2.10.
+2.8.2 Coupler Velocity Ratio
+A similar relationship for the coupler velocity ratio is obtained by computing the
+velocity of B in the ﬁxed frame using vector operations. Combining this with the
+fact that ˙B ·(B −C) =0, we obtain a geometric representation of the velocity ratio.
+
+--- Page 31 ---
+2.8 Velocity Analysis of a 4R Chain 45
+O
+A
+B
+C
+!I
+"
+Fig. 2.10 The angular velocities of the input and output links are instantaneously equivalent to
+gears in contact at the instant center I.
+The coupler has the angular velocitywA = (˙φ + ˙θ)⃗k, so the velocity ofB is given
+by
+˙B = ˙A +wA ×(B −A). (2.123)
+Since ˙A = ˙θ⃗k ×A, this equation becomes
+˙B = ˙θ⃗k ×A +( ˙φ + ˙θ)⃗k ×(B −A) =˙θ⃗k ×B + ˙φ⃗k ×(B −A). (2.124)
+Substitute this into the condition ˙B ·(B −C) =0 to obtain
+(˙θ⃗k ×B + ˙φ⃗k ×(B −A)
+)
+·(B −C) =0. (2.125)
+Notice that B can be replaced by any point on the line LCB: Y(t) =B +t(B −C)
+because ⃗k ×t(B −C) ·(B −C) =0. In particular, consider the point J that is the
+intersection of LCB with the line LOA that joins O and A. Let ⃗e be the unit vector in
+the direction A, so A = a⃗e and J = r⃗e. Substitute this into (2.125) and obtain
+(˙θr + ˙φ(r −a)
+)⃗k ×⃗e ·(B −C) =0. (2.126)
+For this equation to be zero, the coupler velocity ratio must satisfy the relation
+
+--- Page 32 ---
+46 2 Analysis of Planar Linkages
+˙φ
+˙θ = r
+a −r . (2.127)
+Thus, the angular velocity ratio between the coupler and input link is instantaneously
+equivalent to the speed ratio of two gears in contact at J with radii of a −r and a,
+respectively, Figure 2.11.
+O
+A
+B
+C
+J
+!
+"
+Fig. 2.11 The angular velocities of the input and coupler links are instantaneously equivalent to
+gears in contact at the instant center J.
+The value of r deﬁning J along the line LOA is obtained by solving for t such
+that⃗e⊥·(B +t(B −C)) =0. Note that ⃗e⊥= (−sinθ,cosθ)T is the unit vector per-
+pendicular to⃗e. Then, substitute the result into the relation r =⃗e ·(B +t(B −A)) to
+compute r.
+2.8.3 Kennedy’s Theorem
+We have seen that the output velocity ratio of a 4R linkage can be viewed as gen-
+erated instantaneously by a pair of gears connecting the input and output links. The
+points in contact along the pitch circles of the two gears, Q on the input link and P
+on the output link, must have the same velocity, that is, ˙Q = ˙P. The point in F that
+coincides with these two points is the instant center I. We now show that an instant
+center with this property exists for any two links moving relative to a ground frame
+F.
+
+--- Page 33 ---
+2.8 Velocity Analysis of a 4R Chain 47
+Consider the movement of two independent links and let their instant centers in
+F be O and C. We now ask whether there are points, Q on one and P on the other,
+that have both the same coordinates I = (X,Y )T in F and the same velocity.
+Let g = |C −O|be the distance between the instant centers, and let Q −O =
+(r cosθ,r sinθ)T and P −C = (g +k cosψ,k sinψ)T be the relative vectors locating
+Q and P. The velocities of these points are
+˙Q = ˙θ
+{
+−r sinθ
+r cosθ
+}
+, ˙P = ˙ψ
+{
+−k sinψ
+k cosψ
+}
+. (2.128)
+If Q = P = (X,Y )T , then Y = r sinθ = k sinψ, and to have the same velocity
+˙P −˙Q =
+{
+−˙ψY + ˙θY
+˙ψ(r cosθ −g)−˙θr cosθ
+}
+=
+{
+0
+0
+}
+. (2.129)
+The ﬁrst component of this equation shows thatY = 0. Set θ = ψ = 0 and let r and k
+take positive and negative values so thatX = r = k +g. From the second component
+of (2.129) we ﬁnd that r must satisfy the equation
+˙ψ(r −g)−˙θr = 0,
+that is,
+˙ψ
+˙θ = r
+r −g. (2.130)
+Thus, I = (r,0)T is the desired instant center. The fact that the point I must lie on
+the line joining the O and C is known as Kennedy’s theorem.
+2.8.4 Mechanical Advantage in a 4R Linkage
+The relationship between an applied input torque and the torque generated at the
+output crank of a 4R linkage is easily determined by considering the equivalent
+set of gears and the principle of virtual work. From the velocity ratios determined
+above, we have the virtual displacement of the output crank deﬁned as
+δψ = ˙ψδ t = ˙θ r
+r −gδt, (2.131)
+where r is the distance to the instant center I from the ﬁxed pivot O of the drive
+crank.
+The virtual work of the input torque TO = TO⃗k is TOδθ . Similarly, the virtual
+work of the output torque, TC = TC⃗k, is TCδψ . From the principle of virtual work
+we obtain
+TOδθ = TCδψ , or TO ˙θδ t = TC
+r
+r −g
+˙θδ t. (2.132)
+
+--- Page 34 ---
+48 2 Analysis of Planar Linkages
+The virtual time increment δt is nonzero, so we equate coefﬁcients to obtain the
+relationship
+TC
+TO
+= r −g
+r . (2.133)
+Note that the distance r has a sign associated with its direction along thex-axis from
+O. The conclusion is that the torque ratio of a linkage is the inverse of its velocity
+ratio, which is exactly the torque ratio of the equivalent gear train. Notice that the
+value of this torque ratio changes with the conﬁguration of the linkage.
+Let the input torque be generated by acouple, which is a pair of forces in opposite
+directions but of equal magnitude FO separated by the perpendicular distance a,
+so MO = aFO. Similarly, let the output torque result in a couple with magnitude
+MC = bFC. Then, the ratio of output force FC to input force FO is obtained from
+(2.133) as
+FC
+FO
+= a
+b
+(r −g
+r
+)
+. (2.134)
+This ratio is called the mechanical advantage of the linkage. For a given set of
+dimensions a and b the mechanical advantage is directly proportional to the velocity
+ratio of the input and output links.
+2.9 Analysis of Multiloop Planar Linkages
+The study of mulitiloop planar linkages is covered in detail in a later chapter. Here
+we summarize how to use Dixon’s determinant to solve for the conﬁguration angles
+that deﬁne the assemblies of the linkage (Wampler [148]).
+2.9.1 Complex Loop Equations
+Given an input angleθ0, the vector equations for each independent loopL of a planar
+linkage can be written as
+Fk : αk +
+2L
+∑
+j=1
+βk j cosθj +
+2L
+∑
+j=1
+γk j sinθj = 0, k = 1,..., 2L. (2.135)
+Here, αk, βk j, and γk j are real quantities that depend on the dimensions of the links,
+and θj denotes the rotation angle of link j. Because the input angle θ0 is known,
+we absorb it into the coefﬁcients of αk, and these 2L equations are solved for 2 L
+conﬁguration angles θj.
+Combine the loop equations (2.135) into a single complex equation by using
+complex vectors x = x +iy, where i2 = −1, rather than vectors x = (x,y). Introduce
+the complex vector Θj = eiθj , j = 1,..., 2L, so the 2L loop equations become
+
+--- Page 35 ---
+2.9 Analysis of Multiloop Planar Linkages 49
+Ck : ck0 +
+2L
+∑
+j=1
+ck, jΘj = 0, k = 1,..., L. (2.136)
+We obtain a second set of loop equations by computing the complex conjugates
+C⋆
+k : c⋆
+k0 +
+2L
+∑
+j=1
+c⋆
+k, j
+Θ−1
+j = 0, k = 1,..., L. (2.137)
+These equations combine to provide a set of 2L complex equations for 2L complex
+conﬁguration angles Θj that are solved using the Dixon determinant.
+2.9.2 The Dixon Determinant
+Suppress the joint angle Θ2L, so we have 2L complex equations in 2L −1 variables
+Θj, labeled Ck and C⋆
+k . These equations form the ﬁrst row of the Dixon determinant.
+The second row consists of the same functions but with the variable θ1 replaced by
+α1. Similarly, row three has Θ1 and Θ2 replaced by α1 and α2. This continues for
+the remaining rows in the determinant, so that we obtain
+∆(Θ1,Θ2,..., Θ2L−1)
+=
+⏐⏐
+⏐
+⏐
+⏐
+⏐⏐
+⏐
+⏐
+C
+1(Θ1,Θ2,..., Θ2L−1) ... C⋆
+L (Θ1,Θ2,..., Θ2L−1)
+C1(α1,Θ2,..., Θ2L−1) ... C⋆
+L (α1,Θ2,..., Θ2L−1)
+..
+.
+C
+1(α1,α2,..., α2L−1) ... C⋆
+L (α1,α2,..., α2L−1)
+⏐⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+. (2.138)
+his determinant is zero when Θ
+1,Θ2,..., Θ2L−1 satisfy the loop equations, because
+the elements in the ﬁrst row become zero.
+Insight into the structure of the determinant ∆ is obtained by noting that the
+complex equations for each loop k have the form
+Ck : ck0 +ck,2Lx +
+2L−1
+∑
+j=1
+ck, jΘj and C⋆
+k : c⋆
+k0 +c⋆
+k,2L
+x−1 +
+2L−1
+∑
+j=1
+c⋆
+k, j
+Θ−1
+j , (2.139)
+where x denotes the suppressed variable Θ2L. These equations maintain this form
+when αj replaces Θj. Thus, we can row reduce ∆ by subtracting the second row
+from the ﬁrst row, then the third from the second, the fourth from the third, and so
+on to obtain
+
+--- Page 36 ---
+50 2 Analysis of Planar Linkages
+⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐⏐⏐
+⏐
+c1,1(Θ1 −α1) c∗
+1,1(Θ−1
+1 −α−1
+1 ) ... c∗
+L,1
+(Θ−1
+1 −α−1
+1 )
+c1,2(Θ2 −α2) c∗
+1,2
+(Θ−1
+2 −α−1
+2 ) ... c∗
+L,2
+(Θ−1
+2 −α−1
+2 )
+..
+.
+.
+..
+...
+c
+1,2L−1(Θ2L−1 −α2L−1) c∗
+1,2L−1(Θ−1
+2L−1 −α−1
+2L−1) ... c∗
+L,2L−1
+(Θ−1
+2L−1 −α−1
+2L−1)
+C1(α1,α2,..., α2L−1) C⋆
+1 (α1,α2,..., α2L−1) ... C⋆
+L (α1,α2,..., α2L−1)
+⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐⏐⏐
+⏐
+. (2.140)
+Because Θ
+j −αj = −Θjαj(Θ−1
+j −α−1
+j ), we can divide out these extraneous roots
+(Θ−1
+j −α−1
+j ) to deﬁne the determinant
+δ = ∆(Θ1,Θ2,..., Θ2L−1)
+∏2L−1
+k=1 (Θ−1
+k −α−1
+k ) , (2.141)
+that is,
+δ =
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+−c1,1Θ1α1 c∗
+1,1 ... c∗
+L,1
+−c1,2Θ2α2 c∗
+1,2
+... c∗
+L,2
+..
+.
+−c
+1,2L−1Θ2L−1α2L−1 c∗
+1,2L−1 ... c∗
+L,2L−1
+C1(α1,α2,..., α2L−1) C⋆
+1 (α1,α2,..., α2L−1) ... C⋆
+L (α1,α2,..., α2L−1)
+⏐⏐
+⏐
+⏐
+⏐
+⏐
+⏐⏐⏐
+⏐
+. (2.142)
+This determinant is a polynomial of the form
+δ = a
+T [W]t = 0, (2.143)
+where a = (a1,a2)T contains the monomials formed from αj, t = (t1,t2)T are
+formed from monomials of Θj, and [W] is the 2L ×2L matrix is given by
+[W] =
+[D1x +D2 AT
+A s( D∗
+1x−1 +D∗
+2
+)
+]
+, (2.144)
+where D1 and D2 are diagonal matrices and the elements of A obey the relations ai j
+= sa⋆
+ji and s = (−1)L−1.
+The vectors of monomialsa = (a1,a2)T and t = (t1,t2)T in (2.143) are generated
+as follows. Starting with a, ﬁnd all combinations
+(2L−1
+L−1
+)
+of distinct variables of
+degree L −1 from the set (α1,α2,..., α2L−1)T . Assemble these into the vector a1,
+and then forma2 using the complement of degreeL corresponding to each monomial
+in a1. The vector t is obtained in the same way.
+ValuesΘj that satisfy the loop equations (2.136) and (2.137) also yieldδ = 0 for
+arbitrary values of the auxiliary variables αj. Thus, solutions for these loop equa-
+tions must also satisfy the matrix equation
+[W]t = 0. (2.145)
+This equation has nonzero solutions only if det[W] =0. Expand this determinant to
+obtain a polynomial in x = Θ2L.
+The structure of [W] yields
+
+--- Page 37 ---
+2.10 Summary 51
+[W]t =
+[(
+D1 0
+A −D∗
+2
+)
+x −
+(
+−D2 −AT
+0 D∗
+1
+)]
+t = [Mx −N]t = 0. (2.146)
+Notice that the values of x that satisfy det[W] =0 are the roots of the characteristic
+polynomial p(x) =det(Mx −N) of the generalized eigenvalue problem
+Nt = xMt. (2.147)
+Each value of x = Θ2L has an associated eigenvector t, which yields the values of
+the remaining joint angles Θj, j = 1,2,..., 2L −1.
+2.9.3 Tangent Sorting
+For each value of the input angle Θ0, the solution of the Dixon determinant yields
+multiple roots for the conﬁguration angles ⃗Θ = (Θ1,..., Θ2L). Each root deﬁnes one
+way that the linkage can be assembled. For example, a six-bar linkage can have as
+many as six values for Θj, or six assemblies, for each input angle. An eight-bar
+linkage can have as many as 20 assemblies. Presented here is a way to sort these
+roots to deﬁne these assemblies.
+Assume that for thekth value of the input angleΘ
+0 we calculate the conﬁguration
+angles ⃗Θk
+i ,i = 1,..., m that deﬁne m assemblies of the linkage. When we increment
+Θ0 and solve the loop equations, we to obtain ⃗Θk+1
+i , and our goal is to sort these
+roots so to match those of ⃗Θk
+i .
+Use Newton’s method to approximate the loop equations by computing the Jaco-
+bian [∇C], in order to obtain
+[∇C(⃗Θk
+i )](⃗Ψ −⃗Θk
+i ) =0, (2.148)
+where ⃗Ψ is an approximation to ⃗Θk+1
+i in the assembly that we seek. Solve these
+equations to obtain ⃗Ψ, and select from the available roots⃗Θk+1
+i the one that is closest
+to ⃗Ψ, in order to match the assemblies.
+The conﬁgurations traced by one assembly of a multiloop linkage is called a
+circuit. The solution of (2.148) identiﬁes a value Ψ on the tangent to the ith circuit
+through ⃗Θk
+i . This allows rapid and exact calculation of the conﬁguration angles for
+each assembly of a multiloop planar linkage for a range of values of the input angle.
+2.10 Summary
+This chapter presented the position and velocity analysis of planar open chains and
+the closed chain slider-crank and four-bar linkages. Conditions on the existence of
+solutions to the input-output equations for the closed chains provide a classiﬁca-
+
+--- Page 38 ---
+52 2 Analysis of Planar Linkages
+tion scheme for these devices based on the range of movement of their cranks. The
+velocity analysis of these systems lead to the introduction of instant centers and
+Kennedy’s theorem, which can be used to compute the mechanical advantage of the
+linkage. The position analysis of multiloop planar linkages using complex number
+coordinates and the Dixon determinant elimination method were also discussed.
+2.11 References
+The position and velocity analysis of planar open chains follows the approach used
+in robotics as found in Craig [15] and Paul [92]. The analysis of planar linkages
+including the study of accelerations and dynamic forces can be found in many text-
+books. See, for example, Waldron and Kinzel [144], Erdman and Sandor [30], Ma-
+bie and Reinholtz [70], Mallik et al. [71], and Shigley and Uicker [114]. For fur-
+ther study of the dynamics of these systems see Krishnaprasad and Yang [58] and
+Sreenath et al. [125]. The strategy used to classify planar slider-crank and 4R link-
+ages follows Murray and Larochelle [87]. The closed form kinematic analysis of
+planar multiloop mechanism was presented by Wampler [148]. Also see Nielsen
+and Roth [90], and Wampler [147].
+Exercises
+1. Consider the PRRP elliptic trammel formed from two PR chains connected so
+that the directions of the two sliders are at right angles in the ground link. Derive
+the coupler angle φ as a function of the input slider translation s and show that a
+general coupler curve is an ellipse.
+2. Oldham’s couplingis an RPPR linkage with the directions of the two sliders ori-
+ented at a right angle to form the coupler link. Analyze this linkage to determine
+the output crank angle ψ as a function of the input angle θ.
+3. The Scotch yoke mechanism is an RRPP linkage with the ways of the sliders at
+right angles. Analyze this linkage to determine the output slide s as a function of
+the input θ.
+4. Derive the algebraic equation of the coupler curve of an RRRP linkage and show
+that it is a quartic curve.
+5. Analyze (i) Watt’s linkage, (ii) Robert’s linkage, (iii) Chebyshev’s linkage, and
+determine the coupler angle φ as a function of the input crank angle θ. Generate
+the coupler curve of the point that traces an approximately straight line.
+6. Derive the algebraic form of the 4R coupler curve and show that its highest de-
+gree terms are (x2 + y2)3, and that those of ﬁfth and fourth degree contain the
+factors (x2 + y2)2 and x2 + y2, respectively. These features identify this curve to
+as a tricircular sextic.
+
+--- Page 39 ---
+2.11 References 53
+7. Select a coupler point X on a 4R linkage OABC. Construct the triangle △OCY
+that is similar to the coupler triangle △ABX. Show that the coupler curve traced
+by X has a double point at its intersections with the circle circumscribing△OCY.
+8. Show that the centrode for an RR chain becomes a circle when ˙φ = µ ˙θ and
+µ is constant. Because this curve lies in the ﬁxed frame F it is called the ﬁxed
+centrode.
+9. Transform the coordinates of the centrode of an RR chain to the moving frame
+M by m = [T −1]I. This deﬁnes a curve known as themoving centrode. Show that
+for ˙φ = µ ˙θ and constant µ, the moving centrode is a circle.

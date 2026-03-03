@@ -1,0 +1,1454 @@
+--- Page 1 ---
+Chapter 5
+Algebraic Synthesis of Planar Chains
+In this chapter we examine the design of RR, PR and RP planar open chains that
+reach a speciﬁed set of task positions. A constraint equation is deﬁned for each
+chain that characterizes the set of positions that it can reach. This relationship is
+inverted by considering the positions as known and the ﬁxed and moving pivots of
+the chain as unknowns. The result is a set of design equations that are solved to
+design the chain.
+Two of these chains can be connected to the moving body to form a one-degree-
+generator which provides coordinated movement of the input and output links. Such
+a connection, however, limits the movement of the two chains and can interfere with
+the smooth travel of the workpiece through the task positions. Techniques used to
+avoid this problem are known as solution rectiﬁcation.
+5.1 A Single Revolute Joint
+A revolute, or hinged, joint provides pure rotation about a point. Given two positions
+of a rigid body,M1 and M2, we can locate a revolute joint such that it moves the body
+between the two positions. This is easily done by locating the hinged joint at the pole
+of the relative displacement.
+Let the two positions be speciﬁed by the transformations [T
+1] = [A(φ1),d1] and
+[T2] = [A(φ2),d2]. Then, locate the revolute joint G at the relative pole
+G = [I −A(φ12)]−1(d2 −A(φ12)d1), (5.1)
+where φ12 = φ2 −φ1. Notice that this joint does not exist if the relative displacement
+is a pure translation.
+The point g in the moving body M that is to be connected to the hinge G is
+the pole of the relative inverse displacement [T †
+12], which is obtained from (4.39) to
+deﬁne
+©
+J.M. McCarthy and G.S. Soh, Geometric Design of Linkages, Interdisciplinary Applied 93
+of-freedom planar four-bar linkage. This closed chain can be used as a function
+Mathematics 11, DOI 10.1007/978-1-4419-7892-9_5,
+  Springer Science+Business Media, LLC 2011
+
+--- Page 2 ---
+94 5 Algebraic Synthesis of Planar Chains
+g = −[A2 −A1]−1(d2 −d1). (5.2)
+The locations of the pointG in F and g in M are uniquely deﬁned by the two task
+positions. In the following sections we show that we can design an RR chain that
+reaches as many as ﬁve task positions.
+5.2 The Geometry of RR Chains
+An RR chain consists of a ﬁxed revolute joint located at a point G = (x,y)T in F
+connected by a link to a moving revolute joint located atw in M. Let [T ] = [A,d] be
+a displacement that locates M. Then the point W in F that coincides with w is given
+by
+W = [A]w +d. (5.3)
+Clearly, W = (λ,µ)T must lie on a circle about the ﬁxed pivot G, that is,
+(W −G)·(W −G) = (λ −x)2 +( µ −y)2 = R2, (5.4)
+where R is the length of the link. This geometric constraint characterizes the RR
+chain.
+5.2.1 Perpendicular Bisectors
+Let n positions of the end-link of an RR chain be deﬁned by the transformations
+[Ti], i = 1,..., n. The coordinates Wi of the moving pivot must satisfy (5.4) for each
+position Mi, and we have the n equations
+(Wi −G)·(Wi −G) =|Wi|2 −2Wi ·G +|G|2 = R2, i = 1,..., n. (5.5)
+Subtract the ﬁrst equation from the others to cancel the terms|G|2 and R2. The result
+is
+(Wi −W1)·G −1
+2(|Wi|2 −|W1|2) =0, i = 2,..., n. (5.6)
+We now show that (5.6) deﬁnes the perpendicular bisector of the segment joining
+W1 to Wi. Rewrite the second term in this equation as
+Wi ·Wi −W1 ·W1 = (Wi +W1)·(Wi −W1). (5.7)
+Introduce the midpoint V1i = (Wi +W1)/2 and substitute this into (5.6) to obtain
+(Wi −W1)·(G −V1i) =0. (5.8)
+
+--- Page 3 ---
+5.2 The Geometry of RR Chains 95
+Thus, G −V1i is perpendicular to the vector Wi −W1 and passes through its mid-
+point, Figure 5.1. This is an algebraic expression of the fact that the perpendicular
+bisectors of all chords of a circle must pass through its center.
+The pole P1i of the relative displacement [T1i] of the end-link of the RR chain
+also lies on the perpendicular bisector of Wi −W1. This means that we can replace
+the vector G −V1i in (5.8) by G −P1i to obtain
+(Wi −W1)·(G −P1i) =0,i = 2,..., n. (5.9)
+P12
+G
+M2
+M1
+!12
+F
+W1
+W2
+!12
+ 2
+"12
+Fig. 5.1 The ﬁxed pivot G lies on the perpendicular bisector of the segmentW1W2 formed by two
+positions of the moving pivot.
+5.2.2 The Dyad Triangle
+The displacement of the end-link from M1 to Mi is the composite of a rotation of
+angle α1i about W1 followed by a rotation β1i about G. The result is a rotation by
+φ1i about the pole P1i. Thus, [T1i] is given by
+[T (φ1i,P1i)] = [T (β1i,G)][T (α1i,W1)]. (5.10)
+This equation can be obtained from the kinematics equations of the RR chain, see
+equation (E.4). The composite pole theorem connects the geometry of the triangle
+△W
+1GP1i, called the dyad triangle, and the rotation angles α1i, β1i, and φ1i.
+Expand (5.10) using the notation of complex vectors to obtain
+eiφ1i = ei(β1i+α1i),
+(1 −eiφ1i )P1i = (1 −eiβ1i )G +eiβ1i (1 −eiα1i )W1. (5.11)
+
+--- Page 4 ---
+96 5 Algebraic Synthesis of Planar Chains
+The ﬁrst equation shows that φ1i = β1i +α1i. The second equation is the equation of
+the dyad triangle △W1GP1i. Thus, from the composite pole theorem we have:
+1. If α1i + β1i < 2π, then the interior angles at W1 and G are α1i/2 and β1i/2,
+respectively; and the exterior angle at P1i is φ1i/2.
+2. If α1i + β1i > 2π, then α1i/2 and β1i/2 are the exterior angles at W1 and G,
+respectively. Denote by κ the interior angle at P1i, then φ1i/2 = κ +π.
+5.2.3 The Center-Point Theorem
+Consider three positions M1, M2, and M3 of the ﬂoating link of an RR chain with
+the corresponding positions Wi, i = 1,2,3, of the moving pivot. The crank rotation
+angle around G between each of these positions is βi j = ∠WiGWj; clearly, β13 =
+β23 +β12.
+The geometry of the dyad triangle tells us that the angle ∠W1GP12 is either
+β12/2 or β12/2 + π, depending on the location of P12 relative to G. Similarly, for
+the dyad triangle △W2GP23 we have that ∠W2GP23 is either β23/2 or β23/2 + π.
+Notice that ∠W1GP12 = ∠P12GW2. Considering each of the possible cases for
+∠P12GP23 = ∠P12GW2 +∠W2GP23, we see that this angle must be eitherβ13/2 or
+β13/2+π. Thus, G views the segmentP12P23 in either the angleβ13/2 or β13/2+π,
+seeFigure 5.2 .
+Fig. 5.2 The two dyad triangles △W1GP12 and △W1GP13 deﬁne a third triangle P12GP13.
+This generalizes to the theorem already presented in chapter 3, which is the foun-
+dation for Burmester’s approach to RR chain design:
+Theorem 6 (The Center-Point Theorem). The center point of an RR chain that
+reaches positions Mi, Mj, and Mk views the relative displacement poles Pi j and Pjk
+in the angle βik/2 or βik/2 +π, where βik is the crank rotation angle from position
+Mi to Mk.
+G
+P12
+P23
+2
+W1
+2
+β23 β13
+β12
+2
+δ
+2
+γ
+2
+
+--- Page 5 ---
+5.3 Finite Position Synthesis of RR Chains 97
+We now determine the equation of the triangle formed by G and the two poles
+P12 and P23. Let the vector P12 −G be the base of the triangle with interior angles
+at vertices P12 and G given by δ/2 and β13/2. Then the exterior angle γ/2 at P23 is
+given by γ/2 = δ/2 +β13/2, and the equation of the triangle (4.62) yields
+(1 −eiγ )P23 = (1 −eiβ13 )G +eiβ13 (1 −eiδ )P12. (5.12)
+Substitute for δ and solve for G to obtain
+C : G = P23 −eiβ13 P12
+1 −eiβ13
++
+(P23 −P12
+1 −eiβ13
+)
+eiγ . (5.13)
+If we ﬁx β13 and let γ vary in this equation, then we obtain a circle with center C
+given by
+C = P12 −eiβ13 P23
+1 −eiβ13
+. (5.14)
+This circle has the property that the central angle measured from P12 to P23 is β13.
+Thus, any pointG on this circle views the segmentP12P23 in either β13/2 or β13/2+
+π.
+5.3 Finite Position Synthesis of RR Chains
+In order to design an RR chain we identify a set of task positions Mi, i = 1,..., n,
+for the end-link of the chain. This means that the displacements[Ti],i = 1,..., n, are
+known, and the angles φ1i and the relative poles P1i can be determined at the outset.
+The unknowns are the two coordinates of the ﬁxed pivot G = (x,y)T and the two
+coordinates of the moving pivot W1 = (λ,µ)T , four in all.
+5.3.1 The Algebraic Design Equations
+The equations (5.9) can be formulated in a way that yields a convenient set of alge-
+braic design equations for an RR chain. Starting with the relation
+Wi −P1i = [A(φ1i)](W1 −P1i), (5.15)
+we subtract W1 −P1i from both side to obtain
+Wi −W1 = [A(φ1i)−I](W1 −P1i). (5.16)
+Substitute this into (5.9) to obtain the equations
+D1i : (G −P1i)·[A(φ1i)−I](W1 −P1i) =0, i = 2,..., n, (5.17)
+
+--- Page 6 ---
+98 5 Algebraic Synthesis of Planar Chains
+which we call the design equations for the RR chain.
+Notice that when n = 5, we have four design equations in four unknowns. Thus,
+an RR chain can be designed to reach ﬁve arbitrarily speciﬁed precision positions.
+5.3.1.1 The Bilinear Structure
+The design equations (5.17) are quadratic in the four unknowns G = (x,y)T and
+W1 = (λ,µ)T . However, they have the important property that they are linear when
+considered separately in the unknowns x, y and λ, µ. This structure provides a con-
+venient strategy for the solution the ﬁve position problem.
+However, before considering ﬁve-position synthesis, we examine the subprob-
+lems of design for two-, three- and four-precision positions. In these cases, the bi-
+linear structure provides alternative solutions that we describe as “select the ﬁxed
+pivot” or “select the moving pivot.” These solution strategies correspond to the two
+ways the design equations can be used to design RR chains.
+Let the coordinates of the relative pole be P
+1i = (pi,qi)T . Then we can expand
+(5.17) to obtain
+{
+x −pi
+y −qi
+}T [
+cosφ1i −1 −sinφ1i
+sinφ1i cosφ1i −1
+]{λ −pi
+µ −qi
+}
+= 0, i = 2,..., n. (5.18)
+If we select the ﬁxed pivotG then the coordinates x, y are known, and we can collect
+the coefﬁcients of λ and µ to obtain the design equations
+Ai(x,y)λ +Bi(x,y)µ = Ci(x,y), i = 2,..., n, (5.19)
+where
+Ai(x,y) = (cosφ1i −1)(x −pi)+ sinφ1i(y −qi),
+Bi(x,y) =−sinφ1i(x −pi)+( cosφ1i −1)(y −qi),
+Ci(x,y) = (cosφ1i −1)(pi(x −pi)+ qi(y −qi))+ sinφ1i(piy −qix).
+The coordinates of the moving pivot(λ,µ) are obtained by solving this set of linear
+equations.
+On the other hand, if we select the moving pivot W1, then λ, µ are known, and
+we can collect the coefﬁcients of x and y to obtain
+A′
+i(λ,µ)x +B′
+i
+(λ,µ)y = C′
+i (λ,µ), i = 2,..., n, (5.20)
+where
+A′
+i
+(λ,µ) = (cosφ1i −1)(λ −pi)−sinφ1i(µ −qi),
+B′
+i
+(λ,µ) =sinφ1i(λ −pi)+( cosφ1i −1)(µ −qi),
+C′
+i (λ,µ) = (cosφ1i −1)(pi(λ −pi)+ qi(µ −qi))−sinφ1i(piµ −qiλ).
+
+--- Page 7 ---
+5.3 Finite Position Synthesis of RR Chains 99
+Thus, the ﬁxed pivot coordinates x, y are obtained by solving a set of linear equa-
+tions, as well.
+5.3.2 Parameterized Form of the Design Equations
+The equations of the dyad triangle provide a set of design equations that include the
+crank rotation angles β1i. These equations provide a way to select a crank angle in
+the design process.
+For a set of task positions Mi, i = 1,..., n, we have the n −1 dyad triangle equa-
+tions
+(1 −eiφ1i )P1i = (1 −eiβ1i )G +eiβ1i (1 −eiα1i )W1, i = 2,..., n, (5.21)
+which are linear in the in the unknown complex vectorsG = x+iy and W1 = λ +iµ.
+If the crank angles β1i are speciﬁed, then the rotation angles α1i = φ1i −β1i are
+known as well.
+5.3.3 Two Precision Positions
+If two positions M1 and M2 of the end-link are speciﬁed, then the displacements
+[T1] = [A(φ1),d1] and [T2] = [A(φ2),d2] are given. The relative rotation angle φ12
+and the pole P12 can be determined. Because n = 2, there is a single design equation
+(G −P12)·[A(φ12)−I](W1 −P12) =0. (5.22)
+To design the RR chain we can select either the ﬁxed or moving pivot, and still have
+a free parameter.
+5.3.3.1 Select the Fixed Pivot
+Choose values for the coordinates of the ﬁxed pivot G = (x,y)T , then (5.19) yields
+the equation
+A2(x,y)λ +B2(x,y)µ = C2(x,y), (5.23)
+for the coordinates W1 = (λ,µ)T of the moving pivot. This is a single equation
+relating λ and µ. Simply choose one and compute the other.
+
+--- Page 8 ---
+100 5 Algebraic Synthesis of Planar Chains
+5.3.3.2 Select the Moving Pivot
+The bilinearity of the design equations allows us to select values for the coordinates
+W1 = (λ,µ)T of the moving pivot, and use (5.20) to deﬁne
+A′(λ,µ)x +B′(λ,µ)y = C′(λ,µ). (5.24)
+This is the equation of the perpendicular bisector of the segment W1W2. Any point
+on this line can be used as the center point G.
+5.3.3.3 Select the Crank Angle
+The equation of the dyad triangle can be used to specify the crank angleβ12 between
+the two positions M1 and M2. In this case (5.22) yields a linear equation in the
+complex vectors G = x +iy and W1 = λ +iµ:
+(1 −eiφ12 )P12 = (1 −eiβ12 )G +eiβ12 (1 −eiα12 )W1. (5.25)
+Recall that α12 = φ12 −β12. We can choose either of the vectorsG or W1 and solve
+this equation for the other one. Notice that the free parameter that existed in the
+previous solutions has been used here to deﬁne the crank angle β12.
+5.3.4 Three Precision Positions
+For the case of three speciﬁed positions of the ﬂoating link, we have the three dis-
+placements [T
+i] = [A(φi),di],i = 1,2,3. Compute the relative anglesφ12, φ13 and the
+poles P12, P13 in order to obtain the pair of design equations
+(G −P1i)·[A(φ1i)−I](W1 −P1i) =0,i = 2,3. (5.26)
+These equations yield a unique solution for either the ﬁxed pivot G or the moving
+pivot W1 for an arbitrary choice of the other.
+5.3.4.1 Select the Fixed Pivot
+Choose values for the coordinates of G and assemble the two design equations
+(5.19) into the matrix equation
+[
+A1(x,y) B1(x,y)
+A2(x,y) B2(x,y)
+]{
+λ
+µ
+}
+=
+{
+C1(x,y)
+C2(x,y)
+}
+. (5.27)
+Solve these equations to obtain a unique moving pivot W1.
+
+--- Page 9 ---
+5.3 Finite Position Synthesis of RR Chains 101
+5.3.4.2 Select the Moving Pivot
+We may specify the coordinates of W1 = (λ,µ)T and write the design equations
+(5.20) in matrix form to obtain
+[
+A′
+1(λ,µ) B′
+1
+(λ,µ)
+A′
+2
+(λ,µ) B′
+2
+(λ,µ)
+]{
+x
+y
+}
+=
+{
+C′
+1(λ,µ)
+C′
+2(λ,µ)
+}
+. (5.28)
+These equations deﬁne the two perpendicular bisectors D12 and D13 that intersect
+at the point G, see Figure 5.3.
+P12
+G
+M2
+M1
+!12
+M3
+P23!23
+F
+W1
+W2
+W3
+!12
+ 2
+!23
+ 2
+Fig. 5.3 The ﬁxed pivot G is the intersection of the two bisectors V12 and V23.
+5.3.4.3 Select the Crank Angles
+The relative displacements from M1 to M2 and from to M3 yield the two dyad trian-
+gle equations
+[(1 −eiβ12 ) eiβ12 (1 −eiα12 )
+(1 −eiβ13 ) eiβ13 (1 −eiα13 )
+]{ G
+W1
+}
+=
+{(1 −eiφ12 )P12
+(1 −eiφ13 )P13
+}
+. (5.29)
+Choose values for the crank angles β12 and β13 and compute α1i = φ1i −β1i. Then
+Cramer’s rule yields unique coordinate vectorsG and W1.
+Another approach to this problem uses the center-point theorem to determine the
+ﬁxed pivot G that has selected values for the crank angles β12 and β13. To be the
+desired ﬁxed pivot G must view the sides P13P23 and P12P23 of the pole triangle in
+the angles β12/2 and β13/2, respectively.
+
+--- Page 10 ---
+102 5 Algebraic Synthesis of Planar Chains
+This is achieved by determining the circle that has the segmentP12P23 as a chord
+with arc length β13. From (5.13) we have
+C13 : G = P23 −eiβ13 P12
+1 −eiβ13
++
+(P23 −P12
+1 −eiβ13
+)
+eiγ . (5.30)
+In the same way, the circle that has theP13P23 as a chord with arc lengthβ12 is given
+by
+C12 : G = P23 −eiβ12 P13
+1 −eiβ12
++
+(P23 −P13
+1 −eiβ12
+)
+eiγ . (5.31)
+The circles C13 and C12 have the point P23 in common, and the second intersec-
+tion is the desired ﬁxed pivot G. Let C13 and C12 be the centers of these circles and
+note that
+(G −C13)2 = (P23 −C13)2, (G −C12)2 = (P23 −C12)2. (5.32)
+From these relations, we can compute
+(G −P23)·(C2 −C1) =0. (5.33)
+Thus, for a given set of values for β12 and β13 the ﬁxed pivot G is the reﬂection of
+P23 through the line joining the centers of the two circles, C13 and C12.
+5.3.5 Four Precision Positions
+In order to ﬁnd RR cranks that reach four design positions we must ﬁnd points
+Wi, i = 1,2,3,4, that lie on a circle. Clearly, an arbitrary point will not satisfy this
+condition. However, this does not mean that no such points exist. In fact, there is a
+cubic curve of moving pivots called the circle-point curve that have four positions
+on a circle. The centers of all of these circles form the center-point curve.
+5.3.5.1 The Center-Point Curve
+Given four speciﬁed positions M
+i, i = 1,2,3,4, we can determine the relative dis-
+placements [T1i] = [A(φ1i,d1i)] and deﬁne the matrix form of the design equations
+
+
+A2(x,y) B2(x,y)
+A3(x,y) B3(x,y)
+A4(x,y) B4(x,y)
+
+
+{
+λ
+µ
+}
+=
+
+
+
+C2(x,y)
+C3(x,y)
+C4(x,y)
+
+
+. (5.34)
+There is a solution for the moving pivotW1 only if these three equations are linearly
+dependent.
+
+--- Page 11 ---
+5.3 Finite Position Synthesis of RR Chains 103
+For these equations to have a solution, the ﬁxed pivot G must be selected so the
+3 ×3 augmented coefﬁcient matrix [M] = [Ai,Bi,Ci] is of rank two. This means that
+the determinant |M|equals zero, which yields a cubic polynomial
+R(x,y) : |M|= a30y3 +(a21x +a20)y2 +(a12x2 +a11x +a10)y
++a03x3 +a02x2 +a01x +a00 = 0. (5.35)
+This polynomial deﬁnes a cubic curve in the ﬁxed frame, and any point on this curve
+may be chosen as the center pointG for the RR chain. This is thecenter-point curve.
+Formulas for the coefﬁcients in (5.35) are obtained by noting that each of the
+elements of [M] are linear in the components ofG = (x,y)T . Introducing the column
+vectors ai, bi, and ci, we have
+det[M] =
+⏐⏐a1x +b1y +c1, a2x +b2y +c2, a3x +b3y +c3
+⏐
+⏐= 0. (5.36)
+The linearity of the determinant allows us to expand this expression to deﬁne the
+coefﬁcients of the center-point curve as
+a
+30 = |b1b2b3|,
+a21 = |a1b2b3|+|b1a2b3|+|b1b2a3|,
+a20 = |b1b2c3|+|b1c2b3|+|c1b2b3|,
+a12 = |a1a2b3|+|a1b2a3|+|b1a2a3|,
+a11 = |a1b2c3|+|a1c2b3|+|b1a2c3|+|b1c2a3|+|c1a2b3|+|c1b2a3|,
+a10 = |b1c2c3|+|c1b2c3|+|c1c2b3|,
+a03 = |a1a2a3|,
+a02 = |a1a2c3|+|a1c2a3|+|c1a2a3|,
+a01 = |a1c2c3|+|c1a2c3|+|c1c2a3|,
+a00 = |c1c2c3|. (5.37)
+5.3.5.2 Burmester’s Theorem
+The center-point theorem provides a geometric condition that characterizes center
+points for four precision positions. Given four positions, there are six relative dis-
+placement poles P
+i j, i < j =1,2,3,4, and the center-point theorem requires that a
+ﬁxed pivot G view the pole pairsPi jPik and Pm jPmk in the angle βjk/2 or βjk/2+π.
+Burmester [7] assembled the six relative poles into the three complementary pairs
+P12P34, P13P24, and P14P23 such that each pair has the numbers 1 through 4 in its
+indices. He then introduced theopposite-pole quadrilateral that has any two of these
+complementary pairs as its diagonals, Figure 5.4. This construction ensures that the
+opposite sides of the opposite-pole quadrilateral have the form needed to apply the
+center-point theorem. The result is Burmester’s theorem presented in the chapter 3,
+which we repeat here:
+
+--- Page 12 ---
+104 5 Algebraic Synthesis of Planar Chains
+Theorem 7 (Burmester’s Theorem). The center point G of an RR chain that can
+reach four speciﬁed positions in the plane views opposite sides of an opposite-pole
+quadrilateral obtained from the relative poles of the given positions in angles that
+are equal, or differ by π.
+Proof. Burmester’s deﬁnition of the opposite-pole quadrilateral ensures that oppo-
+site sides have the form Pi jPik and Pm jPmk. The center-point theorem states that G
+must view Pi jPik in the angle βjk/2 or βjk/2 + π, where βjk is the angle from po-
+sition Mj to Mk. Similarly, it must view the Pm jPmk in either βjk/2 or βjk/2 + π.
+Consider the various combinations to see that G views these sides in angles that are
+equal, or differ by π. ⊓ ⊔
+M4
+M3
+M2
+M1
+P12
+P23
+P34
+P14
+Fig. 5.4 The opposite-pole quadrilateral obtained from four planar positions.
+Burmester’s theorem provides a way to derive the center-point curve in terms of
+the coordinates of the relative displacement poles. Let the opposite-pole quadrilat-
+eral be formed with vertices Q : P12P23P34P14, and assume the ﬁxed pivot G views
+P23P12 in the angle κ. Then G must view P34P14 in either κ or κ +π.
+We determine the angle ∠P12GP23 = κ by separately determining sin κ and
+cosκ. Introduce, for the moment, a third coordinate direction ⃗k perpendicular to
+the plane, and consider our coordinate vectors to be three-dimensional with zeros as
+the third component. This allows us to compute sinκ using the vector cross product
+⃗k ·(P12 −G)×(P23 −G) =sinκ|P12 −G||P23 −G|. (5.38)
+This quantity is the determinant of the 2 ×2 matrix [P12 −G,P23 −G], so we have
+
+--- Page 13 ---
+5.3 Finite Position Synthesis of RR Chains 105
+sinκ|P12 −G||P23 −G|=
+⏐⏐P12 −G, P23 −G
+⏐
+⏐. (5.39)
+The cosine of κ is obtained using the dot product
+cosκ|P
+12 −G||P23 −G|= (P12 −G)·(P23 −G). (5.40)
+Divide these two equations, and substituteP12 = (p2,q2)T , P23 = (a1,b1)T to obtain
+tanκ = (b1 −q2)x +(a1 −p2)y + p2b1 −q2a1
+x2 +y2 −(p2 +a1)x −(q2 +b1)y + p2a1 +q2b1
+= L12
+C12
+. (5.41)
+The numerator in this equation is a linear function of the coordinates x, y, and the
+denominator is the equation of a circle.
+A similar calculation yields the angle ∠P14GP34, which must be either κ or
+κ +π. However, since tanκ = tan(κ +π), we have
+tanκ = (b2 −q4)x +(a2 −p4)y + p4b2 −q4a2
+x2 +y2 −(p4 +a2)x −(q4 +b2)y + p4a2 +q4b2
+= L34
+C34
+, (5.42)
+where the coordinates of the relative poles are P14 = (p4,q4)T and P34 = (a2,b2)T .
+Equate (5.41) and (5.42) to obtain a formula for the center-point curve, given by
+R(x,y) : L12C34 −L34C12 = 0. (5.43)
+It is easy to see that the cubic terms of R(x,y) in (5.35) are
+a30y3 +a21y2x +a12yx2 +a03x3
+=
+(
+(b1 −q2 −b2 +q4)x +(a1 −p2 −a2 + p4)y
+)
+(x2 +y2). (5.44)
+The factor x2 + y2 in this term identiﬁes this cubic polynomial as a circular cubic.
+This also means that the ten coefﬁcients ai j are not independent. In fact, it is easy to
+see that
+a30 = a12 = a1 −p2 −a2 + p4, a03 = a21 = b1 −q2 −b2 +q4. (5.45)
+5.3.5.3 The Parameterized Center-Point Curve
+Burmester’s theorem is also the basis for a derivation of a parameterized version of
+the center-point curve. The construction presented in chapter 3 uses the opposite-
+pole quadrilateral Q : P
+12P23P34P14 to generate points that satisfy Burmester’s the-
+orem. We formulate this construction analytically in terms of the dyad triangle for
+the RR chain P12P23 and compute the center points G as the relative displacement
+poles of the segment P23P34, Figure 5.5.
+Identify the vertices of the opposite-pole quadrilateral Q with the pivots of a 4R
+linkage so O = P12, A = P23, B = P34, and C = P14. The formulas in chapter 2 are
+
+--- Page 14 ---
+106 5 Algebraic Synthesis of Planar Chains
+Fig. 5.5 The dimensions of an opposite-pole quadrilateral considered as a four-bar linkage.
+used to determine the angles at each vertex. Let θ be the interior angle at P12, then
+we can determine the coupler angle φ(θ) at P23 using equation (2.57).
+Rotate the segment P12P23 an angle ∆θ from the initial conﬁguration of Q. This
+requires a corresponding rotation of angle∆φ of the segment P23P34 about P23. The
+composition of these two displacement is a relative rotation of angle κ = ∆θ +∆φ
+about the pole G (Figure 5.6), given by
+[T (κ,G)] = [T (∆θ ,P12)][T (∆φ ,P23)]. (5.46)
+This composition yields the dyad triangle equation
+(1 −ei(∆θ +∆φ ))G = (1 −ei∆θ )P12 +ei∆θ (1 −ei∆φ )P23. (5.47)
+Let θ0 and φ0 be the initial values for these angles in Q, then we have
+∆θ = θ −θ0, ∆φ = φ(θ)−φ0. (5.48)
+The result is that this equation deﬁnes a point G on the center-point curve for every
+value of the parameter θ.
+To complete this formulation, we need the initial conﬁguration angles θ0 and φ0,
+which are computed by using formulas (5.39) and (5.40) to obtain
+θ0 = arctan
+( ⏐⏐P14 −P12, P23 −P12
+⏐⏐
+(P14 −P12)·(P23 −P12)
+)
+(5.49)
+and
+φ0 = arctan
+( ⏐⏐P23 −P12, P34 −P23
+⏐⏐
+(P23 −P12)·(P34 −P23)
+)
+. (5.50)
+A beneﬁt of this parameterization is that a center-point curve can be classiﬁed
+by the linkage type of the opposite-pole quadrilateral Q that generates it. In par-
+ticular, center-point curves generated by nonGrashof opposite-pole quadrilaterals
+have a single circuit, while those generated by Grashof opposite-pole quadrilater-
+h
+a b
+g
+θ0
+P12
+P23 P34
+P14
+φ0
+
+--- Page 15 ---
+5.3 Finite Position Synthesis of RR Chains 107
+!0
+P12
+P23
+P34
+P14
+G
+"#
+  2
+"!
+  2
+"#+"!
+     2
+Fig. 5.6 A center pointG is the pole of the displacement of the couplerP23P34 of the opposite-pole
+quadrilateral when driven as a four-bar linkage.
+als have two circuits. Furthermore, all three opposite-pole quadrilaterals that can be
+constructed from the six relative poles generate the same curve.
+5.3.5.4 The Circle-Point Curve
+For each point of the center-point curve we have a solution to the design equation
+(5.19), which yields a moving pivot W1. These points form the circle-point curve.
+We can obtain an equation for this curve directly by using (5.20) to deﬁne the matrix
+equation 
+
+A′
+2(λ,µ) B′
+2
+(λ,µ)
+A′
+3
+(λ,µ) B′
+3
+(λ,µ)
+A′
+4
+(λ,µ) B′
+4
+(λ,µ)
+
+
+{x
+y
+}
+=
+
+
+
+C′
+2(λ,µ)
+C′
+3(λ,µ)
+C′
+4(λ,µ)
+
+
+. (5.51)
+These equations have a solution for the ﬁxed pivotG = (x,y)T only if the augmented
+coefﬁcient matrix [M′] has rank two. Here, as above, the elements of [M′] are linear
+functions of coordinates of the moving pivot W1 = (λ,µ) and can be assembled
+into column vectors, so we have
+det[M′] =
+⏐⏐a′
+1λ +b′
+1
+µ +c′
+1
+, a′
+2
+λ +b′
+2
+µ +c′
+2
+, a′
+3
+λ +b′
+3
+µ +c′
+3
+⏐⏐= 0. (5.52)
+The expansion of this determinant yields a polynomial R(λ,µ) that has the same
+form as R(x,y) in (5.35). The coefﬁcients of R(λ,µ) are given by (5.37) using a′,
+b′and c′.
+If the four displacements ofM relative toF are inverted, then we can compute the
+circling-point curve simply as the center-point curve of the inverted displacements.
+In this case, the curve is deﬁned in the moving reference frame M. We can then
+transform these coordinates to the ﬁxed frame in the ﬁrst position to obtain the
+curve of moving pivots W1.
+
+--- Page 16 ---
+108 5 Algebraic Synthesis of Planar Chains
+This result is achieved by determining the opposite-pole quadrilateral for the
+relative inverse displacements with M in position M1. Form the quadrilateral Q†
+from the image poles P1
+12P1
+23
+P1
+34
+P1
+14
+. Recall that P1
+12
+= P12 and P1
+14
+= P14. The
+image poles P1
+23
+and P1
+34
+are the reﬂections of P23 and P34 through the lines
+P12P13 and P13P14, respectively. Thus, the inverted opposite-pole quadrilateral
+Q† : P12P1
+23
+P1
+34
+P14 has the same dimensions as the original opposite-pole quadrilat-
+eral Q.
+The circle-point curve is constructed by applying Burmester’s theorem to the
+quadrilateral Q†. Using the equations (5.39) and (5.40), we can derive the equivalent
+to equations (5.41) and (5.42). The result is a circular cubic curve that deﬁnes the
+moving pivots W1.
+A parameterized version of the circle-point curve is obtained using the same pro-
+cedure as above for the center-point curve. In fact, because the dimensions ofQ and
+Q† are the same, the only difference is the initial conﬁguration of the quadrilateral.
+Compute new the values for θ0 and φ0 using P1
+23 and P1
+34
+in equations (5.49) and
+(5.50), then (5.47) yields the circle-point curve.
+5.3.6 Five Precision Positions
+Given ﬁve task positions for the moving body, we obtain four design equations
+(5.17) that are quadratic in four unknowns G = (x,y)T and W1 = (λ,µ)T . We use
+a two-step procedure to eliminate the variable in these equations. The goal is a sin-
+gle polynomial in one unknown. The solutions of this polynomial are then used
+to determine the remaining unknowns. We also solve this problem by ﬁnding the
+intersections of two center-point curves.
+5.3.6.1 Algebraic Elimination
+Let the coordinates of the relative poles be P
+1i = (pi,qi)T , and expand the design
+equations (5.17) for the case n = 5. Assemble these equations into four linear equa-
+tions in the two unknowns (λ,µ)
+
+
+A2(x,y) B2(x,y)
+A3(x,y) B3(x,y)
+A4(x,y) B4(x,y)
+A5(x,y) B5(x,y)
+
+
+{λ
+µ
+}
+=
+
+
+
+
+C
+2(x,y)
+C3(x,y)
+C4(x,y)
+C5(x,y)
+
+
+
+
+. (5.53)
+In order for this system of equations to have a solution the rank of the 4 ×3
+augmented coefﬁcient matrix [M] = [A
+i,Bi,Ci] must be two. For this to occur, each
+the four 3 ×3 minors of this matrix must equal zero. Let Rj be the determinant of
+the 3×3 matrix formed by removing row 5−j; so R1 is the computed from the ﬁrst
+three rows, R2 from the ﬁrst two and last row, and so on. The result is four cubic
+
+--- Page 17 ---
+5.3 Finite Position Synthesis of RR Chains 109
+polynomials in x and y
+Rj(x,y) : a30, jy3 +(a21, jx +a20, j)y2 +(a12, jx2 +a11, jx +a10, j)y
++a03, jx3 +a02, jx2 +a01, jx +a00, j = 0, j = 1,2,3,4. (5.54)
+Thus, our four equations in four unknowns are transformed into four equations in
+two unknowns. The next step eliminates y to obtain a single polynomial in x.
+At this point we assume that determinants Rj have the structure of a general
+cubic polynomial in two variables. Collect the coefﬁcients of y in each Rj to deﬁne
+Rj : dj0y3 +dj1y2 +dj2y +dj3 = 0, j = 1,2,3,4. (5.55)
+The coefﬁcient djk is a polynomial in x of degree k.
+Assemble these polynomials into a matrix equation with the vector of unknowns
+(y3,y2,y)T , given by
+
+
+d10 d11 d12
+..
+. .
+.
+. .
+.
+.
+d
+40 d41 d42
+
+
+
+
+
+y3
+y2
+y
+
+
+= −
+
+
+
+d13
+..
+.
+d
+43
+
+
+
+. (5.56)
+This equation has a solution only if the rank of the 4 ×4 augmented coefﬁcient
+matrix [D] = [d0,d1,d2,d3], where dj = (d1 j,d2 j,d3 j,d4 j)T , is three. This means
+that the determinant |D|of this matrix must be zero.
+The determinant |D|is a polynomial in the single variable x. The degree of this
+polynomial is the sum of the degrees of each of the columns of [D], that is, 0 +1 +
+2 +3 = 6. Thus, we obtain a single sixth-degree polynomial in x
+P(x) : |D|=
+6
+∑
+i=0
+aixi = 0. (5.57)
+It happens that a5 = a6 = 0 and P(x) is a quartic polynomial. This is due to the
+circular cubic structure (5.45) of the polynomials Rj. This quartic polynomial has
+four roots of which zero, two, or four will be real. Thus, there can be as many as
+four RR chains that reach ﬁve positions.
+To determine the RR chains that reach ﬁve task positions, ﬁrst formulate the
+polynomial P(x) and determine its roots xi, i = 1,2,3,4. For each real rootxi, solve
+(5.56) to determine the coordinate yi. This deﬁnes as many as four ﬁxed pivots
+Gi = (xi,yi)T . Determine the associated moving pivots W1
+i = (λ,µ)T by solving
+two of the linear constraint equations (5.17).
+5.3.6.2 Intersecting Two Center-Point Curves
+Five task positions determine ten relative displacement poles Pi j, i < j = 1,..., 5.
+Consider the two opposite-pole quadrilateralsQ14: P12P23P34P14 and Q15: P12P23P35P15.
+
+--- Page 18 ---
+110 5 Algebraic Synthesis of Planar Chains
+A ﬁxed pivot compatible with ﬁve positions lies on the center-point curve deﬁned
+by Q14 and on the center-point curve deﬁned by Q15. This provides another way to
+determine the ﬁxed pivot G.
+The opposite-pole quadrilaterals Q14 and Q15 share the side P12P23,Figure 5.7 .
+Thus, the pivot G must satisfy the two equations
+G = P12(1 −ei∆θ1 )+ P23(1 −ei∆φ1 )ei∆θ1
+1 −ei(∆φ1+∆θ1) (5.58)
+and
+G = P12(1 −ei∆θ2 )+ P23(1 −ei∆φ2 )ei∆θ2
+1 −ei(∆φ2+∆θ2) . (5.59)
+The angles ∆φ1 and ∆φ2 are functions of ∆θ1 and ∆θ2 deﬁned by the dimensions
+of the two opposite-pole quadrilaterals.
+Fig. 5.7 The reference conﬁguration for the planar compatibility platform.
+Notice that equations (5.58) and (5.59) deﬁne the same point G when
+∆θ1 = ∆θ2 and ∆φ1 = ∆φ2. (5.60)
+The ﬁrst condition is satisﬁed by using the same parameter θ to drive P12P23 for
+both curves. The second condition requires that the triangle △P23P34P35 have the
+same shape in each solution conﬁguration. Thus, the ﬁxed pivots G are the poles
+of the displacement of △P23P34P35 to each of the assemblies of the platform, Fig-
+P12
+P14
+P15
+P23
+P34
+P35
+θ0,2
+θ0,1
+φ0,2φ0,1
+a
+h2
+h1
+g1
+g2
+b1
+b2
+
+--- Page 19 ---
+5.4 The Design of PR Chains 111
+ure 5.8. We call this assembly of relative displacement poles theplanar compatibil-
+ity platform and obtain the following theorem:
+P12
+P14
+P15
+P23
+P34
+P35
+G
+Fig. 5.8 The relative displacement poles of the assemblies of the planar compatibility platform
+deﬁne the ﬁxed pivots G.
+Theorem 8 (The Planar Compatibility Platform). The ﬁxed pivot of an RR chain
+compatible with ﬁve speciﬁed planar positions is a pole of the displacement of the
+planar compatibility platform from its original conﬁguration another of its assem-
+blies.
+The analysis of the two 4R linkages in this platform yields two equations of the
+form
+Ai cosφ +Bi sinφ = Ci, i = 1,2. (5.61)
+that are easily solved as shown in (A.11). This 3RR platform is known to have six
+assemblies. One is the initial conﬁguration, therefore we obtain a relative pole to
+each of the remaining ﬁve assemblies. However, one of these is the pole P13, thus
+the remaining four are the desired ﬁxed pivots.
+5.4 The Design of PR Chains
+A PR chain consists of a prismatic joint in the ﬁxed frame F connected by a slider
+to a revolute joint in the moving frame M. Let the trajectory of the moving pivot W
+lie on the line L: Y(t) =R+tS, which must be parallel to the guide of the prismatic
+joint. The condition that W lie on L is simply that the vector W −R be aligned with
+the direction S. This is expressed by the equation
+⏐⏐S, W −R
+⏐
+⏐= 0. (5.62)
+
+--- Page 20 ---
+112 5 Algebraic Synthesis of Planar Chains
+This constraint characterizes the PR chain.
+5.4.1 The Design Equations
+In order to design a PR chain to reach a the task positions Mi, i = 1,..., n, we must
+ﬁnd a moving pivot W1 such that the corresponding points Wi, i = 1,..., n, all lie
+on a line L in F. Any line parallel to L can be used as the guide for the prismatic
+joint.
+The points Wi and L: Y(t) =R +tS are related by the constraint equations
+⏐⏐S, Wi −R
+⏐
+⏐= 0, i = 1,..., n. (5.63)
+Subtract the ﬁrst equation from those remaining to obtain
+⏐⏐S, W
+i −W1⏐⏐= 0, i = 2,..., n. (5.64)
+Notice that R has cancelled in these equations. This is because the point W1 is
+sufﬁcient to locate the line L.
+Now recall from our derivation of the design equations for an RR chain that
+Wi −W1 = [A(φ1i)−I](W1 −P1i). (5.65)
+Substitute this into (5.64) to obtain the design equations
+⏐
+⏐S, [A(φ
+1i)−I](W1 −P1i)
+⏐
+⏐= 0, i = 2,..., n. (5.66)
+The unknowns in these equations are the directionS of the guide and the coordinates
+of the moving pivot W
+1.
+The design equations are homogeneous in the components of S, which means
+that if S is a solution then kS is also a solution. Therefore, only one component of S
+is independent, so we set S = (1,m)T , where m is the slope of L. The components of
+W1 = (λ,µ)T are independent unknowns. Thus, the design equations have a total
+of three unknowns, m, λ, and µ. We will see in what follows that the three design
+equations obtained from four task positions deﬁne one PR chain.
+5.4.1.1 The Bilinear Structure
+The design equations are linear in m and separately linear in λ and µ. This bilin-
+ear structure allows us to follow a solution procedure similar to that used for RR
+chains. However, the different number of unknowns introduces an asymmetry into
+the analysis.
+The coefﬁcients of m can be isolated by introducing the vectors C
+i = [A(φ1i) −
+I](W1 −P1i). Then (5.66) can be written as
+
+--- Page 21 ---
+5.4 The Design of PR Chains 113
+[
+m, −1
+][
+C2, ..., Cn
+]
+= 0, (5.67)
+where the components of Ci = (Ai,Bi)T are given by
+Ai = (cosφ1i −1)λ −sinφ1iµ −((cosφ1i −1)pi −sinφ1iqi),
+Bi = sinφ1iλ +(cosφ1i −1)µ −(sinφ1i pi +(cosφ1i −1)qi). (5.68)
+Note that the components of the poles are given by P1i = (pi,qi)T .
+We can also collect coefﬁcients of λ and µ, so (5.66) becomes
+Diλ +Eiµ +Fi = 0, i = 2,..., n, (5.69)
+where
+Di = m(cosφ1i −1)−sinφ1i,
+Ei = −msinφ1i −(cosφ1i −1),
+Fi = −m((cosφ1i −1)pi −sinφ1iqi)+( sinφ1i pi +(cosφ1i −1)qi). (5.70)
+We now determine the solutions to these equations for the cases n = 2,3,4.
+5.4.2 Two Positions
+For two speciﬁed positions for the moving body, we have the single design equation
+[m, −1]
+C2 = mA2 −B2 = 0. (5.71)
+This equation is solved by selecting either a point W1 or a direction m.
+In the ﬁrst case, given values for components ofW1 = (λ,µ)T the components of
+the vector C2 = (A2,B2)T are speciﬁed, and equation (5.71) has the single unknown
+m. Thus, this slope is uniquely determined.
+If instead we select a direction m, then (5.71) becomes a linear equation inλ and
+µ
+D2λ +E2µ +F2 = 0. (5.72)
+Choose either λ or µ and solve for the other.
+The result is a two-dimensional set of PR chains, which are obtained by selecting
+either the moving pivot W1 or a direction m and one component of W1.
+5.4.3 Three Positions
+When three positions of the moving body are speciﬁed, we have two design equa-
+tions that form the matrix equation
+
+--- Page 22 ---
+114 5 Algebraic Synthesis of Planar Chains
+[
+m, −1
+][
+C2, C3
+]
+= 0. (5.73)
+This equation has a solution if the 2 ×2 coefﬁcient matrix [C2,C3] has rank 1, that
+is, when ⏐⏐[A(φ12)−I](W1 −P12), [A(φ13)−I](W1 −P13)
+⏐⏐= 0. (5.74)
+This provides a condition on the selection of the moving pivots W1.
+To simplify (5.74), we introduce the identity
+[A(φ1i)−I] =2sin φ1i
+2 [J][A(φ1i
+2 )], (5.75)
+where [J] is a rotation by 90 ◦. This combines with the linearity of the determinant
+to yield ⏐
+⏐
+⏐[A(
+φ12
+2 )](P12 −W1), [A(φ13
+2 )](P13 −W1)
+⏐
+⏐
+⏐= 0. (5.76)
+Multiply both columns by [A(φ
+12/2)]T , so (5.74) ﬁnally takes the form
+⏐
+⏐
+⏐P
+12 −W1, [A(φ23
+2 )](P13 −W1)
+⏐
+⏐
+⏐= 0. (5.77)
+This determinant is zero when the two columns are colinear vectors. Therefore,
+the rotation by φ
+23/2 around W1 must bring P13 −W1 into alignment with P12 −
+W1. Thus, W1 must view the segment P12P13 in the angle φ23/2, and (5.77) is the
+equation of a circle. This is an algebraic proof of the slider-point theorem.
+Expand equation (5.77) to obtain the circle C1 given by
+C1 : λ2 + µ2 +a11λ +a12µ +a13 = 0. (5.78)
+Any point on this circle may be chosen as the pivot W1, in which case the ﬁrst
+design equation (5.71) can be solved to determine m.
+Rather than selectW1, we can choose the directionm and obtain the pair of linear
+equations
+D2λ +E2µ +F2 = 0,
+D3λ +E3µ +F3 = 0. (5.79)
+The solution of these equations deﬁnes a unique point W1 associated with a given
+direction m.
+The result is one PR chain for each direction m or point on the circle C1. This is
+a one-dimensional set of solutions.
+
+--- Page 23 ---
+5.5 The Design of RP Chains 115
+5.4.4 Four Positions
+If four task positions for the moving body are speciﬁed, then the design equations
+become [
+m, −1
+][
+C2, C3, C4
+]
+= 0. (5.80)
+In order for this equation to have a solution, the three minors of the matrix
+[C2,C3,C4] must be simultaneously zero. This provides three conditions on the co-
+ordinates of the point W1, each of which has the same form as (5.77).
+The condition |C2,C3|= 0 yields the circle described in the previous section.
+Setting the other two minors to zero, we obtain
+|C2,C4|=
+⏐⏐
+⏐P
+12 −W1, [A(φ24
+2 )](P14 −W1)
+⏐
+⏐
+⏐= 0,
+|C
+3,C4] =
+⏐
+⏐
+⏐P
+13 −W1, [A(φ34
+2 )](P14 −W1)
+⏐
+⏐
+⏐= 0. (5.81)
+This deﬁnes two additional circles,
+C
+2 : λ2 + µ2 +a21λ +a22µ +a23 = 0,
+C3 : λ2 + µ2 +a31λ +a32µ +a33 = 0, (5.82)
+which combine with C1 above to determine the components of W1 = (λ,µ)T .
+Collect the coefﬁcients of µ and write the three circle equations as the matrix
+equation 
+
+1 a12 λ2 +a11λ +a13
+1 a22 λ2 +a21λ +a23
+1 a32 λ2 +a31λ +a33
+
+
+
+
+
+µ2
+µ
+1
+
+
+=
+
+
+
+0
+0
+0
+
+
+. (5.83)
+This system of equations has a solution if the determinant |C|of the coefﬁcient
+matrix is zero. This determinant can be simpliﬁed by subtracting the ﬁrst row from
+the other two to obtain a linear equation in λ, given by
+⏐⏐
+⏐
+⏐
+a
+22 −a12 (a21 −a11)λ +a23 −a13
+a32 −a12 (a31 −a11)λ +a33 −a13
+⏐⏐
+⏐
+⏐= 0. (5.84)
+Solve this equation for λ and then (5.83) for µ in order to determine the point W
+1.
+Using this point, the design equations (5.80) yield the directionm for the slider. The
+result is a unique PR chain that can reach four speciﬁed positions.
+5.5 The Design of RP Chains
+An RP chain consists of a revolute joint G in the ﬁxed frame F connected to a
+prismatic joint in the moving frameM. The prismatic joint follows a ﬁxed line inM.
+From the point of view ofM, the pointG must follow the lineL: y(t) =r+ts parallel
+
+--- Page 24 ---
+116 5 Algebraic Synthesis of Planar Chains
+to the guide of the prismatic joint as the body moves through a set of positions Mi.
+Let g be the coordinates of G measured in M. The condition that g lie on L is simply
+that g −r must be aligned with s, which is given by
+⏐⏐s, g −r
+⏐
+⏐= 0. (5.85)
+This constraint characterizes an RP chain.
+5.5.1 The Design Equations
+In order for the end-link of an RP chain to reach the task positions Mi, i = 1,..., n,
+we must ﬁnd a point G in F that has its corresponding n points gi, i = 1,..., n, in M
+on a line L. Any line parallel to L can be used as the guide for the prismatic joint.
+Let the n positions of the moving body be deﬁned by the transformations [Ti],
+i = 1,..., n, so we have the inverse transformations gi = [T −1
+i ]G. Then, the points
+gi and the line L: y(t) =r +ts in M are related by the equations
+⏐⏐s, gi −r
+⏐
+⏐= 0, i = 1,..., n. (5.86)
+Subtract the ﬁrst equation from those remaining to obtain
+⏐
+⏐s, g
+i −g1⏐
+⏐= 0, i = 2,..., n. (5.87)
+Now introduce the relative inverse transformation[T
+†
+1i] = [A†
+1i,d†
+1i
+] so that this equa-
+tion becomes ⏐⏐s, [A†
+1i −I](g1 −p1i)
+⏐⏐= 0, i = 2,..., n, (5.88)
+where p1i is the pole of the relative inverse displacement in M. This is simply the
+inverted version of the PR design equation (5.66).
+Consider the moving frame to be in positionM1 and transform coordinates to the
+frame F. This requires multiplying (5.88) by [A1], so we obtain
+⏐
+⏐[A
+1]s, [A1][A†
+1i −I](g1 −p1i)
+⏐⏐= 0, i = 2,..., n. (5.89)
+Let S = [A1]s be the direction of the lineL in F. Notice that [A1](g1 −p1i) =G−P1i,
+where P1i is the relative pole in F. We obtain the RP design equations in the form
+⏐
+⏐S, [A
+†
+1i −I](G −P1i)
+⏐⏐= 0, i = 2,..., n. (5.90)
+Note that [A1][A†
+1i][AT
+1 ] = [A†
+1i], because planar rotations commute.
+This set of equations is identical in form to those for the PR chain, and their
+analysis is the same except for one fundamental difference. The relative inverse
+rotation [A†
+1i] is the inverse of the relative rotation[A1i], which means that the rotation
+angles φ†
+1i are −φ1i. From this we conclude that the circles derived in the previous
+
+--- Page 25 ---
+5.6 Planar Four-Bar Linkages 117
+section for PR chains will be reﬂected through through the segments P1iP1k. Use
+these circles and the design procedure for PR chains to design RP chains.
+5.6 Planar Four-Bar Linkages
+The design equations developed in this chapter determine RR, PR and RP chains
+that reach a speciﬁed set of positions. These chains can be connected in pairs to
+construct various four-bar linkages, each of which has one degree of freedom. The
+connection between two chains also allows us to coordinate the movement of the
+input and output links in order to design a linkage known as a function generator.
+The coupling between two open chains introduces limits on their relative move-
+ment that can interfere with the smooth travel of the ﬂoating link between the spec-
+iﬁed positions. For example, a Grashof linkage may reach one set of task positions
+in one assembly and the other positions in the other assembly. This is referred to as
+the branching problem.
+In what follows, we consider the solution to the branching problem for 4R chains,
+and then present a strategy for the design of function generators.
+5.6.1 Solution Rectiﬁcation
+Filemon [32] introduced a construction for the moving pivot of the input crank of a
+4R linkage that ensures that the linkage moves smoothly through the task positions.
+This construction assumes that an output crank CB = G
+outW1
+out has been selected.
+It is then possible to determine how this crank rotates to reach each of the design
+positions. Viewed from the coupler, this link sweeps out two wedge shaped regions
+centered on W
+1
+out, Figure 5.9. Filemon showed that all that is necessary is that we
+choose the moving pivotW1
+in of the input crank outside of these regions. Recall that
+the limit positions of the input crank OA = GinW1
+in of a 4R linkage occur when the
+coupler AB = W1
+inW1
+out lines up with the output crank.
+5.6.1.1 Filemon’s Construction
+We will focus on three-position synthesis to develop rectiﬁcation theory, though it
+can be applied more generally. For positions deﬁned by the displacements[T1], [T2],
+and [T3] we have the design equations (5.28). For any choice of the output moving
+pivot W1
+out, we can determine a unique ﬁxed pivot Gout.
+The positions that Gout can take relative to the moving frame are computed using
+the relative inverse displacements [T 1
+1i] with M in position M1, that is,
+Gi
+out = [T 1
+1i]Gout. (5.91)
+
+--- Page 26 ---
+118 5 Algebraic Synthesis of Planar Chains
+Fig. 5.9 Filemon’s construction uses the three positions of the output crank to deﬁne a wedge-
+shaped region; the input moving pivot is selected from outside this region.
+Recall that [T 1
+1i] = [T −1
+1i ].
+Now consider the angleα12 measured from G1
+out to G2
+out around W1
+out. Similarly,
+we have α23 = ∠G2
+outW1
+outG3
+out measured around W1
+out. These angles combine to
+form the wedge swept by the driven crank relative the moving frame M. Assume
+these angles are between π and −π, then the angle τ of this wedge is the sum
+α12 + α23 if these angles have the same sign. If these angles have different signs
+then τ is the angle with the largest absolute value.
+Choose the input moving pivot W1
+in from outside of this wedge-shaped region.
+The resulting 4R linkage will pass through the design positions before the coupler
+lines up with the output crank, which deﬁnes the limit to the movement of the input
+crank.
+5.6.1.2 Waldron’s Construction
+Waldron [142, 143] shows that if the output pivot W1
+out rotates so that any of the
+angles α12, α23, or α13 is greater than or equal to π, then there is no solution to
+Filemon’s construction. This lead him to consider the points that view each side of
+the image pole triangle in π/2 and deﬁne the three-circle diagram.
+The poles of the relative inverse displacements [T 1
+12], [T 1
+23], and [T 1
+13] deﬁne the
+image pole triangle △P12P1
+23P13. The center-point theorem applied to the image
+pole triangle yields the result the moving pivot W1
+out views the sides of this triangle
+the rotation angle −αik/2 of the coupler relative to the RR chain. Thus, for a point
+W and side P1
+i jP1
+jk of the image pole triangle, we have the relation
+M1
+F
+W1
+g3
+α12
+α23
+τ
+g1
+g2
+
+--- Page 27 ---
+5.6 Planar Four-Bar Linkages 119
+P12
+P13
+P23
+P231
+C12 C13
+C23
+Fig. 5.10 Waldron’s three-circle diagram identiﬁes regions of driven moving pivots that ensure
+that Filemon’s construction yields useful driving pivots.
+cos αik
+2 =
+(P1
+i j −W)·(P1
+jk −W)
+|P1
+i j
+−W||P1
+jk −W| . (5.92)
+The points that have αik/2 = π/2 lie on the circles
+Cik : (P1
+i j −W)·(P1
+jk −W) =0. (5.93)
+The diameters of these circles are the segments P1
+i jP1
+jk.
+The three circles C12, C23, and C13 bound regions of points for which αi j >
+π/2. Points outside of these circles, as well as points in regions where they overlap
+can be used as moving pivots W1
+out, Figure 5.10. For these points the output crank
+GoutW1
+out has a solution for Filemon’s construction. The result is a 4R linkage that
+moves through the three speciﬁed positions before it reaches a limit to the range of
+movement of the input crank.
+5.6.2 Function Generation
+A four-bar linkage is often designed to coordinate the movement of the input
+and output links. Suppose that we are given a table of coordinated angular val-
+ues θ
+i,ψi,i = 1,..., n, for the input and output cranks of a 4R linkage, or θi,si for
+the input and output of a slider-crank. We can apply the design theory developed in
+preceding sections to ﬁnd a linkage that provides this functional relationship.
+
+--- Page 28 ---
+120 5 Algebraic Synthesis of Planar Chains
+5.6.2.1 The 4R Chain
+Select ﬁxed pivots O and C for the input and output cranks of this linkage. Let
+g = |C −O|be the distance between these points,Figure 5.11 . Let F be a reference
+frame located at O with its x-axis along the line OC. Assume the angles θi and ψi
+are measured relative to thex-axis of F. Introduce the lineLO through O at the angle
+θ1.
+Fig. 5.11 A 4R function generator has a prescribed set of input and output angles θi, and ψi.
+We now invert this problem by deﬁning the exterior angles ¯θi = π −θi at O,
+Figure 5.12. Introduce the coordinate frame F′attached to the input crank so that its
+x-axis is aligned with LO such that ¯θ1 is the angle to OC. The angles ¯θi and ψi can
+now be viewed as the joint angles of the RR open chain formed by OC as it moves
+in F′. Using the kinematics equations of this chain, we compute the n positions
+[Di] = [Z( ¯θi)][X(g)][Z(ψi)], i = 1,..., n. (5.94)
+The positions [Di] can now be used to design an RR chainAB to close the 4R chain.
+The result is a 4R chain that has the desired set of coordinated angles θi and ψi,
+i = 1,..., n. Clearly, n ≤5, because this is the maximum number of positions for
+which solutions exist to the ﬁnite position problem.
+5.6.2.2 The RRRP Chain
+The same strategy can be used to design a slider-crank that has the input angle θ
+coordinated with an output slide s. Let θi and si, i = 1,..., n, be the desired table of
+values. Select a ﬁxed pivot O and the direction S. Introduce a ﬁxed frame F at O
+with its x-axis perpendicular to S, where e is the offset distance from O to the guide
+S. We assume the angles θi are measured from the x-axis of F, and si are measured
+along the y-axis. Let LO be the line through O at the angle θ1 to the x-axis of F.
+We invert the problem and determine the exterior angles¯θi = π −θi and introduce
+the frame F′ with its x-axis along LO at the angle ¯θ1. In this frame the kinematic
+equations of the RP chain can be written as
+
+--- Page 29 ---
+5.8 References 121
+Fig. 5.12 Holding the input crank ﬁxed the output crank takes positions M1,..., Mi for each of the
+prescribed input and output angles.
+[Di] = [Z( ¯θi)][X(e)][Y (si)],i = 1,..., n. (5.95)
+The positions [Di] can be used to design the RR chain connecting the input and
+output cranks of the RRRP linkage. Again, at most ﬁve sets of coordinated input
+angles and output slides can be speciﬁed.
+5.7 Summary
+This chapter has presented algebraic techniques for the design of planar RR, PR, and
+RP chains. The results are a direct reﬂection of the graphical constructions presented
+earlier. In fact, many of the graphical results are simply reproduced here in algebraic
+form. This provides a transition to the formulation we need for the design of spatial
+linkages. Because the geometric principles are the same, it is useful to appeal to
+understanding gained in planar synthesis theory to provide insight to the design of
+spherical and spatial chains.
+5.8 References
+The algebraic formulation of linkage design was introduced by Freudenstein and
+Sandor [37] using a complex vector formulation and is developed in detail in Erd-
+man and Sandor [30]. See also Waldron and Kinzel [144]. The polynomial elim-
+ination procedure used to solve the RR and PR design equations was inspired by
+Innocenti [52] and Liao [66]. Computer implementations of planar linkage syn-
+thesis originated with Kaufman’s KINSYN [54], and include Waldron and Song’s
+RECSYN [145], Erdman and Gustafson’s LINCAGES [28], and Ruth’s SphinxPC
+θ1
+θ2
+θi
+1
+2 i
+M1
+Mi
+M2
+O
+C1
+C2
+Ci
+
+--- Page 30 ---
+122 5 Algebraic Synthesis of Planar Chains
+[109]. Ravani and Roth [100] present an optimization approach to linkage synthesis
+that allows more that ﬁve task positions.
+Exercises
+1. Use the positions listed in Table 5.1 to design two RR chains to form a 4R linkage
+(Sandor and Erdman [112]).
+Table 5.1 Three positions
+Mi θi dx,i dy,i
+1 293 ◦ 1.55 −0.90
+2 138 ◦ 1.75 −0.30
+3 348 ◦ 0.80 1.60
+2. Use the positions in Table 5.2 to determine the pole triangle △P12P23P13. Deter-
+mine the equation of the circle that circumscribes this pole triangle (Sandor and
+Erdman [112]).
+Table 5.2 Three more positions
+Mi θi dx,i dy,i
+1 0 ◦ 0 0
+2 22 ◦ −6 11
+3 68 ◦ −17 13
+3. Design a slider-crank linkage to guide the workpiece through the three positions
+in Table 5.2.
+4. Design a 4R linkage that moves a workpiece through the three positions in Table
+5.2.
+5. Determine the equation of the curve of moving pivots W1 that lie on circles of
+the same radius R. Show that this is a tricircular sextic.
+6. Show that if the opposite-pole quadrilateral has the shape of a kite, then the
+center-point curve degenerates into a circle and a line.
+7. Determine the center-point and circle-point curves for the positions listed in Ta-
+ble 5.3 (Suh and Radcliffe [134]).
+8. Determine the Burmester points for the ﬁve positions listed in Table 5.4 (Sandor
+and Erdman [112]).
+
+--- Page 31 ---
+5.8 References 123
+Table 5.3 Four positions
+Mi θi dx,i dy,i
+1 0 ◦ 1.0 1.0
+2 0 ◦ 2.0 0.5
+3 45 ◦ 3.0 1.5
+4 90 ◦ 2.0 2.0
+Table 5.4 Five positions
+Mi θi dx,i dy,i
+1 0 ◦ 0 0
+2 10 ◦ 1.5 .8
+3 20 ◦ 1.6 1.5
+4 60 ◦ 2.0 3.0
+5 90 ◦ 2.3 3.5
