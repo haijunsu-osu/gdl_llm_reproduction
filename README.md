@@ -1,12 +1,9 @@
-# GDL LLM Reproduction Data (McCarthy & Soh)
+# GDL LLM Reproduction Data (Prepared by Hai-Jun Su)
 
 This workspace is a data-and-artifacts repository for reproducing linkage analysis and synthesis workflows from:
 
 - **J. M. McCarthy and G. S. Soh**, *Geometric Design of Linkages*, Interdisciplinary Applied Mathematics 11, Springer, 2011.
 - Book DOI: **10.1007/978-1-4419-7892-9**
-
-Related GitHub repository:
-- https://github.com/haijunsu-osu/gdl_llm_reproduction
 
 The goal is to support the paper by **Haijun Su** by providing reproducible prompts, extracted chapter text, solver scripts, and generated outputs.
 
