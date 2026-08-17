@@ -1,5 +1,7 @@
 # GDL LLM Reproduction Data (Prepared by Hai-Jun Su)
 
+[Prof. Hai-Jun Su's Lab project page](https://su-idr-lab.github.io/projects/msr_2026_ai_kinematics_tutorial/index.html)
+
 This workspace is a data-and-artifacts repository for reproducing linkage analysis and synthesis workflows from:
 
 - **J. M. McCarthy and G. S. Soh**, *Geometric Design of Linkages*, Interdisciplinary Applied Mathematics 11, Springer, 2011.
@@ -79,6 +81,13 @@ Chapter-level DOI suffixes appear inside the extracted files (e.g., `_2`, `_5`, 
 ## Citation
 
 If you use this dataset/reproduction workflow, cite the book and this repository.
+
+### Preprint
+[2026_ASME_IDETC_AGI.pdf](2026_ASME_IDETC_AGI.pdf)
+
+> **Citation**
+>
+> HJ Su, JM McCarthy, *Solving Kinematics Problems by Leveraging the Power of Large Language Models*, Proceedings of the ASME 2026 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference (IDETC/CIE 2026), Houston, TX, August 23–26, 2026, Paper No. DETC2026-193726.
 
 ### Book
 McCarthy, J. M., & Soh, G. S. (2011). *Geometric Design of Linkages*. Interdisciplinary Applied Mathematics, 11. Springer. https://doi.org/10.1007/978-1-4419-7892-9
