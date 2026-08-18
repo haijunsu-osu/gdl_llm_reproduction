@@ -83,7 +83,7 @@ Chapter-level DOI suffixes appear inside the extracted files (e.g., `_2`, `_5`, 
 If you use this dataset/reproduction workflow, cite the book and this repository.
 
 ### Preprint
-[2026_ASME_IDETC_AGI.pdf](2026_ASME_IDETC_AGI.pdf)
+[2026_ASME_IDETC_GUIDE.pdf](2026_ASME_IDETC_GUIDE.pdf)
 
 > **Citation**
 >
